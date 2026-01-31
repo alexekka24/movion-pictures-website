@@ -39,7 +39,7 @@ export const ProjectDialog = ({ projects, open, onClose, startIndex = 0 }) => {
     <AnimatePresence>
       {/* Backdrop */}
       <motion.div
-        className="fixed inset-0 z-10 bg-black/70 backdrop-blur-lg shadow-2xl shadow-amber-50"
+        className="fixed inset-0 z-30 bg-black/70 backdrop-blur-lg shadow-2xl shadow-amber-50"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -48,7 +48,7 @@ export const ProjectDialog = ({ projects, open, onClose, startIndex = 0 }) => {
 
       {/* Modal */}
       <motion.div
-        className="fixed inset-0 z-20 flex items-center justify-center "
+        className="fixed inset-0 z-40 flex items-center justify-center "
         initial={{ scale: 0.96, opacity: 0,}}
         animate={{ scale: 1, opacity: 1}}
         exit={{ scale: 0.96, opacity: 0,}}

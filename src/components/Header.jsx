@@ -46,84 +46,9 @@ export const Header = () => {
 
   return (
     <>
-      {/* <nav
-        className={cn(
-          "z-40 transition-all duration-500",
-
-          // 🔹 MOBILE / TABLET → normal flow
-          "relative lg:absolute",
-
-          isScrolled
-            ? "lg:fixed lg:top-6 lg:left-1/2 lg:-translate-x-1/2 w-[92%] max-w-6xl py-3 \
-         backdrop-blur-2xl bg-background/70 border border-white/30 \
-         rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.25)]"
-            : "lg:absolute lg:top-0 lg:left-0 lg:w-full py-6 bg-black"
-        )}
-      > */}
-      {/* <nav
-  className={cn(
-    "z-40 transition-all duration-500",
-    isScrolled
-      ? "fixed top-6 left-1/2 -translate-x-1/2 w-[92%] max-w-6xl py-3 \
-         backdrop-blur-2xl bg-background/70 border border-white/30 \
-         rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.25)]"
-      : isDesktop
-      ? "absolute top-0 left-0 w-full py-6 bg-transparent"
-      : "sticky top-0 w-full py-4 bg-background/90 backdrop-blur-xl"
-  )}
-> */}
-      {/* <nav
-        className={cn(
-          "z-40 transition-all duration-500",
-
-          // DESKTOP: lg+ → transparent at top, black when scrolled
-          "lg:absolute lg:top-0 lg:left-0 lg:w-full lg:py-6 lg:bg-transparent",
-
-          // MOBILE & TABLET: < lg → always black, sticky
-          "w-full py-4 bg-black sticky top-0",
-
-          // Add scrolled styles only for desktop
-          isScrolled &&
-            "lg:fixed lg:top-6 lg:left-1/2 lg:-translate-x-1/2 lg:w-[92%] lg:max-w-6xl lg:py-3 lg:bg-background/70 lg:backdrop-blur-2xl lg:border lg:border-white/30 lg:rounded-full lg:shadow-[0_8px_32px_rgba(0,0,0,0.25)]"
-        )}
-      > */}
-      {/* <nav
-  className={cn(
-    "z-40 transition-all duration-500",
-
-    // Base (mobile/tablet) → normal flow before scroll
-    "relative w-full py-4 bg-black sticky top-0",
-
-    // DESKTOP: lg+ → absolute top, transparent before scroll
-    "lg:absolute lg:top-0 lg:left-0 lg:w-full lg:py-6 lg:bg-transparent",
-
-    // SCROLLED → pill layout applied to all breakpoints
-    isScrolled &&
-      "fixed top-6 left-1/2 -translate-x-1/2 w-[92%] max-w-6xl py-3 \
-       rounded-full border border-white/30 shadow-[0_8px_32px_rgba(0,0,0,0.25)] \
-       backdrop-blur-2xl",
-
-    // SCROLLED → color difference
-    isScrolled
-      ? "bg-white lg:bg-background/70" // mobile/tablet: black; desktop: translucent
-      : ""
-  )}
-> */}
-      {/* <nav
-  className={cn(
-    "z-40 transition-all duration-500",
-
-    // AT TOP
-    "relative w-full py-4 sticky top-0 bg-black lg:bg-transparent lg:absolute lg:top-0 lg:left-0 lg:w-full lg:py-6",
-
-    // SCROLLED → GLASS PILL
-    isScrolled &&
-      "fixed top-6 left-1/2 -translate-x-1/2 w-[92%] max-w-6xl py-3 rounded-full border border-white/30 shadow-[0_8px_32px_rgba(0,0,0,0.25)] backdrop-blur-2xl bg-white/10"
-  )}
-> */}
       <nav
         className={cn(
-          "z-10 transition-all duration-500",
+          "z-40 transition-all duration-500",
 
           // BASE (mobile/tablet at top)
           "relative w-full py-4 top-0 bg-black",
@@ -192,7 +117,7 @@ export const Header = () => {
 
           {/* MOBILE TOGGLE */}
           <button
-            className="lg:hidden p-2 text-foreground z-30"
+            className="lg:hidden p-2 text-foreground z-40"
             aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
             onClick={() => setIsMenuOpen((prev) => !prev)}
           >
@@ -210,10 +135,10 @@ export const Header = () => {
               "transition-all duration-300 lg:hidden rounded-4xl",
               isMenuOpen
                 ? "translate-y-0 opacity-100 pointer-events-auto"
-                : "-translate-y-full opacity-0 pointer-events-none",
+                : "-translate-y-full opacity-0 pointer-events-auto",
               isScrolled
                 ? "h-100 text-white pointer-events-auto"
-                : "h-100"
+                : "h-100 pointer-events-auto"
             )}
           >
             <div
