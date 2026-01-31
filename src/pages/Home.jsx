@@ -1,5 +1,5 @@
 import { HeroSection } from "../components/HeroSection";
-import { OurClients } from "../components/ourClients";
+import { OurClients } from "../components/OurClients";
 import { WhoWeAre } from '../components/WhoWeAre';
 import { OurProjects } from "../components/OurProjects";
 

@@ -206,7 +206,7 @@ export const WhoWeAre = () => {
       </div>
 
       {/* Film grain */}
-      <div className="pointer-events-none absolute inset-0 bg-[url('/noise.png')] opacity-[0.035]" />
+      {/* <div className="pointer-events-none absolute inset-0 bg-[url('/noise.png')] opacity-[0.035]" /> */}
 
       <motion.div
         style={{ y, opacity }}
