@@ -107,7 +107,7 @@ const HeroVideo = () => {
     object-contain
     lg:object-cover
   "
-        src="/src/assets/video/showreel.mp4"
+        src="https://res.cloudinary.com/dxwadodnh/video/upload/v1769851472/shoreel-web_be3aty.mp4"
         autoPlay
         loop
         muted

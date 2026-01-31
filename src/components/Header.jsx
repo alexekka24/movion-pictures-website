@@ -145,8 +145,8 @@ export const Header = () => {
             <img
               src={
                 isScrolled
-                  ? "/src/assets/images/logos/logo-black.png"
-                  : "/src/assets/images/logos/logos-white.png"
+                  ? "/assets/images/logos/logo-black.png"
+                  : "/assets/images/logos/logos-white.png"
               }
               alt="Movion Pictures"
               className="w-3xs transition-all duration-300"
