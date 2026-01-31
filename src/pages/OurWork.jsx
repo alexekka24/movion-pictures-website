@@ -7,6 +7,8 @@ import { ProjectDialog } from "../components/ProjectDialog";
 
 // Data
 import { PROJECTS } from "../../public/assets/data/PROJECTS";
+import { MarqueeComponent } from "../components/MarqueeComponent";
+import GravitySection from "../components/GravitySection";
 
 
 export default function OurWorkPage() {
@@ -45,10 +47,13 @@ export default function OurWorkPage() {
 
   return (
     <>
-      <HeroProjectsHero />
-      <MotoSection />
+      {/* <HeroProjectsHero /> */}
+      <GravitySection />
+      <div className="h-screen"></div>
+      <MarqueeComponent />
+      {/* <MotoSection /> */}
 
-      <section className="py-20 px-6 bg-black/90 text-white">
+      <section className="py-20 px-6 bg-black">
         <FilterTabs active={activeFilter} setActive={setActiveFilter} />
 
         <ProjectsGrid
@@ -60,14 +65,27 @@ export default function OurWorkPage() {
 
       <ProjectDialog
         open={open}
-        project={filteredProjects[selectedIndex]}
+        projects={filteredProjects}
         onClose={closeModal}
         onNext={handleNext}
         onPrev={handlePrev}
         direction={direction}
         currentIndex={selectedIndex}
+        startIndex={selectedIndex}
         totalCount={filteredProjects.length}
       />
+
+      <section className="py-32 bg-white text-black text-center">
+        <h2 className="text-4xl font-bold mb-6">
+          Let’s build something meaningful.
+        </h2>
+        <a
+          href="/contact"
+          className="inline-block px-8 py-4 rounded-full bg-green-700 text-white font-medium hover:scale-105 transition cursor-pointer"
+        >
+          Start a Conversation
+        </a>
+      </section>
     </>
   );
 }

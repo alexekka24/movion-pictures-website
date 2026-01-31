@@ -190,3 +190,41 @@ body {
   padding: 0;
   text-align: center;
 }
+
+.swiper-pagination {
+  top: 16px !important;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+  pointer-events: none;
+}
+
+.swiper-pagination .divider {
+  color: #fff; /* match your numbers */
+}
+
+.swiper-pagination .swiper-pagination-current,
+.swiper-pagination .swiper-pagination-total {
+  color: #fff;
+}
+
+.mySwiper .swiper-button-next,
+.mySwiper .swiper-button-prev {
+  width: 44px;
+  height: 44px;
+  border-radius: 9999px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+}
+
+.mySwiper .swiper-button-next::after,
+.mySwiper .swiper-button-prev::after {
+  font-size: 18px;
+  color: white;
+}
+
+/* hover */
+.mySwiper .swiper-button-next:hover,
+.mySwiper .swiper-button-prev:hover {
+  background: rgba(255, 255, 255, 0.15);
+}

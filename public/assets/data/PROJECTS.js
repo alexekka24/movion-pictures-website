@@ -38,38 +38,37 @@ export const PROJECTS = [
     category: "BEAUTY & LIFESTYLE",
     thumbnail: "/assets/images/who-we-are/image1.jpg",
     videoType: "instagram",
-    videoUrl: "https://www.instagram.com/reel/xyz/",
     description: "High-performing short-form ads built for social platforms.",
     priority: false,
     videos: [
       {
         id: "video1",
         videoType: "instagram",
-        videoId: "abcd1234",
+        videoId: "https://www.instagram.com/reel/CxswW8CJEWN/",
         label: "",
       },
       {
         id: "video2",
         videoType: "instagram",
-        videoId: "abcd1234",
+        videoId: "https://www.instagram.com/reel/CxswW8CJEWN/",
         label: "",
       },
       {
         id: "video3",
         videoType: "instagram",
-        videoId: "abcd1234",
+        videoId: "https://www.instagram.com/reel/CxswW8CJEWN/",
         label: "",
       },
-            {
+      {
         id: "video4",
         videoType: "instagram",
-        videoId: "abcd1234",
+        videoId: "https://www.instagram.com/reel/CxswW8CJEWN/",
         label: "",
       },
       {
         id: "video5",
         videoType: "instagram",
-        videoId: "abcd1234",
+        videoId: "https://www.instagram.com/reel/CxswW8CJEWN/",
         label: "",
       },
     ],
@@ -232,7 +231,6 @@ export const PROJECTS = [
         videoId: "GEDr5VPGjiQ",
         label: "JM Pro Application Advertisement (RAJ)",
       },
-
     ],
   },
   {
@@ -256,7 +254,7 @@ export const PROJECTS = [
   },
   {
     id: 12,
-    title: "Universal AI: The \"Guruji\" Campaign",
+    title: 'Universal AI: The "Guruji" Campaign',
     subtitle: "AI-Powered Financial Advisor Film",
     company: "XXXXXXX",
     category: "AD FILMS / BRAND FILMS",
@@ -400,7 +398,8 @@ export const PROJECTS = [
         id: "video1",
         videoType: "youtube",
         videoId: "di6Lbs9QmCc",
-        label: "Experience the Future of Education at Universal Ai University – India’s 1st Ai University.",
+        label:
+          "Experience the Future of Education at Universal Ai University – India’s 1st Ai University.",
       },
       {
         id: "video2",
@@ -475,13 +474,15 @@ export const PROJECTS = [
         id: "video1",
         videoType: "youtube",
         videoId: "k37ecJjz_xI",
-        label: "Vijay Se Vijay Tak | Kargil War Memorial | Battle of Minds 2023",
+        label:
+          "Vijay Se Vijay Tak | Kargil War Memorial | Battle of Minds 2023",
       },
       {
         id: "video2",
         videoType: "instagram",
         videoId: "https://www.instagram.com/reel/CxswW8CJEWN/",
-        label: "Because Masterji says so! Listen to Masterji and register now! Just 3 days to go for the 30th of September!",
+        label:
+          "Because Masterji says so! Listen to Masterji and register now! Just 3 days to go for the 30th of September!",
       },
       {
         id: "video3",
@@ -592,7 +593,8 @@ export const PROJECTS = [
         id: "video1",
         videoType: "youtube",
         videoId: "IMtwb5je0xE",
-        label: "Experience the Future of Education at Universal Ai University – India’s 1st Ai University.",
+        label:
+          "Experience the Future of Education at Universal Ai University – India’s 1st Ai University.",
       },
     ],
   },
@@ -615,7 +617,7 @@ export const PROJECTS = [
       },
     ],
   },
-    {
+  {
     id: 26,
     title: "AQDA - The Yellow Diary",
     subtitle: "Music Video",

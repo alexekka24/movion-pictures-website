@@ -123,7 +123,7 @@ export const Header = () => {
 > */}
       <nav
         className={cn(
-          "z-40 transition-all duration-500",
+          "z-10 transition-all duration-500",
 
           // BASE (mobile/tablet at top)
           "relative w-full py-4 top-0 bg-black",
@@ -192,7 +192,7 @@ export const Header = () => {
 
           {/* MOBILE TOGGLE */}
           <button
-            className="lg:hidden p-2 text-foreground z-50"
+            className="lg:hidden p-2 text-foreground z-30"
             aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
             onClick={() => setIsMenuOpen((prev) => !prev)}
           >
@@ -206,7 +206,7 @@ export const Header = () => {
           {/* MOBILE MENU */}
           <div
             className={cn(
-              "fixed inset-0 bg-white backdrop-blur-3xl z-40 flex flex-col items-center justify-center",
+              "fixed inset-0 bg-white backdrop-blur-3xl z-30 flex flex-col items-center justify-center",
               "transition-all duration-300 lg:hidden rounded-4xl",
               isMenuOpen
                 ? "translate-y-0 opacity-100 pointer-events-auto"

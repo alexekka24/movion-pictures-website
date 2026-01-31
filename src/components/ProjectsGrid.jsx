@@ -30,7 +30,6 @@ export const ProjectsGrid = ({ projects, onSelect, activeFilter }) => {
       sm:grid-cols-2
       lg:grid-cols-3
       lg:auto-rows-[260px]
-      
     "
     >
       {projects.map((project, index) => {
@@ -47,9 +46,10 @@ export const ProjectsGrid = ({ projects, onSelect, activeFilter }) => {
             className={`
               group cursor-pointer
               overflow-hidden rounded-xl
-              bg-gray-100
+              bg-black
               relative
               ${spanClass}
+              shadow-2xl/40
             `}
           >
             <img
@@ -66,16 +66,16 @@ export const ProjectsGrid = ({ projects, onSelect, activeFilter }) => {
             <div
               className="
               absolute inset-0
-              bg-linear-to-t from-black/60 via-black/10 to-transparent
+              bg-linear-to-t from-black/90 via-black/10 to-transparent
               opacity-0 group-hover:opacity-100
               transition
             "
             />
 
             <div className="absolute bottom-4 left-4 text-white">
-              <h3 className="font-semibold">{project.title}</h3>
-              <p className="text-sm opacity-80">{project.company}</p>
-              <p className="text-sm opacity-80">{project.subtitle}</p>
+              <h3 className="font-semibold text-2xl">{project.title}</h3>
+              <p className="text-xl opacity-80">{project.company}</p>
+              <p className="text-lg opacity-80">{project.subtitle}</p>
             </div>
           </div>
         );
