@@ -126,7 +126,7 @@ export const Header = () => {
           "z-40 transition-all duration-500",
 
           // BASE (mobile/tablet at top)
-          "relative w-full py-4 sticky top-0 bg-black",
+          "relative w-full py-4 top-0 bg-black",
 
           // DESKTOP (lg+) at top
           "lg:absolute lg:top-0 lg:left-0 lg:w-full lg:py-6 lg:bg-transparent",

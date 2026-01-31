@@ -61,7 +61,7 @@ export default function DesktopCarouselFixedAxis({ scrollYProgress }) {
 
   return (
     <div
-      className="relative w-full h-[460px] flex items-center justify-center"
+      className="relative w-full h-115 flex items-center justify-center"
       style={{ perspective: "1400px" }}
     >
       <motion.div
