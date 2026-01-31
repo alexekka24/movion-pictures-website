@@ -200,7 +200,7 @@ export const WhoWeAre = () => {
       {/* Cinematic glow */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute left-1/2 top-1/3
-          h-[600px] w-[600px] -translate-x-1/2
+          h-150 w-150 -translate-x-1/2
           rounded-full bg-purple-600/20 blur-[160px]"
         />
       </div>
@@ -237,7 +237,7 @@ const CinematicContent = () => {
         className="
           text-5xl md:text-7xl lg:text-8xl
           font-semibold tracking-tight leading-[1.05]
-          bg-gradient-to-b from-white to-white/60
+          bg-linear-to-b from-white to-white/60
           bg-clip-text text-transparent
         "
       >
@@ -275,7 +275,7 @@ const images = [
 
 const CinematicOrbit = () => {
   return (
-    <div className="relative mt-24 h-[380px] w-full flex items-center justify-center">
+    <div className="relative mt-24 h-95 w-full flex items-center justify-center">
       <motion.div
         className="absolute inset-0"
         animate={{ rotate: 360 }}

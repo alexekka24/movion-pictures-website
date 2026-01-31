@@ -66,7 +66,7 @@ export const ProjectsGrid = ({ projects, onSelect, activeFilter }) => {
             <div
               className="
               absolute inset-0
-              bg-gradient-to-t from-black/60 via-black/10 to-transparent
+              bg-linear-to-t from-black/60 via-black/10 to-transparent
               opacity-0 group-hover:opacity-100
               transition
             "
