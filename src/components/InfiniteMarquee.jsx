@@ -2,11 +2,11 @@ import React from "react";
 
 const InfiniteMarquee = () => {
   const items = [
-    "/src/assets/images/clients/indian-army.png",
-    "/src/assets/images/clients/indian-army.png",
-    "/src/assets/images/clients/indian-army.png",
-    "/src/assets/images/clients/indian-army.png",
-    "/src/assets/images/clients/indian-army.png",
+    "/assets/images/clients/indian-army.png",
+    "/assets/images/clients/indian-army.png",
+    "/assets/images/clients/indian-army.png",
+    "/assets/images/clients/indian-army.png",
+    "/assets/images/clients/indian-army.png",
   ];
 
   return (

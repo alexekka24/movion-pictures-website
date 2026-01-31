@@ -6,7 +6,7 @@ import { ProjectsGrid } from "../components/ProjectsGrid";
 import { ProjectDialog } from "../components/ProjectDialog";
 
 // Data
-import { PROJECTS } from "../../public/data/PROJECTS";
+import { PROJECTS } from "../../public/assets/data/PROJECTS";
 
 
 export default function OurWorkPage() {

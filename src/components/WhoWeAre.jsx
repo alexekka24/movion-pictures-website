@@ -268,9 +268,9 @@ const CinematicContent = () => {
 };
 
 const images = [
-  "/src/assets/images/who-we-are/image1.jpg",
-  "/src/assets/images/who-we-are/image1.jpg",
-  "/src/assets/images/who-we-are/image1.jpg",
+  "/assets/images/who-we-are/image1.jpg",
+  "/assets/images/who-we-are/image1.jpg",
+  "/assets/images/who-we-are/image1.jpg",
 ];
 
 const CinematicOrbit = () => {

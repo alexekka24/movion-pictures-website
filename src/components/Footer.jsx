@@ -36,7 +36,7 @@ export const Footer = () => {
             className="text-xl font-bold text-primary flex items-center"
           >
             <img
-              src="/src/assets/images/logos/logos-white.png"
+              src="/assets/images/logos/logos-white.png"
               alt="Movion Pictures"
               className="w-3xs transition-all duration-300"
             />

@@ -2,14 +2,14 @@ import { motion, useScroll, useVelocity, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 const images = [
-  "/src/assets/images/who-we-are/image1.jpg",
-  "/src/assets/images/who-we-are/image1.jpg",
-  "/src/assets/images/who-we-are/image1.jpg",
-  "/src/assets/images/who-we-are/image1.jpg",
-  "/src/assets/images/who-we-are/image1.jpg",
-  "/src/assets/images/who-we-are/image1.jpg",
-  "/src/assets/images/who-we-are/image1.jpg",
-  "/src/assets/images/who-we-are/image1.jpg",
+  "/assets/images/who-we-are/image1.jpg",
+  "/assets/images/who-we-are/image1.jpg",
+  "/assets/images/who-we-are/image1.jpg",
+  "/assets/images/who-we-are/image1.jpg",
+  "/assets/images/who-we-are/image1.jpg",
+  "/assets/images/who-we-are/image1.jpg",
+  "/assets/images/who-we-are/image1.jpg",
+  "/assets/images/who-we-are/image1.jpg",
 ];
 
 export default function Carousel3DFixedAxis() {

@@ -142,21 +142,21 @@ const FOUNDERS = [
     role: "Cinematographer, Colorist & Editor",
     description:
       "Introducing Dikshant, a passionate aspiring filmmaker driven by a profound love for the art of visual storytelling, encompassing cinematography, editing, and color grading. With a creative mindset and an unwavering work ethic, Dikshant is positioned to make a meaningful impact on the landscape of filmmaking. He embraces the realm of dreams and channels his vision through the lens, consistently striving to create cinematic magic that resonates with audiences on a profound level.",
-    image: "/src/assets/images/founders/founder1.JPG",
+    image: "/assets/images/founders/founder1.JPG",
   },
   {
     name: "AMIT KALA",
     role: "Creative Producer, Writer & Actor",
     description:
       "Meet Amit Kala, a soulful actor and a creative producer who values the enduring magic of dreams. Collaborating with a talented team, he believes in turning dreams into workable realities. Amit's short films and music videos have travelled the world, collecting awards along the way. His work has garnered acclaim at the prestigious Dada Saheb Phalke Film Festival, in addition to being streamed on prestigious OTT platforms, and gaining a niche following among audiences.",
-    image: "/src/assets/images/founders/founder2.JPG",
+    image: "/assets/images/founders/founder2.JPG",
   },
   {
     name: "Aaron Justine",
     role: "Cinematographer, Director & Editor",
     description:
       "With a meticulous eye for detail and a passion for creativity, Aaron approaches every frame with careful consideration. Whether behind the camera or in the editing room, he envisions the final product, ensuring a seamless and captivating storytelling experience. Committed to pushing boundaries while maintaining the highest standards of quality, he brings a blend of precision and creativity to every project at Midnight Productions.",
-    image: "/src/assets/images/founders/founder3.JPG",
+    image: "/assets/images/founders/founder3.JPG",
   },
 ];
 

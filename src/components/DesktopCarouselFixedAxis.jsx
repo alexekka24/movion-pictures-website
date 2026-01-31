@@ -1,14 +1,14 @@
 // import { motion, useTransform } from "framer-motion";
 
 const images = [
-  "/src/assets/images/who-we-are/image1.jpg",
-  "/src/assets/images/who-we-are/image1.jpg",
-  "/src/assets/images/who-we-are/image1.jpg",
-  "/src/assets/images/who-we-are/image1.jpg",
-  "/src/assets/images/who-we-are/image1.jpg",
-  "/src/assets/images/who-we-are/image1.jpg",
-  "/src/assets/images/who-we-are/image1.jpg",
-  "/src/assets/images/who-we-are/image1.jpg",
+  "/assets/images/who-we-are/image1.jpg",
+  "/assets/images/who-we-are/image1.jpg",
+  "/assets/images/who-we-are/image1.jpg",
+  "/assets/images/who-we-are/image1.jpg",
+  "/assets/images/who-we-are/image1.jpg",
+  "/assets/images/who-we-are/image1.jpg",
+  "/assets/images/who-we-are/image1.jpg",
+  "/assets/images/who-we-are/image1.jpg",
 ];
 import {
   motion,

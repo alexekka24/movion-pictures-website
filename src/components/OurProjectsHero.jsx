@@ -20,7 +20,7 @@ export const HeroProjectsHero = ({title, subtitle}) => {
       ref={sectionRef}
       className="relative h-[80vh] flex items-center justify-center text-center overflow-hidden"
       style={{
-        backgroundImage: "url('/src/assets/images/who-we-are/image1.jpg')",
+        backgroundImage: "url('/assets/images/who-we-are/image1.jpg')",
         backgroundSize: "contain",
         backgroundPosition: "center",
         backgroundAttachment: "fixed",

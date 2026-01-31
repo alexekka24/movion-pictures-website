@@ -8,16 +8,16 @@ import { motion } from "framer-motion";
 
 
 const projects = [
-  { id: 1, image: "/images/AyanLakra.jpeg", layout: "featured" },
-  { id: 2, image: "/images/AyanLakra.jpeg", layout: "wide" },
-  { id: 3, image: "/images/AyanLakra.jpeg" }, //auto
-  { id: 4, image: "/images/AyanLakra.jpeg", layout: "tall" },
-  { id: 2, image: "/images/AyanLakra.jpeg", layout: "wide" },
-  { id: 5, image: "/images/AyanLakra.jpeg" }, //auto
-  { id: 15, image: "/images/AyanLakra.jpeg" }, //auto
-  { id: 6, image: "/images/AyanLakra.jpeg", layout: "tall" },
-  { id: 8, image: "/images/AyanLakra.jpeg" }, //add freely
-  { id: 7, image: "/images/AyanLakra.jpeg", layout: "hero" },
+  { id: 1, image: "/assets/images/who-we-are/image1.jpeg", layout: "featured" },
+  { id: 2, image: "/assets/images/who-we-are/image1.jpeg", layout: "wide" },
+  { id: 3, image: "/assets/images/who-we-are/image1.jpeg" }, //auto
+  { id: 4, image: "/assets/images/who-we-are/image1.jpeg", layout: "tall" },
+  { id: 5, image: "/assets/images/who-we-are/image1.jpeg", layout: "wide" },
+  { id: 6, image: "/assets/images/who-we-are/image1.jpeg" }, //auto
+  { id: 7, image: "/assets/images/who-we-are/image1.jpeg" }, //auto
+  { id: 8, image: "/assets/images/who-we-are/image1.jpeg", layout: "tall" },
+  { id: 9, image: "/assets/images/who-we-are/image1.jpeg" }, //add freely
+  { id: 10, image: "/assets/images/who-we-are/image1.jpeg", layout: "hero" },
 ];
 
 export const OurProjects = () => {
@@ -48,7 +48,7 @@ export const OurProjects = () => {
             h-240
             max-lg:auto-rows-[180px]
             max-md:flex max-md:flex-col max-md:h-auto
-            my-15
+            my-10
           "
         >
           {projects.map((project, index) => (
