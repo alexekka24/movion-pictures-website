@@ -1,15 +1,19 @@
 import { useState, useEffect } from "react";
 import { cn } from "../utils/utils";
-import { X, Menu, Home, Info, Briefcase, Mail } from "lucide-react";
 import Button from "./Button";
 import { NavLink } from "react-router-dom";
 import { Contact } from "./Contact";
+import { RiMenu3Fill } from "react-icons/ri";
+import { IoClose } from "react-icons/io5";
 
-const navItems = [
-  { id: 1, name: "Home", href: "/", iconName: Home },
-  { id: 2, name: "About Us", href: "/aboutus", iconName: Info },
-  { id: 3, name: "Our Work", href: "/ourwork", iconName: Briefcase },
-  { id: 4, name: "Contact", href: "/contact", iconName: Mail, action: "overlay" },
+import { FaInstagram, FaYoutube } from "react-icons/fa";
+import { NAVIGATION } from "../../public/assets/data/NAVIGATION";
+
+const images = [
+  { id: 1, src: "/assets/images/image1.jpg" },
+  { id: 2, src: "/assets/images/image2.jpg" },
+  { id: 3, src: "/assets/images/image3.jpg" },
+  { id: 4, src: "/assets/images/image4.jpg" },
 ];
 
 export const Header = () => {
@@ -18,9 +22,18 @@ export const Header = () => {
   const [contactOpen, setContactOpen] = useState(false);
   const textColor = isScrolled ? "text-black" : "text-white";
   const iconColor = isScrolled ? "black" : "white";
-  // const isDesktop = window.matchMedia("(min-width: 1024px)").matches;
-
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
+
+  useEffect(() => {
+    if (!isMenuOpen) return;
+
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+    };
+  }, [isMenuOpen]);
 
   useEffect(() => {
     const onResize = () => setIsDesktop(window.innerWidth >= 1024);
@@ -32,12 +45,13 @@ export const Header = () => {
     const heroHeight = window.innerHeight;
 
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > heroHeight - 20);
+      setIsScrolled(window.scrollY > heroHeight - 800);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  // if (!isMenuOpen) return null;
 
   const handleContactOpen = () => {
     setContactOpen(true);
@@ -48,20 +62,16 @@ export const Header = () => {
     <>
       <nav
         className={cn(
-          "z-40 transition-all duration-500",
+          "z-40 fixed left-1/2 -translate-x-1/2 transition-all duration-500",
+          "top-0 w-full h-20 flex items-center bg-black/20 backdrop-blur-2xs",
 
-          // BASE (mobile/tablet at top)
-          "relative w-full py-4 top-0 bg-black",
-
-          // DESKTOP (lg+) at top
-          "lg:absolute lg:top-0 lg:left-0 lg:w-full lg:py-6 lg:bg-transparent",
-
-          // PILL layout when scrolled
           isScrolled &&
-            "fixed top-6 left-1/2 -translate-x-1/2 w-[92%] max-w-6xl py-3 rounded-full border border-white/30 shadow-[0_8px_32px_rgba(0,0,0,0.25)] backdrop-blur-2xl bg-white/10 lg:bg-background/70"
+            "top-6 w-[92%] max-w-6xl rounded-full border border-white/30 shadow-[0_8px_32px_rgba(0,0,0,0.25)] backdrop-blur-2xl bg-white/10",
         )}
       >
-        <div className="container flex items-center justify-between">
+        {/* <div className="container flex items-center justify-between"> */}
+        <div className="w-full max-w-6xl mx-auto px-6 flex items-center justify-between">
+
           {/* Logo */}
           <NavLink
             to="/"
@@ -73,113 +83,105 @@ export const Header = () => {
                   ? "/assets/images/logos/logo-black.png"
                   : "/assets/images/logos/logos-white.png"
               }
-              alt="Movion Pictures"
+              alt="Movion Pictures Logo"
               className="w-3xs transition-all duration-300"
             />
           </NavLink>
 
-          {/* DESKTOP NAV */}
-          <div className="hidden lg:flex space-x-6">
-            {navItems.map((item) => {
-              const Icon = item.iconName;
-
-              // 🔥 Contact → OPEN OVERLAY
-              if (item.action === "overlay") {
-                return (
-                  <Button
-                    // variant="surface"
-                    variant={isScrolled ? "surface_black" : "primary"}
-                    key={item.id}
-                    onClick={handleContactOpen}
-                    className="flex items-center gap-4"
-                  >
-                    <Icon size={24} />
-                    {item.name}
-                  </Button>
-                );
-              }
-
-              return (
-                <NavLink key={item.name} to={item.href}>
-                  <Button
-                    // variant="primary"
-                    variant={isScrolled ? "primary_black" : "primary"}
-                    size="lg"
-                    key={item.name}
-                    className={isScrolled ? "text-black" : "text-white"}
-                  >
-                    {item.name}
-                  </Button>
-                </NavLink>
-              );
-            })}
-          </div>
-
           {/* MOBILE TOGGLE */}
-          <button
-            className="lg:hidden p-2 text-foreground z-40"
+          <Button
+            variant="simple_black"
+            size="lg"
+            className="p-2 text-black z-40 bg-black/40 rounded-[20%]"
             aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
             onClick={() => setIsMenuOpen((prev) => !prev)}
           >
             {isMenuOpen ? (
-              <X size={30} color="black" />
+              <IoClose color="black" className="hover:scale-110 duration-300" />
             ) : (
-              <Menu size={30} color={isScrolled ? "black" : "white"} />
+              <RiMenu3Fill
+                color={isScrolled ? "black" : "white"}
+                className="hover:scale-110 duration-300"
+              />
             )}
-          </button>
-
-          {/* MOBILE MENU */}
-          <div
-            className={cn(
-              "fixed inset-0 bg-white backdrop-blur-3xl z-30 flex flex-col items-center justify-center",
-              "transition-all duration-300 lg:hidden rounded-4xl",
-              isMenuOpen
-                ? "translate-y-0 opacity-100 pointer-events-auto"
-                : "-translate-y-full opacity-0 pointer-events-auto",
-              isScrolled
-                ? "h-100 text-white pointer-events-auto"
-                : "h-100 pointer-events-auto"
-            )}
-          >
-            <div
-              className="flex flex-col space-y-8 text-xl rounded-4xl"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {navItems.map((item) => {
-                const Icon = item.iconName;
-
-                // 🔥 Contact → OPEN OVERLAY
-                if (item.action === "overlay") {
-                  return (
-                    <button
-                      key={item.name}
-                      onClick={handleContactOpen}
-                      className="flex items-center gap-4 text-green-700"
-                    >
-                      <Icon size={24} />
-                      {item.name}
-                    </button>
-                  );
-                }
-
-                return (
-                  <NavLink
-                    key={item.name}
-                    to={item.href}
-                    className="text-black hover:text-primary transition-colors flex gap-4 items-center"
-                  >
-                    <Icon size={24} />
-                    {item.name}
-                  </NavLink>
-                );
-              })}
-            </div>
-          </div>
+          </Button>
         </div>
       </nav>
+      {/* MOBILE MENU */}
+      <div
+        className={cn(
+          "fixed inset-0 bg-white backdrop-blur-3xl z-30 flex items-center justify-evenly h-screen rounded-2xl",
+          "transition-all duration-300",
+          isMenuOpen
+            ? "translate-x-0 opacity-100 pointer-events-auto"
+            : "translate-x-full opacity-0 pointer-events-auto",
+          isScrolled
+            ? " text-white pointer-events-auto "
+            : "pointer-events-auto",
+        )}
+      >
+        {/* MASONRY GRID */}
+        <div className="hidden md:block w-1/2">
+          <div className="columns-2 gap-4">
+            {images.map((img, i) => (
+              <div
+                key={i}
+                className="masonry-item stagger-item"
+                style={{ animationDelay: `${i * 80}ms` }}
+              >
+                <img
+                  src={img.src}
+                  className="w-full rounded-xl object-cover grayscale hover:grayscale-0 duration-200"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div
+          className="flex flex-col space-y-10 rounded-4xl"
+          onClick={() => setIsMenuOpen(false)}
+        >
+          {NAVIGATION.map((item) => {
+            // Contact → OPEN OVERLAY
+            if (item.action === "overlay") {
+              return (
+                <a className="flex" key={item.name}>
+                  <Button
+                    key={item.name}
+                    onClick={handleContactOpen}
+                    className="text-black hover:text-black/60 transition-colors"
+                    variant="simple_black"
+                    size="ex_lg"
+                    text={item.name.toUpperCase()}
+                  ></Button>
+                </a>
+              );
+            }
+
+            return (
+              <NavLink
+                key={item.name}
+                to={item.href}
+                className="text-black hover:text-black/60 transition-colors flex"
+              >
+                <Button
+                  variant="simple_black"
+                  size="ex_lg"
+                  text={item.name.toUpperCase()}
+                />
+              </NavLink>
+            );
+          })}
+        </div>
+        {/* ICONS */}
+        <div className="text-black absolute flex gap-5 bottom-20 lg:bottom-10">
+          <Button text={<FaInstagram />} variant="simple" size="lg" />
+          <Button text={<FaYoutube />} variant="simple" size="lg" />
+        </div>
+      </div>
       {/* CONTACT OVERLAY */}
       <Contact open={contactOpen} onClose={() => setContactOpen(false)} />
     </>
   );
 };
-

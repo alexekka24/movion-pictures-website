@@ -1,15 +1,10 @@
-module.exports = {
-  theme: {
-    extend: {
-      keyframes: {
-        marquee: {
-          '0%': { transform: 'translateX(0%)' },
-          '100%': { transform: 'translateX(-50%)' },
-        },
-      },
-      animation: {
-        marquee: 'marquee 18s linear infinite',
-      },
-    },
+// tailwind.config.js
+animation: {
+  fadeIn: "fadeIn 0.6s ease forwards",
+},
+keyframes: {
+  fadeIn: {
+    from: { opacity: 0, transform: "translateY(10px)" },
+    to: { opacity: 1, transform: "translateY(0)" },
   },
-};
+},

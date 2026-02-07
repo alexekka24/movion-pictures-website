@@ -1,47 +1,71 @@
-import {FooterNavLinks} from "./FooterNavLinks";
-import { X, Menu, Home, Info, Briefcase, Mail } from "lucide-react";
+import { FooterNavLinks } from "./FooterNavLinks";
 import { NavLink } from "react-router-dom";
 import { FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
+import Button from "./Button";
 
+export const Footer = ({ pageTheme = "dark" }) => {
+  // pageTheme: "dark" | "light"
+  // dark page -> light glass footer
+  // light page -> dark glass footer
 
-const navItems = [
-  { name: "Home", href: "/", iconName: Home },
-  { name: "About Us", href: "/aboutus", iconName: Info },
-  { name: "Our Work", href: "/ourwork", iconName: Briefcase },
-  { name: "Contact", href: "/contact", iconName: Mail, action: "overlay" },
-];
+  const isDarkPage = pageTheme === "dark";
+  const isFooterDark = !isDarkPage; // contrast rule
 
-export const Footer = () => {
   return (
     <footer
-      className="
+      className={`
         relative left-1/2 -translate-x-1/2
         h-[60vh] w-11/12
-        bg-black/80 backdrop-blur-md
-        border border-white/10
         rounded-[20px]
-        shadow-lg
+        shadow-xl
         z-50
         flex flex-col justify-between
-        px-10 py-12
-        my-8
-      "
+        px-10 py-12 mt-8
+        backdrop-blur-xl
+        ${
+          isFooterDark
+            ? `
+              bg-black/70
+              border border-white/10
+              text-white
+            `
+            : `
+              bg-white/20
+              border border-black/10
+              text-white
+            `
+        }
+      `}
     >
+      {/* subtle glass glow */}
+      <div
+        className={`
+          pointer-events-none absolute inset-0 rounded-[20px]
+          ${
+            isFooterDark
+              ? "bg-linear-to-br from-white/5 via-transparent to-transparent"
+              : "bg-linear-to-br from-black/5 via-transparent to-transparent"
+          }
+        `}
+      />
+
       {/* Top Content */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div className="relative grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* Company Info */}
         <div className="sm:flex sm:flex-col items-center gap-4">
-          <NavLink
-            to="/"
-            className="text-xl font-bold text-primary flex items-center"
-          >
+          <NavLink to="/" className="text-xl font-bold flex items-center">
             <img
-              src="/assets/images/logos/logos-white.png"
+              src={
+                isFooterDark
+                  ? "/assets/images/logos/logos-white.png"
+                  : "/assets/images/logos/logos-white.png"
+              }
               alt="Movion Pictures"
               className="w-3xs transition-all duration-300"
             />
           </NavLink>
-          <p className="text-white/60 max-w-xs">
+
+          <p className={`${isFooterDark ? "text-white/60" : "text-white/60"} max-w-xs`}>
             Building meaningful digital experiences with modern web
             technologies.
           </p>
@@ -49,41 +73,45 @@ export const Footer = () => {
 
         {/* Navigation */}
         <div className="sm:flex sm:flex-col items-center">
-          <h4 className="text-white text-lg font-medium mb-4">Navigation</h4>
+          <h4 className={`text-xl font-medium mb-4 ${isFooterDark ? "text-white" : "text-white"}`}>
+            Navigation
+          </h4>
 
-          <FooterNavLinks
-            onContactClick={() => console.log("Open Contact Overlay")}
-          />
+          <FooterNavLinks variant={isFooterDark ? "dark" : "light"} />
         </div>
 
         {/* Social Media */}
         <div className="sm:flex sm:flex-col items-center">
-          <h4 className="text-white text-lg font-medium mb-4">Follow Us</h4>
-          <div className="flex gap-4 text-white/70">
-            <span className="hover:text-white transition cursor-pointer">
-              <FaLinkedin size={20} />
-            </span>
-            <span className="hover:text-white transition cursor-pointer">
-              <FaInstagram size={20} />
-            </span>
-            <span className="hover:text-white transition cursor-pointer">
-              <FaYoutube size={20}/>
-            </span>
+          <h4 className={`text-xl font-medium mb-4 ${isFooterDark ? "text-white" : "text-white"}`}>
+            Follow Us
+          </h4>
+
+          <div className={`flex gap-6 ${isFooterDark ? "text-white/70" : "text-black/70"}`}>
+            <Button variant="simple" size="lg" text={<FaLinkedin />} />
+            <Button variant="simple" size="lg" text={<FaInstagram />} />
+            <Button variant="simple" size="lg" text={<FaYoutube />} />
           </div>
         </div>
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/10 pt-6 text-center">
-        <p className="text-white/60 text-sm">
+      <div
+        className={`relative pt-6 text-center border-t ${
+          isFooterDark ? "border-white/10" : "border-black/10"
+        }`}
+      >
+        <p className={`${isFooterDark ? "text-white/60" : "text-white/60"} text-sm`}>
           © {new Date().getFullYear()} Movion Pictures. All rights reserved.
         </p>
-        <p className="text-white/40 text-xs mt-1">
+
+        <p className={`${isFooterDark ? "text-white/40" : "text-white/40"} text-xs mt-1`}>
           Built by{" "}
           <a
             href="https://linkedin.com/in/alex-ekka"
             target="_blank"
-            className="hover:text-white transition"
+            className={`transition ${
+              isFooterDark ? "hover:text-white" : "hover:text-white"
+            }`}
           >
             Alex Ekka
           </a>
@@ -92,3 +120,5 @@ export const Footer = () => {
     </footer>
   );
 };
+
+

@@ -127,7 +127,7 @@ const ProjectSlide = ({ project }) => {
       </div>
 
       {/* Right: Content */}
-      <div className="lg:w-[30%] h-[40%] lg:h-full bg-black backdrop-blur-xl p-6 overflow-y-auto">
+      <div className="lg:w-[25%] h-[40%] lg:h-full bg-black backdrop-blur-xl p-6 overflow-y-auto flex flex-col justify-center items-center">
         <h2 className="text-2xl font-bold">{project.title}</h2>
         <p className="text-gray-300">{project.company}</p>
         <p className="text-gray-200 mb-6">{project.description}</p>
@@ -144,7 +144,8 @@ const ProjectSlide = ({ project }) => {
                     : "bg-white/5 hover:bg-white/10"
                 }`}
             >
-              <Play size={16} />
+              {/* <Play size={16} /> */}
+              <img src={v.thumbnail} className="h-10"/>
               {v.label}
             </button>
           ))}

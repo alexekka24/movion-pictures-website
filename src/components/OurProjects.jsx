@@ -8,16 +8,16 @@ import { motion } from "framer-motion";
 
 
 const projects = [
-  { id: 1, image: "/assets/images/who-we-are/image1.jpeg", layout: "featured" },
-  { id: 2, image: "/assets/images/who-we-are/image1.jpeg", layout: "wide" },
-  { id: 3, image: "/assets/images/who-we-are/image1.jpeg" }, //auto
-  { id: 4, image: "/assets/images/who-we-are/image1.jpeg", layout: "tall" },
-  { id: 5, image: "/assets/images/who-we-are/image1.jpeg", layout: "wide" },
-  { id: 6, image: "/assets/images/who-we-are/image1.jpeg" }, //auto
-  { id: 7, image: "/assets/images/who-we-are/image1.jpeg" }, //auto
-  { id: 8, image: "/assets/images/who-we-are/image1.jpeg", layout: "tall" },
-  { id: 9, image: "/assets/images/who-we-are/image1.jpeg" }, //add freely
-  { id: 10, image: "/assets/images/who-we-are/image1.jpeg", layout: "hero" },
+  { id: 1, image: "/assets/images/who-we-are/image1.jpg", layout: "featured" },
+  { id: 2, image: "/assets/images/who-we-are/image1.jpg", layout: "wide" },
+  { id: 3, image: "/assets/images/who-we-are/image1.jpg" }, //auto
+  { id: 4, image: "/assets/images/who-we-are/image1.jpg", layout: "tall" },
+  { id: 5, image: "/assets/images/who-we-are/image1.jpg", layout: "wide" },
+  { id: 6, image: "/assets/images/who-we-are/image1.jpg" }, //auto
+  { id: 7, image: "/assets/images/who-we-are/image1.jpg" }, //auto
+  { id: 8, image: "/assets/images/who-we-are/image1.jpg", layout: "tall" },
+  { id: 9, image: "/assets/images/who-we-are/image1.jpg" }, //add freely
+  { id: 10, image: "/assets/images/who-we-are/image1.jpg", layout: "hero" },
 ];
 
 export const OurProjects = () => {
@@ -71,8 +71,8 @@ export const OurProjects = () => {
       </section>
       <NavLink key="Our Work" to="/ourwork">
 
-      <Button variant="primary_black" size="ex_lg" className="my-10">
-        Explore more of our work
+      <Button variant="surface_black" size="lg" className="my-10" text="Explore more of our work">
+        
         <ArrowRight></ArrowRight>
       </Button>
       </NavLink>
