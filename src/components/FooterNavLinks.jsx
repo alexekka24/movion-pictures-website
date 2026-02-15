@@ -1,19 +1,30 @@
 import { NavLink } from "react-router-dom";
 import { Home, Info, Briefcase, Mail } from "lucide-react";
-import Button from "./Button";
-
-const navItems = [
-  { name: "Home", href: "/", iconName: Home },
-  { name: "About Us", href: "/aboutus", iconName: Info },
-  { name: "Our Work", href: "/ourwork", iconName: Briefcase },
-  // { name: "Contact", href: "/contact", iconName: Mail, action: "overlay" },
-];
+import Button from "./common/Button";
+import { NAVIGATION } from "../../public/assets/data/NAVIGATION";
 
 export const FooterNavLinks = ({ onContactClick }) => {
+  
   return (
     <ul className="space-y-3">
-      {navItems.map((item) => {
+      {NAVIGATION.navItems.map((item) => {
         const Icon = item.iconName;
+
+        // Contact → OPEN OVERLAY
+            if (item.action === "overlay") {
+              return (
+                <a className="flex" key={item.name}>
+                  <Button
+                    key={item.name}
+                    // onClick={handleContactOpen}
+                    className="text-white hover:text-white/60 transition-colors"
+                    variant="simple"
+                    size="ex_md"
+                    text={item.name.toUpperCase()}
+                  ></Button>
+                </a>
+              );
+            }
 
         return (
           <li key={item.name}>
@@ -25,7 +36,7 @@ export const FooterNavLinks = ({ onContactClick }) => {
                 }`
               }
             >
-              <Button text={item.name.toUpperCase()} size="md" variant="simple" />
+              <Button text={item.name.toUpperCase()} size="ex_md" variant="simple" />
             </NavLink>
           </li>
         );

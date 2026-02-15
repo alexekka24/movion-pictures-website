@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import Button from "../components/Button";
+import Button from "../common/Button";
 
 export const ProjectCTA = ({ theme = "dark" }) => {
   const isDark = theme === "dark";
@@ -46,8 +46,8 @@ export const ProjectCTA = ({ theme = "dark" }) => {
               pointer-events-none absolute inset-0 rounded-3xl
               ${
                 isDark
-                  ? "bg-gradient-to-br from-white/10 via-transparent to-transparent"
-                  : "bg-gradient-to-br from-black/10 via-transparent to-transparent"
+                  ? "bg-linear-to-br from-white/10 via-transparent to-transparent"
+                  : "bg-linear-to-br from-black/10 via-transparent to-transparent"
               }
             `}
           />

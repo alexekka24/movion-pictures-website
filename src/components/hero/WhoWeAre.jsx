@@ -60,23 +60,29 @@ export const WhoWeAre = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative bg-neutral-100">
-      <div className="absolute inset-0 bg-gradient-to-b from-white via-neutral-50 to-white" />
+    <section ref={sectionRef} className="relative ">
+      {/* <div className="absolute inset-0 bg-gradient-to-b from-white via-neutral-50 to-white" />
 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(0,0,0,0.06),transparent_55%)]" />
-<div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(0,0,0,0.04),transparent_60%)]" />
+<div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(0,0,0,0.04),transparent_60%)]" /> */}
  
       {/* TEXT */}
-      <div className="relative z-10 flex flex-col gap-20 md:gap-[20vh] py-20 md:py-40">
+      <div className="relative z-10 flex flex-col gap-10 md:gap-[5vh] py-10 md:py-20">
+         {/* <p className="text-md uppercase tracking-[0.3em] text-gray-500 mb-3">
+          WHO WE ARE
+        </p> */}
         <h1 className="text-4xl md:text-8xl font-semibold">
           Stories that stay
           <br />
           long after the screen fades.
         </h1>
-        <p className="text-base md:text-5xl text-center">
+       
+        <div className="flex justify-center items-center w-screen">
+        <p className="text-base md:text-5xl text-center w-[80%]">
           We are a story-first production studio. Rooted in culture. Obsessed
           with detail. Crafting cinematic narratives that feel human, intimate,
           and timeless.
         </p>
+        </div>
       </div>
 
       {/* PINNED VISUAL STAGE */}

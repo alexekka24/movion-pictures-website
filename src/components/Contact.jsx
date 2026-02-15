@@ -1,50 +1,9 @@
 import { useEffect } from "react";
-import { X, Instagram, Youtube, Linkedin, MessageCircle } from "lucide-react";
+import { X, MessageCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import CopyButton from "./CopyButton";
-
-const ContactPageContent = {
-  headline: "Let’s create something together",
-
-  email: {
-    label: "contact@movionpictures.in",
-    value: "contact@movionpictures.in",
-  },
-
-  phone: {
-    label: "+91 8928741497",
-    value: "918928741497",
-  },
-
-  location: "Based in India · Working worldwide",
-
-  services: ["Brand Films", "Commercials", "Music Videos", "Social Content"],
-
-  socials: [
-    {
-      name: "Instagram",
-      url: "https://instagram.com/mnpstudio",
-      icon: <Instagram size={20} />,
-    },
-    {
-      name: "YouTube",
-      url: "https://youtube.com/@mnpstudio",
-      icon: <Youtube size={20} />,
-    },
-    {
-      name: "LinkedIn",
-      url: "https://linkedin.com/company/mnpstudio",
-      icon: <Linkedin size={20} />,
-    },
-  ],
-
-  whatsapp: {
-    number: "919XXXXXXXXX",
-    message: "Hello MNP Studio 👋 I'd love to explore a potential collaboration.",
-  },
-
-  availability: "Currently accepting select projects",
-};
+import CopyButton from "./common/CopyButton";
+import Button from "./common/Button";
+import { ContactPageContent } from "../../public/assets/data/CONTACTPAGECONTENT";
 
 const container = {
   hidden: { opacity: 0, y: 30 },
@@ -86,14 +45,14 @@ export const Contact = ({ open, onClose }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[9999] bg-black/80 backdrop-blur-xl overscroll-contain"
+          className="fixed inset-0 z-99 bg-black/80 backdrop-blur-xl overscroll-contain"
         >
           {/* Backdrop click */}
           <div className="absolute inset-0" onClick={onClose} />
 
           {/* Glow blobs */}
-          <div className="absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-white/10 blur-[120px]" />
-          <div className="absolute -bottom-40 -right-40 w-[500px] h-[500px] rounded-full bg-yellow-400/10 blur-[140px]" />
+          <div className="absolute -top-40 -left-40 w-125 h-125 rounded-full bg-white/10 blur-[120px]" />
+          <div className="absolute -bottom-40 -right-40 w-125 h-125 rounded-full bg-yellow-400/10 blur-[140px]" />
 
           {/* Wrapper */}
           <div className="relative flex min-h-dvh items-center justify-center px-6 py-12">
@@ -151,7 +110,14 @@ export const Contact = ({ open, onClose }) => {
                 className="mt-10 space-y-3 text-lg md:text-xl text-center"
               >
                 <p className="flex items-center justify-center gap-2 opacity-90">
-                  {ContactPageContent.email.value}
+                  <a href={`mailto: ${ContactPageContent.email.value}`}>
+                    <Button
+                      variant="simple"
+                      text={ContactPageContent.email.value}
+                      size="ex_md"
+                    />
+                  </a>
+
                   <CopyButton
                     value={ContactPageContent.email.value}
                     label={ContactPageContent.email.label}
@@ -159,7 +125,13 @@ export const Contact = ({ open, onClose }) => {
                 </p>
 
                 <p className="flex items-center justify-center gap-2 opacity-90">
-                  {ContactPageContent.phone.label}
+                  <a href={`tel:${ContactPageContent.phone.value}`}>
+                    <Button
+                      variant="simple"
+                      text={ContactPageContent.phone.label}
+                      size="ex_md"
+                    />
+                  </a>
                   <CopyButton
                     value={ContactPageContent.phone.value}
                     label={ContactPageContent.phone.label}
@@ -198,23 +170,24 @@ export const Contact = ({ open, onClose }) => {
                   Follow our work
                 </p>
 
-                <div className="flex justify-center gap-5">
-                  {ContactPageContent.socials.map((social) => (
-                    <a
-                      key={social.name}
-                      href={social.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="
-                        w-12 h-12 rounded-full flex items-center justify-center
-                        border border-white/15 bg-white/5
-                        hover:bg-white/15 hover:scale-105
-                        transition duration-300
-                      "
-                    >
-                      {social.icon}
-                    </a>
-                  ))}
+                <div className="flex justify-center gap-10">
+                  {ContactPageContent.socials.map((social) => {
+                    const Icon = social.icon;
+                    return (
+                      <a
+                        key={social.name}
+                        href={social.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Button
+                          variant="simple"
+                          text={<Icon />}
+                          size="lg"
+                        />
+                      </a>
+                    );
+                  })}
                 </div>
               </motion.div>
 
@@ -222,7 +195,7 @@ export const Contact = ({ open, onClose }) => {
               <motion.div variants={item} className="mt-12 flex justify-center">
                 <a
                   href={`https://wa.me/${ContactPageContent.whatsapp.number}?text=${encodeURIComponent(
-                    ContactPageContent.whatsapp.message
+                    ContactPageContent.whatsapp.message,
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -230,7 +203,7 @@ export const Contact = ({ open, onClose }) => {
                     inline-flex items-center gap-3
                     rounded-full px-8 py-4
                     text-sm md:text-base
-                    bg-gradient-to-r from-green-500/90 to-emerald-400/90
+                    bg-linear-to-r from-green-500/90 to-emerald-400/90
                     text-black font-semibold
                     shadow-xl shadow-green-500/20
                     hover:scale-[1.03]
@@ -238,7 +211,13 @@ export const Contact = ({ open, onClose }) => {
                   "
                 >
                   <MessageCircle size={18} />
-                  Chat on WhatsApp
+                  <Button
+                    variant="simple"
+                    text={`Chat on WhatsApp`}
+                    size="ex_md"
+                  >
+                    {/* Chat on WhatsApp */}
+                  </Button>
                 </a>
               </motion.div>
 

@@ -1,10 +1,9 @@
-import { HeroSection } from "../components/HeroSection";
-import { OurClients } from "../components/OurClients";
-import { WhoWeAre } from '../components/WhoWeAre';
-import { OurProjects } from "../components/OurProjects";
-import { MarqueeComponent } from "../components/MarqueeComponent";
-import { MasonryProjects } from "../components/MasonryProjects";
-import { ProjectCTA } from "../components/ProjectCTA";
+import { HeroSection } from "../components/hero/HeroSection";
+import { WhoWeAre } from '../components/hero/WhoWeAre';
+import { OurProjects } from "../components/hero/OurProjects";
+import { MarqueeComponent } from "../components/hero/MarqueeComponent";
+import { ProjectsSection } from "../components/hero/ProjectsSection";
+import { ProjectCTA } from "../components/common/ProjectCTA";
 
 export default function Home() {
   return (
@@ -14,7 +13,8 @@ export default function Home() {
                 <HeroSection />
                 <MarqueeComponent />
                 <WhoWeAre />
-                <OurProjects />
+                <ProjectsSection className="lg:hidden" />
+                <OurProjects className="hidden lg:block"/>
                 <ProjectCTA theme="light" />
                 {/* <MasonryProjects /> */}
                 {/* <ProjectMilestones /> */}

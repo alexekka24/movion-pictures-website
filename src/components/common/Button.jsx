@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import gsap from "gsap";
-//inline-flex items-center justify-center
+
 const baseStyles = `
   relative 
   cursor-pointer select-none
@@ -88,6 +88,7 @@ const variants = {
 const sizes = {
   sm: "text-sm",
   md: "text-base",
+  ex_md: "md:text-xl text-md",
   lg: "lg:text-5xl text-4xl",
   ex_lg: "lg:text-6xl md:text-4xl text-3xl",
 };

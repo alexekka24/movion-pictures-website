@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Clock, Users, BadgeIndianRupee } from "lucide-react";
-import { ProjectCTA } from "../components/ProjectCTA";
+import { ProjectCTA } from "../components/common/ProjectCTA";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -83,8 +83,8 @@ export const ProcessAndPricing = () => {
       {/* HERO */}
       <section className="relative py-28 px-6 overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-green-500/10 rounded-full blur-3xl" />
-          <div className="absolute -bottom-40 -right-40 w-[500px] h-[500px] bg-yellow-400/10 rounded-full blur-3xl" />
+          <div className="absolute -top-40 -left-40 w-125 h-125 bg-green-500/10 rounded-full blur-3xl" />
+          <div className="absolute -bottom-40 -right-40 w-125 h-125 bg-yellow-400/10 rounded-full blur-3xl" />
         </div>
 
         <div className="relative max-w-6xl mx-auto text-center">
@@ -116,7 +116,7 @@ export const ProcessAndPricing = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {processSteps.map((item) => (
             <div
               key={item.step}
@@ -139,7 +139,7 @@ export const ProcessAndPricing = () => {
         id="pricing-section"
         className="py-20 px-6 bg-neutral-50 border-t border-black/10"
       >
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="reveal text-3xl md:text-5xl font-founder font-bold mb-4">
               Pricing & Practical Questions
@@ -153,13 +153,13 @@ export const ProcessAndPricing = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {/* PRICING */}
             <div className="pricing-card rounded-2xl p-10 bg-white border border-black/10 shadow-lg shadow-black/5 hover:shadow-xl transition">
-              <div className="w-12 h-12 rounded-xl bg-green-700/10 flex items-center justify-center mb-6">
-                <BadgeIndianRupee className="w-6 h-6 text-green-700" />
+              <div className="w-full h-20 rounded-xl bg-green-700/10 flex items-center justify-center mb-6">
+                <BadgeIndianRupee className="w-10 h-10 text-green-700" />
               </div>
 
               <h3 className="text-2xl font-bold mb-4">What does it cost?</h3>
 
-              <p className="text-black/70 leading-relaxed text-lg">
+              <p className="text-black/70 leading-relaxed text-lg text-justify">
                 This is the most common question — and the honest answer is:
                 every project is different.
                 <br />
@@ -177,13 +177,13 @@ export const ProcessAndPricing = () => {
 
             {/* TIMELINE */}
             <div className="pricing-card rounded-2xl p-10 bg-white border border-black/10 shadow-lg shadow-black/5 hover:shadow-xl transition">
-              <div className="w-12 h-12 rounded-xl bg-yellow-500/10 flex items-center justify-center mb-6">
-                <Clock className="w-6 h-6 text-yellow-600" />
+              <div className="w-full h-20 rounded-xl bg-yellow-500/10 flex items-center justify-center mb-6">
+                <Clock className="w-10 h-10 text-yellow-600" />
               </div>
 
               <h3 className="text-2xl font-bold mb-4">How long does it take?</h3>
 
-              <p className="text-black/70 leading-relaxed text-lg">
+              <p className="text-black/70 leading-relaxed text-lg text-justify">
                 From the first idea to final delivery, most projects take{" "}
                 <span className="font-semibold text-black">2 to 5 weeks</span>.
                 <br />
@@ -199,13 +199,13 @@ export const ProcessAndPricing = () => {
 
             {/* TEAM */}
             <div className="pricing-card rounded-2xl p-10 bg-white border border-black/10 shadow-lg shadow-black/5 hover:shadow-xl transition">
-              <div className="w-12 h-12 rounded-xl bg-black/5 flex items-center justify-center mb-6">
-                <Users className="w-6 h-6 text-black" />
+              <div className="w-full h-20 rounded-xl bg-black/5 flex items-center justify-center mb-6">
+                <Users className="w-10 h-10 text-black" />
               </div>
 
               <h3 className="text-2xl font-bold mb-4">What do we handle?</h3>
 
-              <p className="text-black/70 leading-relaxed text-lg">
+              <p className="text-black/70 leading-relaxed text-lg text-justify">
                 When you work with us, you’re hiring a full creative production
                 partner.
                 <br />
@@ -224,36 +224,6 @@ export const ProcessAndPricing = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      {/* <section className="py-28 px-6 bg-white text-center">
-        <div className="max-w-4xl mx-auto">
-          <p className="reveal text-sm uppercase tracking-[0.3em] text-black/50 mb-4">
-            Let’s work together
-          </p>
-
-          <h2 className="reveal text-4xl md:text-6xl font-founder font-bold mb-6">
-            Let’s plan your next video.
-          </h2>
-
-          <p className="reveal text-lg md:text-xl text-black/70 max-w-2xl mx-auto mb-10">
-            Share your idea and budget range — we’ll recommend the best approach
-            and create a production plan that fits.
-          </p>
-
-          <a
-            href="/contact"
-            className="
-              reveal inline-flex items-center justify-center
-              px-12 py-5 rounded-full
-              bg-black text-white font-semibold
-              hover:scale-105 transition duration-300
-              shadow-lg shadow-black/20
-            "
-          >
-            Start a Conversation →
-          </a>
-        </div>
-      </section> */}
       <ProjectCTA theme="light" />
     </div>
   );

@@ -1,9 +1,10 @@
 import { FaWhatsapp } from "react-icons/fa";
+import Button from "../common/Button";
 
-const WHATSAPP_NUMBER = "919717981853"; // ← change to your number (with country code)
+const WHATSAPP_NUMBER = "919717981853";
 const MESSAGE = "Hi! I came across your portfolio and would like to connect.";
 
-export default function WhatsAppFloatingButton() {
+export const WhatsAppFloatingButton = () => {
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
     MESSAGE
   )}`;
@@ -22,14 +23,15 @@ export default function WhatsAppFloatingButton() {
         transition-transform duration-300
         hover:scale-110
         active:scale-95
-
         /* Size */
         w-16 h-16
-        md:w-14 md:h-14
+        md:w-16 md:h-16
         sm:w-12 sm:h-12
       "
-    >
-      <FaWhatsapp className="text-3xl sm:text-2xl" />
+    > 
+      <div className="flex justify-center items-end">
+        <Button text={<FaWhatsapp />} variant="simple" size="lg" className="text-3xl sm:text-2xl"  />
+      </div>
     </a>
   );
 }

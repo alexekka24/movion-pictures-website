@@ -6,7 +6,7 @@ body {
   padding: 0;
   font-family: 'Poppins';
   font-size: 14px;
-  /* overflow-x: hidden; prevent horizontal scroll */
+  overflow-x: hidden; /*prevent horizontal scroll*/
 }
 
 @theme {

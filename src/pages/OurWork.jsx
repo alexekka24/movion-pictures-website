@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ProjectsGrid } from "../components/ProjectsGrid";
+import { ProjectsGrid } from "../components/ourwork/ProjectsGrid";
+import { FilterTabs } from "../components/ourwork/FilterTabs";
+import { ProjectDialog } from "../components/ourwork/ProjectDialog";
+import { ProjectCTA } from "../components/common/ProjectCTA";
+
 import { PROJECTS } from "../../public/assets/data/PROJECTS";
-import { FilterTabs } from "../components/FilterTabs";
-import { ProjectDialog } from "../components/ProjectDialog";
-import { ProjectCTA } from "../components/ProjectCTA";
 
 gsap.registerPlugin(ScrollTrigger);
 

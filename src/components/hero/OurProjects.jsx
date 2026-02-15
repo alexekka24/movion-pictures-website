@@ -1,10 +1,10 @@
 // OurProjects.jsx
-import React from "react";
-import Button from "./Button";
+import Button from "../common/Button";
 import { ArrowRight, ArrowRightCircle } from "lucide-react";
-import { BentoItem } from "./BentoItem";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
+import { BentoItem } from "../BentoItem";
+import { cn } from "../../utils/utils";
 
 
 const projects = [
@@ -20,10 +20,10 @@ const projects = [
   { id: 10, image: "/assets/images/who-we-are/image1.jpg", layout: "hero" },
 ];
 
-export const OurProjects = () => {
+export const OurProjects = ({className}) => {
   return (
     <>
-      <section id="projects" className="max-w-360 mx-auto my-20 px-4 lg:px-8 h-100dvh">
+      <section id="projects" className={cn("max-w-360 mx-auto my-20 px-4 lg:px-8 h-100dvh", className)}>
         <motion.h1
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}

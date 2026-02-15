@@ -1,8 +1,8 @@
 import { Sparkles, Target, Users, Layers } from "lucide-react";
 import { Search, PenTool, Clapperboard, MonitorStop } from "lucide-react";
-import { FoundersSection } from "../components/FoundersSection";
-import { HeroProjectsHero } from "../components/OurProjectsHero";
-import { MotoSection } from "../components/MotoSection";
+import { FoundersSection } from "../components/aboutus/FoundersSection";
+import { HeroProjectsHero } from "../components/aboutus/OurProjectsHero";
+import { MotoSection } from "../components/aboutus/MotoSection";
 
 export const AboutPage = () => {
   return (

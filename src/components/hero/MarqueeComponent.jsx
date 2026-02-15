@@ -1,22 +1,5 @@
 import Marquee from "react-fast-marquee";
-
-const clients = [
-  "/assets/images/clients/digantara.png",
-  "/assets/images/clients/digantara.png",
-  "/assets/images/clients/digantara.png",
-  "/assets/images/clients/digantara.png",
-  "/assets/images/clients/digantara.png",
-  "/assets/images/clients/digantara.png",
-  "/assets/images/clients/digantara.png",
-  "/assets/images/clients/digantara.png",
-  "/assets/images/clients/digantara.png",
-  "/assets/images/clients/digantara.png",
-  "/assets/images/clients/digantara.png",
-  "/assets/images/clients/digantara.png",
-  "/assets/images/clients/digantara.png",
-  "/assets/images/clients/digantara.png",
-  "/assets/images/clients/digantara.png",
-];
+import { CLIENTS } from "../../../public/assets/data/CLIENTS";
 
 export const MarqueeComponent = () => {
   return (
@@ -45,13 +28,18 @@ export const MarqueeComponent = () => {
         gradientColor="white"
         className="bg-white"
       >
-        {clients.map((logo, index) => (
-          <img
-            src={logo}
-            alt={`Client ${index}`}
-            className="h-30 md:h-60 mx-10 w-auto object-contain grayscale opacity-60 
+        {CLIENTS.map((logo, index) => (
+          <div
+            key={index}
+            className="mx-10 flex items-center justify-center w-40 h-17.5 md:w-70 md:h-35 shrink-0"
+          >
+            <img
+              src={logo}
+              alt={`Client ${index}`}
+              className="max-h-full max-w-full mx-10 w-auto object-contain grayscale opacity-60 
                            hover:grayscale-0 hover:opacity-100 transition duration-300"
-          />
+            />
+          </div>
         ))}
       </Marquee>
     </section>

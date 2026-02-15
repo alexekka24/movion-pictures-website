@@ -1,7 +1,8 @@
-import { FooterNavLinks } from "./FooterNavLinks";
+import { FooterNavLinks } from "../FooterNavLinks";
 import { NavLink } from "react-router-dom";
-import { FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
-import Button from "./Button";
+import Button from "../common/Button";
+import { NAVIGATION } from "../../../public/assets/data/NAVIGATION";
+
 
 export const Footer = ({ pageTheme = "dark" }) => {
   // pageTheme: "dark" | "light"
@@ -87,9 +88,17 @@ export const Footer = ({ pageTheme = "dark" }) => {
           </h4>
 
           <div className={`flex gap-6 ${isFooterDark ? "text-white/70" : "text-black/70"}`}>
-            <Button variant="simple" size="lg" text={<FaLinkedin />} />
-            <Button variant="simple" size="lg" text={<FaInstagram />} />
-            <Button variant="simple" size="lg" text={<FaYoutube />} />
+              {
+                NAVIGATION.socials.map((item) => {
+                  const Icon = item.icon;
+
+                  return (
+                    <a href={item.url} target="_blank">
+                      <Button variant="simple" size="lg" text={<Icon />} />
+                    </a>
+                  )
+                })
+              }
           </div>
         </div>
       </div>

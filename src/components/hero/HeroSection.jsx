@@ -1,4 +1,3 @@
-import { ArrowBigDown } from "lucide-react";
 import {HeroVideo} from "./HeroVideo";
 
 export const HeroSection = () => {

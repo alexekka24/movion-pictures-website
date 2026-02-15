@@ -1,0 +1,16 @@
+export const CLIENTS = [
+  "/assets/images/clients/digantara.png",
+  "/assets/images/clients/indian_army.png",
+  "/assets/images/clients/mercedes_benz.png",
+  "/assets/images/clients/jm_financial.png",
+  "/assets/images/clients/dotandkey.png",
+  "/assets/images/clients/nykaa.png",
+  "/assets/images/clients/addverb.png",
+  "/assets/images/clients/aiuniversal.png",
+  "/assets/images/clients/etherealx.png",
+  "/assets/images/clients/digantara.png",
+  "/assets/images/clients/turtleandsnail.png",
+  "/assets/images/clients/campusfund.png",
+  "/assets/images/clients/sarla.png",
+  "/assets/images/clients/digantara.png",
+];

@@ -1,20 +1,15 @@
 import { useState, useEffect } from "react";
-import { cn } from "../utils/utils";
-import Button from "./Button";
+import { cn } from "../../utils/utils";
+import Button from "../common/Button";
 import { NavLink } from "react-router-dom";
-import { Contact } from "./Contact";
+import { Contact } from "../Contact";
 import { RiMenu3Fill } from "react-icons/ri";
 import { IoClose } from "react-icons/io5";
 
-import { FaInstagram, FaYoutube } from "react-icons/fa";
-import { NAVIGATION } from "../../public/assets/data/NAVIGATION";
+import { FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
+import { NAVIGATION } from "../../../public/assets/data/NAVIGATION";
 
-const images = [
-  { id: 1, src: "/assets/images/image1.jpg" },
-  { id: 2, src: "/assets/images/image2.jpg" },
-  { id: 3, src: "/assets/images/image3.jpg" },
-  { id: 4, src: "/assets/images/image4.jpg" },
-];
+const images = NAVIGATION.images;
 
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -71,7 +66,6 @@ export const Header = () => {
       >
         {/* <div className="container flex items-center justify-between"> */}
         <div className="w-full max-w-6xl mx-auto px-6 flex items-center justify-between">
-
           {/* Logo */}
           <NavLink
             to="/"
@@ -142,7 +136,7 @@ export const Header = () => {
           className="flex flex-col space-y-10 rounded-4xl"
           onClick={() => setIsMenuOpen(false)}
         >
-          {NAVIGATION.map((item) => {
+          {NAVIGATION.navItems.map((item) => {
             // Contact → OPEN OVERLAY
             if (item.action === "overlay") {
               return (
@@ -154,7 +148,7 @@ export const Header = () => {
                     variant="simple_black"
                     size="ex_lg"
                     text={item.name.toUpperCase()}
-                  ></Button>
+                  />
                 </a>
               );
             }
@@ -175,9 +169,17 @@ export const Header = () => {
           })}
         </div>
         {/* ICONS */}
-        <div className="text-black absolute flex gap-5 bottom-20 lg:bottom-10">
-          <Button text={<FaInstagram />} variant="simple" size="lg" />
-          <Button text={<FaYoutube />} variant="simple" size="lg" />
+        <div className="text-black absolute flex gap-10 bottom-20 lg:bottom-10">
+          {
+            NAVIGATION.socials.map((item) => {
+              const Icon = item.icon;
+              return (
+                <a href={item.url} target="_blank">
+                  <Button text={<Icon />} variant="simple_black" size="lg" />
+                </a>
+              )
+            })
+          }
         </div>
       </div>
       {/* CONTACT OVERLAY */}

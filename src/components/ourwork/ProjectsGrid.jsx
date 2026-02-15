@@ -66,11 +66,11 @@ export const ProjectsGrid = ({ projects, onSelect, activeFilter }) => {
               overflow-hidden rounded-xl
               bg-white relative
               ${spanClass}
-              shadow-2xl/40
+              shadow-[0_0_60px_rgba(255,255,255,0.15)]
               transition-all duration-500
               ${
                 project.priority
-                  ? "ring-2 ring-yellow-400/50 hover:shadow-yellow-400/30 hover:shadow-2xl"
+                  ? "ring-2 ring-yellow-400/50 hover:shadow-yellow-300/40 hover:shadow-2xl"
                   : "hover:shadow-2xl"
               }
             `}
