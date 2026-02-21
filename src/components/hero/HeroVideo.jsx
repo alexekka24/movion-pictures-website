@@ -142,19 +142,19 @@ export const HeroVideo = () => {
       {/* Desktop text only */}
       <div className="absolute inset-0 z-30 hidden md:block pointer-events-none">
         <h1 className="think-text absolute left-30 top-1/2 -translate-y-1/2 text-[5vw] opacity-0 flex flex-col font-bold">
-          <div>T</div>
+          {/* <div>T</div>
           <div>H</div>
           <div>I</div>
           <div>N</div>
-          <div>K</div>
+          <div>K</div> */}
         </h1>
 
         <h1 className="build-text absolute right-30 top-1/2 -translate-y-1/2 text-[5vw] opacity-0 flex flex-col font-bold">
-          <div>B</div>
+          {/* <div>B</div>
           <div>U</div>
           <div>I</div>
           <div>L</div>
-          <div>D</div>
+          <div>D</div> */}
         </h1>
       </div>
 
@@ -211,8 +211,8 @@ export const HeroVideo = () => {
 
       {/* Desktop bottom text only */}
       <div className="wipe-text absolute bottom-10 left-0 w-full h-[25vh] hidden md:flex items-center justify-center overflow-hidden z-40">
-        <p className="wipe-block sub text-7xl tracking-wide text-black">
-          Design. Code. Ship.
+        <p className="wipe-block sub text-5xl tracking-wide text-black">
+          Motion • Vision • Movion
         </p>
       </div>
     </section>

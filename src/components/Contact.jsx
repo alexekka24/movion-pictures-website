@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { X, MessageCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { MdEmail } from "react-icons/md";
+import { FaPhone } from "react-icons/fa6";
 import CopyButton from "./common/CopyButton";
 import Button from "./common/Button";
 import { ContactPageContent } from "../../public/assets/data/CONTACTPAGECONTENT";
@@ -110,6 +112,7 @@ export const Contact = ({ open, onClose }) => {
                 className="mt-10 space-y-3 text-lg md:text-xl text-center"
               >
                 <p className="flex items-center justify-center gap-2 opacity-90">
+                <MdEmail />
                   <a href={`mailto: ${ContactPageContent.email.value}`}>
                     <Button
                       variant="simple"
@@ -125,6 +128,7 @@ export const Contact = ({ open, onClose }) => {
                 </p>
 
                 <p className="flex items-center justify-center gap-2 opacity-90">
+                  <FaPhone />
                   <a href={`tel:${ContactPageContent.phone.value}`}>
                     <Button
                       variant="simple"
@@ -210,7 +214,7 @@ export const Contact = ({ open, onClose }) => {
                     transition duration-300
                   "
                 >
-                  <MessageCircle size={18} />
+                  <MessageCircle size={18} color="white" />
                   <Button
                     variant="simple"
                     text={`Chat on WhatsApp`}

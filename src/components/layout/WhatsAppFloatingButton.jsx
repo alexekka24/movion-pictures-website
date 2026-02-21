@@ -1,7 +1,7 @@
 import { FaWhatsapp } from "react-icons/fa";
 import Button from "../common/Button";
 
-const WHATSAPP_NUMBER = "919717981853";
+const WHATSAPP_NUMBER = "918928741497";
 const MESSAGE = "Hi! I came across your portfolio and would like to connect.";
 
 export const WhatsAppFloatingButton = () => {

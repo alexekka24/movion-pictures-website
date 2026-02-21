@@ -24,7 +24,7 @@ export const MarqueeComponent = () => {
         direction="left"
         gradient={true}
         gradientWidth={100}
-        speed={50}
+        speed={100}
         gradientColor="white"
         className="bg-white"
       >

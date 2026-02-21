@@ -132,7 +132,8 @@ const ProjectSlide = ({ project }) => {
         <p className="text-gray-300">{project.company}</p>
         <p className="text-gray-200 mb-6">{project.description}</p>
 
-        <div className="space-y-3">
+        {/* <div className="space-y-3 grid grid-cols-2"> */}
+        <div className="grid gap-4 grid-cols-[repeat(auto-fit,minmax(120px,1fr))] w-full">
           {project.videos.map((v, idx) => (
             <button
               key={v.videoId}
@@ -145,8 +146,8 @@ const ProjectSlide = ({ project }) => {
                 }`}
             >
               {/* <Play size={16} /> */}
-              <img src={v.thumbnail} className="h-10"/>
-              {v.label}
+              <img src={v.thumbnail} className="h-25"/>
+              {/* {v.label} */}
             </button>
           ))}
         </div>

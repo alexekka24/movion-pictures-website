@@ -123,7 +123,7 @@ export const OurWork = () => {
 
   return (
     <div ref={sectionRef} className="w-full bg-black text-white">
-      <section className="py-24 px-6 max-w-7xl mx-auto">
+      <section className="py-24 px-6 max-w-400 mx-auto">
         {/* Title */}
         <div className="mb-12 text-center">
           <p className="reveal text-sm uppercase tracking-[0.3em] text-white/60 mb-4">
@@ -160,7 +160,7 @@ export const OurWork = () => {
         <p className="text-white/40 uppercase tracking-[0.3em] text-sm">
           Interested in working together?
         </p>
-        <div className="mt-6 w-32 h-[1px] bg-white/20 mx-auto" />
+        <div className="mt-6 w-32 h-px bg-white/20 mx-auto" />
       </section>
 
       <ProjectCTA />

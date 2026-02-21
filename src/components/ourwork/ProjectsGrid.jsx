@@ -1,15 +1,15 @@
 import { useMemo } from "react";
 
 const COLLAGE_SPANS = [
-  "lg:col-span-2 lg:row-span-2",
-  "lg:col-span-1 lg:row-span-1",
-  "lg:col-span-1 lg:row-span-2",
-  "lg:col-span-2 lg:row-span-1",
-  "lg:col-span-1 lg:row-span-1",
+  "lg:col-span-2 lg:row-span-2", // reserved for Campaigns
+  "lg:col-span-1 lg:row-span-1", // 16 : 9
+  "lg:col-span-1 lg:row-span-3",
+  // "lg:col-span-2 lg:row-span-1", // too wide not needed
 ];
 
 const BIG_SPAN = "lg:col-span-2 lg:row-span-2";
 const NORMAL_SPAN = "lg:col-span-1 lg:row-span-1";
+const TALL_SPAN = "lg:col-span-1 lg:row-span-2";
 
 export const ProjectsGrid = ({ projects, onSelect, activeFilter }) => {
   const isAll = activeFilter === "ALL";
@@ -19,27 +19,52 @@ export const ProjectsGrid = ({ projects, onSelect, activeFilter }) => {
     return projects; // always keep original order
   }, [projects]);
 
+  // const spanMap = useMemo(() => {
+  //   const map = {};
+
+  //   displayProjects.forEach((project, index) => {
+  //     let spanClass = "";
+
+  //     if (isAll) {
+  //       spanClass = COLLAGE_SPANS[index % COLLAGE_SPANS.length];
+
+  //       if (project.priority) {
+  //         spanClass = BIG_SPAN;
+  //       }
+  //       else {
+  //         spanClass = project.orientation === "portrait" ? TALL_SPAN : NORMAL_SPAN;
+  //       }
+  //     }
+  //     else if (!isAll && !project.priority) {
+  //       spanClass = project.orientation === "portrait" ? TALL_SPAN : NORMAL_SPAN;
+  //     }
+
+  //     map[project.id] = spanClass;
+  //   });
+
+  //   return map;
+  // }, [displayProjects, isAll]);
+
   const spanMap = useMemo(() => {
     const map = {};
 
-    displayProjects.forEach((project, index) => {
-      let spanClass = "";
+    displayProjects.forEach((project) => {
+      let spanClass = NORMAL_SPAN;
 
-      if (isAll) {
-        spanClass = COLLAGE_SPANS[index % COLLAGE_SPANS.length];
-
-        if (project.priority) {
-          spanClass = BIG_SPAN;
-        }
-      } else {
-        spanClass = project.priority ? BIG_SPAN : NORMAL_SPAN;
+      if (project.priority) {
+        spanClass = BIG_SPAN;
+        console.log(project.title, "PRIORITY");
+      } 
+      else if (project.orientation === "portrait") {
+        console.log(project.title, project.orientation);
+        spanClass = TALL_SPAN;
       }
 
       map[project.id] = spanClass;
     });
 
     return map;
-  }, [displayProjects, isAll]);
+  }, [displayProjects]);
 
   return (
     <div
@@ -52,7 +77,7 @@ export const ProjectsGrid = ({ projects, onSelect, activeFilter }) => {
         sm:auto-rows-[220px]
         lg:auto-rows-[260px]
         grid-flow-dense
-      "
+        "
     >
       {displayProjects.map((project) => {
         const spanClass = spanMap[project.id];
@@ -64,14 +89,14 @@ export const ProjectsGrid = ({ projects, onSelect, activeFilter }) => {
             className={`
               project-card group cursor-pointer
               overflow-hidden rounded-xl
-              bg-white relative
+              bg-white relative h-full
               ${spanClass}
               shadow-[0_0_60px_rgba(255,255,255,0.15)]
               transition-all duration-500
               ${
                 project.priority
-                  ? "ring-2 ring-yellow-400/50 hover:shadow-yellow-300/40 hover:shadow-2xl"
-                  : "hover:shadow-2xl"
+                  ? "ring-2 ring-yellow-400/50 hover:shadow-yellow-300/40 hover:shadow-3xl"
+                  : "hover:ring-2 hover:ring-white/60 hover:shadow-white/40 hover:shadow-2x"
               }
             `}
           >

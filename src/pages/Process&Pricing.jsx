@@ -42,6 +42,21 @@ export const ProcessAndPricing = () => {
     },
   ];
 
+  const questions = {
+    cost: {
+      question: "What does it cost ?",
+      answer: "xxxxxx"
+    },
+    time: {
+      question: "How long does it take ?",
+      answer: "From the first idea to final delivery, every project follows a structured and well-planned process. The timeline depends on the type of video, approval cycles, shoot requirements, and post-production complexity. Some projects move quickly, while others require more detailed execution. In every case, we share a clear and realistic schedule upfront-so expectations remain aligned from day one."
+    },
+    handle: {
+      question: "What do we handle ?",
+      answer: "When you work with us, you’re partnering with a full-service creative production team. We manage the entire process under one roof from concept and copy to production and post-production. Depending on the scale of the project, we assemble the right mix of specialists, including directors, cinematographers, sound engineers, makeup artists, set designers, and more-ensuring every detail is handled seamlessly.",
+    }
+  };
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.set(".reveal", { opacity: 0, y: 60 });
@@ -157,10 +172,10 @@ export const ProcessAndPricing = () => {
                 <BadgeIndianRupee className="w-10 h-10 text-green-700" />
               </div>
 
-              <h3 className="text-2xl font-bold mb-4">What does it cost?</h3>
+              <h3 className="text-2xl font-bold mb-4">{questions.cost.question}</h3>
 
               <p className="text-black/70 leading-relaxed text-lg text-justify">
-                This is the most common question — and the honest answer is:
+                {/* This is the most common question — and the honest answer is:
                 every project is different.
                 <br />
                 <br />
@@ -171,7 +186,8 @@ export const ProcessAndPricing = () => {
                 <br />
                 Once you share your budget range, we propose the best possible
                 treatment and execution within it — with a clear breakdown so
-                you know exactly where the money goes.
+                you know exactly where the money goes. */}
+                {questions.cost.answer}
               </p>
             </div>
 
@@ -181,10 +197,10 @@ export const ProcessAndPricing = () => {
                 <Clock className="w-10 h-10 text-yellow-600" />
               </div>
 
-              <h3 className="text-2xl font-bold mb-4">How long does it take?</h3>
+              <h3 className="text-2xl font-bold mb-4">{questions.time.question}</h3>
 
               <p className="text-black/70 leading-relaxed text-lg text-justify">
-                From the first idea to final delivery, most projects take{" "}
+                {/* From the first idea to final delivery, most projects take{" "}
                 <span className="font-semibold text-black">2 to 5 weeks</span>.
                 <br />
                 <br />
@@ -193,7 +209,8 @@ export const ProcessAndPricing = () => {
                 <br />
                 <br />
                 Some projects move fast. Some need more time. But we’ll always
-                share a realistic schedule upfront — so expectations stay clear.
+                share a realistic schedule upfront — so expectations stay clear. */}
+                {questions.time.answer}
               </p>
             </div>
 
@@ -203,10 +220,10 @@ export const ProcessAndPricing = () => {
                 <Users className="w-10 h-10 text-black" />
               </div>
 
-              <h3 className="text-2xl font-bold mb-4">What do we handle?</h3>
+              <h3 className="text-2xl font-bold mb-4">{questions.handle.question}</h3>
 
               <p className="text-black/70 leading-relaxed text-lg text-justify">
-                When you work with us, you’re hiring a full creative production
+                {/* When you work with us, you’re hiring a full creative production
                 partner.
                 <br />
                 <br />
@@ -217,7 +234,8 @@ export const ProcessAndPricing = () => {
                 Depending on the scale, we also bring in a team of{" "}
                 <span className="font-semibold text-black">10 to 40+</span>{" "}
                 specialists: directors, cinematographers, sound engineers,
-                makeup artists, set designers, and more.
+                makeup artists, set designers, and more. */}
+                {questions.handle.answer}
               </p>
             </div>
           </div>

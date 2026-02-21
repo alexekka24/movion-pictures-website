@@ -70,14 +70,14 @@ export const WhoWeAre = () => {
          {/* <p className="text-md uppercase tracking-[0.3em] text-gray-500 mb-3">
           WHO WE ARE
         </p> */}
-        <h1 className="text-4xl md:text-8xl font-semibold">
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold">
           Stories that stay
           <br />
           long after the screen fades.
         </h1>
        
         <div className="flex justify-center items-center w-screen">
-        <p className="text-base md:text-5xl text-center w-[80%]">
+        <p className="text-base md:text-4xl text-center w-[80%]">
           We are a story-first production studio. Rooted in culture. Obsessed
           with detail. Crafting cinematic narratives that feel human, intimate,
           and timeless.
