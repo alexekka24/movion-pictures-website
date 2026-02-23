@@ -75,10 +75,6 @@ export const OurProjects = ({ className }) => {
             </BentoItem>
           ))}
         </div>
-        <ProjectsGrid 
-        className="mt-20"
-        projects={SELECTEDPROJECTS}
-        />
       </section>
       {/* <NavLink key="Our Work" to="/ourwork">
         <Button
@@ -93,11 +89,11 @@ export const OurProjects = ({ className }) => {
 };
 
 const LAYOUT_PRESETS = {
-  normal: "col-span-2 row-span-4",
-  // wide: "col-span-2 row-span-1",
-  tall: "col-span-1 row-span-3",
+  normal: "col-span-1 row-span-1",
+  wide: "col-span-2 row-span-1",
+  tall: "col-span-1 row-span-2",
   featured: "col-span-3 row-span-2",
-  hero: "col-span-5 row-span-4",
+  hero: "col-span-5 row-span-2",
 };
 
 function resolveLayout(project, index) {
