@@ -21,7 +21,7 @@ const projects = [
   { id: 10, image: "/assets/images/thumbnail/beautyAndProduct/poloVista.png", layout: "hero" },
 ];
 
-export const OurProjects = ({ className }) => {
+export const OurProjects = ({ className, content }) => {
   return (
     <>
       <section
@@ -42,9 +42,10 @@ export const OurProjects = ({ className }) => {
           bg-clip-text text-transparent
         "
         >
-          Previous
+          {/* Previous
           <br />
-          Completed Projects
+          Completed Projects */}
+          {content.title}
         </motion.h1>
 
         <div

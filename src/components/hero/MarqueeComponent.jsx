@@ -1,22 +1,21 @@
 import Marquee from "react-fast-marquee";
 import { CLIENTS } from "../../../public/assets/data/CLIENTS";
 
-export const MarqueeComponent = () => {
+export const MarqueeComponent = ({content}) => {
   return (
     <section className="bg-white">
       {/* Heading */}
       <div className="max-w-6xl mx-auto px-6 py-10 md:py-20">
         <p className="text-sm uppercase tracking-[0.3em] text-gray-500 mb-3">
-          Trusted by
+          {content.preTitle}
         </p>
 
         <h1 className="text-4xl md:text-8xl font-semibold tracking-tight text-gray-900">
-          Our Clients
+          {content.title}
         </h1>
 
         <p className="mt-4 text-base md:text-lg text-gray-600">
-          We’ve worked with ambitious brands and teams to build clean, modern
-          digital experiences.
+          {content.description}
         </p>
       </div>
 

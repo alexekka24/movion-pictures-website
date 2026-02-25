@@ -1,9 +1,12 @@
 import { NavLink } from "react-router-dom";
 import Button from "../common/Button";
+import { ContactPageContent } from "../../../public/assets/data/CONTACTPAGECONTENT";
 
 export const ProjectCTA = ({ theme = "dark" }) => {
   const isDark = theme === "dark";
-
+  const whatsappUrl = `https://wa.me/${ContactPageContent.whatsapp.number}?text=${encodeURIComponent(
+    ContactPageContent.whatsapp.message,
+  )}`;
   return (
     <section
       className={`
@@ -82,8 +85,11 @@ export const ProjectCTA = ({ theme = "dark" }) => {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               {/* Primary */}
-              <NavLink
-                to="/contact"
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Chat on WhatsApp"
                 className={`
                   inline-flex items-center justify-center
                   px-10 py-4 rounded-full font-semibold
@@ -99,7 +105,7 @@ export const ProjectCTA = ({ theme = "dark" }) => {
                   size="md"
                   text="Start a Conversation"
                 />
-              </NavLink>
+              </a>
 
               {/* Secondary */}
               <NavLink

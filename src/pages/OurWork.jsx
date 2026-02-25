@@ -5,8 +5,8 @@ import { ProjectsGrid } from "../components/ourwork/ProjectsGrid";
 import { FilterTabs } from "../components/ourwork/FilterTabs";
 import { ProjectDialog } from "../components/ourwork/ProjectDialog";
 import { ProjectCTA } from "../components/common/ProjectCTA";
-
 import { PROJECTS } from "../../public/assets/data/PROJECTS";
+import { OURWORKCONTENT } from "../../public/assets/data/pageData/OURWORKCONTENT";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -127,16 +127,15 @@ export const OurWork = () => {
         {/* Title */}
         <div className="mb-12 text-center">
           <p className="reveal text-sm uppercase tracking-[0.3em] text-white/60 mb-4">
-            Selected Work
+            {OURWORKCONTENT.preTitle}
           </p>
 
           <h2 className="reveal text-4xl md:text-6xl font-founder tracking-tight">
-            Projects that tell stories.
+            {OURWORKCONTENT.title}
           </h2>
 
           <p className="reveal mt-6 text-lg md:text-xl text-white/70 max-w-2xl mx-auto">
-            A curated collection of campaigns, films, and creative work crafted
-            with detail and intent.
+            {OURWORKCONTENT.description}
           </p>
         </div>
 

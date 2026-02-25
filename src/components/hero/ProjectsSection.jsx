@@ -34,7 +34,7 @@ const projects = [
   { id: 10, image: "/assets/images/image5.jpg", ratio: "square" },
 ];
 
-export const ProjectsSection = ({className}) => {
+export const ProjectsSection = ({className, content}) => {
   return (
     <div className={cn("p-10", className)} >
       <MasonryLayout

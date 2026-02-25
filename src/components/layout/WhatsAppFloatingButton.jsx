@@ -1,8 +1,9 @@
 import { FaWhatsapp } from "react-icons/fa";
 import Button from "../common/Button";
+import { ContactPageContent } from "../../../public/assets/data/CONTACTPAGECONTENT";
 
-const WHATSAPP_NUMBER = "918928741497";
-const MESSAGE = "Hi! I came across your portfolio and would like to connect.";
+const WHATSAPP_NUMBER = ContactPageContent.whatsapp.number;
+const MESSAGE = ContactPageContent.whatsapp.message;
 
 export const WhatsAppFloatingButton = () => {
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(

@@ -12,7 +12,7 @@ const images = [
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const WhoWeAre = () => {
+export const WhoWeAre = ({content}) => {
   const sectionRef = useRef(null);
   const imageRef = useRef(null);
   const pinRef = useRef(null);
@@ -71,16 +71,18 @@ export const WhoWeAre = () => {
           WHO WE ARE
         </p> */}
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold">
-          Stories that stay
+          {/* Stories that stay
           <br />
-          long after the screen fades.
+          long after the screen fades. */}
+          {content.title}
         </h1>
        
         <div className="flex justify-center items-center w-screen">
         <p className="text-base md:text-4xl text-center w-[80%]">
-          We are a story-first production studio. Rooted in culture. Obsessed
+          {/* We are a story-first production studio. Rooted in culture. Obsessed
           with detail. Crafting cinematic narratives that feel human, intimate,
-          and timeless.
+          and timeless. */}
+          {content.description}
         </p>
         </div>
       </div>
