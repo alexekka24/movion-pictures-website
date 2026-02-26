@@ -25,13 +25,12 @@ export const WhatsAppFloatingButton = () => {
         hover:scale-110
         active:scale-95
         /* Size */
-        w-16 h-16
+        w-12 h-12
         md:w-16 md:h-16
-        sm:w-12 sm:h-12
       "
-    > 
-      <div className="flex justify-center items-end">
-        <Button text={<FaWhatsapp />} variant="simple" size="lg" className="text-3xl sm:text-2xl"  />
+    >
+      <div className="flex justify-center items-center w-full h-full">
+        <Button text={<FaWhatsapp />} variant="simple" size="lg" className="text-2xl md:text-3xl" />
       </div>
     </a>
   );

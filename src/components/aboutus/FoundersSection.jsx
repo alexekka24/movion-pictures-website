@@ -52,6 +52,8 @@ function FounderSpotlight({ founder }) {
     >
       <div className="h-[55vh] rounded-3xl overflow-hidden">
         <img
+          loading="lazy"
+          decoding="async"
           src={founder.image}
           alt={founder.name}
           className="w-full h-full object-contain rounded-3xl hover:scale-105 transition-transform duration-500 cursor-pointer"
@@ -81,10 +83,12 @@ export function MobileFounders() {
         >
           <div className="w-full object-contain flex justify-center items-center overflow-hidden bg-black">
             <img
-            src={founder.image}
-            alt={founder.name}
-            className="w-full object-contain"
-          />
+              loading="lazy"
+              decoding="async"
+              src={founder.image}
+              alt={founder.name}
+              className="w-full object-contain"
+            />
           </div>
 
           <div className="px-8 flex flex-col justify-center gap-4 bg-black">

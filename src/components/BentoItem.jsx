@@ -1,7 +1,13 @@
-export function BentoItem({ children, className }) {
+export function BentoItem({ children, className, onClick }) {
   return (
     <a
       href="#"
+      onClick={(e) => {
+        if (onClick) {
+          e.preventDefault();
+          onClick(e);
+        }
+      }}
       className={`
         relative overflow-hidden rounded-3xl
         bg-neutral-100 dark:bg-neutral-900

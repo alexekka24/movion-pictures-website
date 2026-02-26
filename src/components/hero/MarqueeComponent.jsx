@@ -1,7 +1,7 @@
 import Marquee from "react-fast-marquee";
 import { CLIENTS } from "../../../public/assets/data/CLIENTS";
 
-export const MarqueeComponent = ({content}) => {
+export const MarqueeComponent = ({ content }) => {
   return (
     <section className="bg-white">
       {/* Heading */}
@@ -30,12 +30,14 @@ export const MarqueeComponent = ({content}) => {
         {CLIENTS.map((logo, index) => (
           <div
             key={index}
-            className="mx-10 flex items-center justify-center w-40 h-17.5 md:w-70 md:h-35 shrink-0"
+            className="mx-6 md:mx-12 flex items-center justify-center w-32 h-16 md:w-60 md:h-24 shrink-0"
           >
             <img
+              loading="lazy"
+              decoding="async"
               src={logo}
               alt={`Client ${index}`}
-              className="max-h-full max-w-full mx-10 w-auto object-contain grayscale opacity-60 
+              className="max-h-full max-w-full w-auto object-contain grayscale opacity-60 
                            hover:grayscale-0 hover:opacity-100 transition duration-300"
             />
           </div>

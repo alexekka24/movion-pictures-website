@@ -45,7 +45,7 @@ export const ProcessAndPricing = () => {
   const questions = {
     cost: {
       question: "What does it cost ?",
-      answer: "xxxxxx"
+      answer: "This is the most common question — and the honest answer is: every project is different. We’re not selling a fixed product that can be repeated the same way every time. Each video has its own goals, scale, locations, and creative requirements. Once you share your budget range, we propose the best possible treatment and execution within it — with a clear breakdown so you know exactly where the money goes."
     },
     time: {
       question: "How long does it take ?",
@@ -96,7 +96,7 @@ export const ProcessAndPricing = () => {
   return (
     <div ref={pageRef} className="w-full bg-white text-black">
       {/* HERO */}
-      <section className="relative py-28 px-6 overflow-hidden">
+      <section className="relative py-16 md:py-28 px-6 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute -top-40 -left-40 w-125 h-125 bg-green-500/10 rounded-full blur-3xl" />
           <div className="absolute -bottom-40 -right-40 w-125 h-125 bg-yellow-400/10 rounded-full blur-3xl" />
@@ -120,7 +120,7 @@ export const ProcessAndPricing = () => {
       </section>
 
       {/* PROCESS */}
-      <section className="py-20 px-6 max-w-6xl mx-auto">
+      <section className="py-12 md:py-20 px-6 max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="reveal text-3xl md:text-5xl font-founder font-bold mb-4">
             Our Process
@@ -135,13 +135,13 @@ export const ProcessAndPricing = () => {
           {processSteps.map((item) => (
             <div
               key={item.step}
-              className="reveal p-8 rounded-2xl border border-black/10 bg-white shadow-lg shadow-black/5 hover:shadow-xl transition"
+              className="reveal p-6 md:p-8 rounded-2xl border border-black/10 bg-white shadow-lg shadow-black/5 hover:shadow-xl transition"
             >
               <p className="text-sm font-semibold tracking-[0.3em] text-green-700 mb-3">
                 {item.step}
               </p>
-              <h3 className="text-2xl font-semibold mb-3">{item.title}</h3>
-              <p className="text-black/70 text-lg leading-relaxed">
+              <h3 className="text-xl md:text-2xl font-semibold mb-3">{item.title}</h3>
+              <p className="text-black/70 text-base md:text-lg leading-relaxed">
                 {item.desc}
               </p>
             </div>
@@ -152,7 +152,7 @@ export const ProcessAndPricing = () => {
       {/* PRICING INFO SECTION */}
       <section
         id="pricing-section"
-        className="py-20 px-6 bg-neutral-50 border-t border-black/10"
+        className="py-12 md:py-20 px-6 bg-neutral-50 border-t border-black/10"
       >
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">

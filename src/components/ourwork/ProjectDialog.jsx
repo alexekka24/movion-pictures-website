@@ -15,24 +15,18 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-creative";
 import { InstagramEmbed } from "./InstagramEmbed";
+import { lockScroll, unlockScroll } from "../../utils/utils";
 
 export const ProjectDialog = ({ projects, open, onClose, startIndex = 0 }) => {
-  
+
   useEffect(() => {
     if (open) {
-      document.body.style.overflow = "hidden"; // prevent background scroll
-      document.body.style.touchAction = "none"; // optional, prevents mobile overscroll
+      lockScroll();
     } else {
-      document.body.style.overflow = "";
-      document.body.style.touchAction = "";
+      unlockScroll();
     }
-    
-    return () => {
-      document.body.style.overflow = "";
-      document.body.style.touchAction = "";
-    };
   }, [open]);
-  
+
   if (!open) return null;
 
   return (
@@ -49,15 +43,15 @@ export const ProjectDialog = ({ projects, open, onClose, startIndex = 0 }) => {
       {/* Modal */}
       <motion.div
         className="fixed inset-0 z-40 flex items-center justify-center "
-        initial={{ scale: 0.96, opacity: 0,}}
-        animate={{ scale: 1, opacity: 1}}
-        exit={{ scale: 0.96, opacity: 0,}}
+        initial={{ scale: 0.96, opacity: 0, }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.96, opacity: 0, }}
       >
         <div className="relative w-[90%] h-[90%] rounded-3xl overflow-hidden bg-black">
           {/* Close button */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 z-50 bg-black/50 hover:bg-white/20 text-white p-3 rounded-full cursor-pointer"
+            className="absolute top-4 right-4 z-50 bg-black/80 md:bg-black/50 hover:bg-white/20 text-white p-4 md:p-3 scale-110 md:scale-100 rounded-full cursor-pointer"
           >
             <X />
           </button>
@@ -112,41 +106,42 @@ const ProjectSlide = ({ project }) => {
   return (
     <div className="flex flex-col lg:flex-row w-full h-full text-white">
       {/* Left: Video */}
-      <div className="lg:w-[70%] h-[60%] lg:h-full bg-black flex justify-center overflow-hidden relative" onTouchMove={(e) => e.stopPropagation()}>
+      <div className="lg:w-[70%] h-[55%] lg:h-full bg-black flex justify-center items-center overflow-hidden relative" onTouchMove={(e) => e.stopPropagation()}>
         {video.videoType === "youtube" && (
           <iframe
-            src={`https://www.youtube.com/embed/${video.videoId}?autoplay=1&mute=1&playsinline=1`}
-            className="w-full h-full"
+            src={`https://www.youtube.com/embed/${video.videoId}?autoplay=1&mute=1&playsinline=1&controls=0&rel=0`}
+            className="w-full h-full max-h-full"
             allowFullScreen
           />
         )}
 
         {video.videoType === "instagram" && (
-          <InstagramEmbed url={video.videoId} />
+          <div className="scale-[0.85] sm:scale-100 flex items-center justify-center h-full w-full">
+            <InstagramEmbed url={video.videoId} />
+          </div>
         )}
       </div>
 
       {/* Right: Content */}
-      <div className="lg:w-[25%] h-[40%] lg:h-full bg-black backdrop-blur-xl p-6 overflow-y-auto flex flex-col justify-center items-center">
-        <h2 className="text-2xl font-bold">{project.title}</h2>
-        <p className="text-gray-300">{project.company}</p>
-        <p className="text-gray-200 mb-6">{project.description}</p>
+      <div className="lg:w-[30%] h-[45%] lg:h-full bg-black backdrop-blur-xl p-4 md:p-8 overflow-y-auto flex flex-col justify-center items-center">
+        <h2 className="text-xl md:text-2xl font-bold mb-1">{project.title}</h2>
+        <p className="text-gray-400 text-sm md:text-base mb-2">{project.company}</p>
+        <p className="text-gray-200 text-sm md:text-base mb-4 line-clamp-3 md:line-clamp-none leading-relaxed text-center">{project.description}</p>
 
         {/* <div className="space-y-3 grid grid-cols-2"> */}
-        <div className="grid gap-4 grid-cols-[repeat(auto-fit,minmax(120px,1fr))] w-full">
+        <div className="grid gap-2 md:gap-4 grid-cols-2 md:grid-cols-[repeat(auto-fit,minmax(120px,1fr))] w-full mt-auto">
           {project.videos.map((v, idx) => (
             <button
               key={v.videoId}
               onClick={() => setActiveVideoIndex(idx)}
               className={`w-full flex gap-3 p-3 rounded-lg
-                ${
-                  idx === activeVideoIndex
-                    ? "bg-white/20"
-                    : "bg-white/5 hover:bg-white/10"
+                ${idx === activeVideoIndex
+                  ? "bg-white/20"
+                  : "bg-white/5 hover:bg-white/10"
                 }`}
             >
               {/* <Play size={16} /> */}
-              <img src={v.thumbnail} className="h-25"/>
+              <img loading="lazy" decoding="async" src={v.thumbnail} className="h-25" />
               {/* {v.label} */}
             </button>
           ))}

@@ -23,14 +23,13 @@ export const Footer = ({ pageTheme = "dark" }) => {
         flex flex-col justify-between
         px-10 py-12 mt-8
         backdrop-blur-xl
-        ${
-          isFooterDark
-            ? `
+        ${isFooterDark
+          ? `
               bg-black/70
               border border-white/10
               text-white
             `
-            : `
+          : `
               bg-white/20
               border border-black/10
               text-white
@@ -42,10 +41,9 @@ export const Footer = ({ pageTheme = "dark" }) => {
       <div
         className={`
           pointer-events-none absolute inset-0 rounded-[20px]
-          ${
-            isFooterDark
-              ? "bg-linear-to-br from-white/5 via-transparent to-transparent"
-              : "bg-linear-to-br from-black/5 via-transparent to-transparent"
+          ${isFooterDark
+            ? "bg-linear-to-br from-white/5 via-transparent to-transparent"
+            : "bg-linear-to-br from-black/5 via-transparent to-transparent"
           }
         `}
       />
@@ -56,6 +54,8 @@ export const Footer = ({ pageTheme = "dark" }) => {
         <div className="sm:flex sm:flex-col items-center gap-4">
           <NavLink to="/" className="text-xl font-bold flex items-center">
             <img
+              loading="lazy"
+              decoding="async"
               src={
                 isFooterDark
                   ? "/assets/images/logos/logos-white.png"
@@ -88,26 +88,25 @@ export const Footer = ({ pageTheme = "dark" }) => {
           </h4>
 
           <div className={`flex gap-6 ${isFooterDark ? "text-white/70" : "text-black/70"}`}>
-              {
-                NAVIGATION.socials.map((item) => {
-                  const Icon = item.icon;
+            {
+              NAVIGATION.socials.map((item) => {
+                const Icon = item.icon;
 
-                  return (
-                    <a href={item.url} target="_blank">
-                      <Button variant="simple" size="lg" text={<Icon />} />
-                    </a>
-                  )
-                })
-              }
+                return (
+                  <a href={item.url} target="_blank">
+                    <Button variant="simple" size="lg" text={<Icon />} />
+                  </a>
+                )
+              })
+            }
           </div>
         </div>
       </div>
 
       {/* Bottom Bar */}
       <div
-        className={`relative pt-6 text-center border-t ${
-          isFooterDark ? "border-white/10" : "border-black/10"
-        }`}
+        className={`relative pt-6 text-center border-t ${isFooterDark ? "border-white/10" : "border-black/10"
+          }`}
       >
         <p className={`${isFooterDark ? "text-white/60" : "text-white/60"} text-sm`}>
           © {new Date().getFullYear()} Movion Pictures. All rights reserved.
@@ -118,9 +117,8 @@ export const Footer = ({ pageTheme = "dark" }) => {
           <a
             href="https://linkedin.com/in/alex-ekka"
             target="_blank"
-            className={`transition ${
-              isFooterDark ? "hover:text-white" : "hover:text-white"
-            }`}
+            className={`transition ${isFooterDark ? "hover:text-white" : "hover:text-white"
+              }`}
           >
             Alex Ekka
           </a>

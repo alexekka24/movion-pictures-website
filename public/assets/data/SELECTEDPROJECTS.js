@@ -10,8 +10,7 @@ export const SELECTEDPROJECTS = [
     videoType: "instagram",
     description:
       "A fast-paced, sensory-driven product film showcasing cleansing action and skin feel. Shot to resonate with a young, digital-first skincare audience.",
-    priority: false,
-    orientation: "landscape",
+    layout: "featured",
     videos: [
       {
         id: "video1",
@@ -32,8 +31,7 @@ export const SELECTEDPROJECTS = [
     thumbnail: "/assets/images/thumbnail/beautyAndProduct/bellaVitaGlam.png",
     videoType: "youtube",
     description: "A cinematic brand launch film capturing vision and energy.",
-    priority: false,
-    orientation: "portrait",
+    layout: "wide",
     videos: [
       {
         id: "video1",
@@ -55,11 +53,10 @@ export const SELECTEDPROJECTS = [
     videoType: "youtube",
     description:
       "A cinematic architectural walkthrough of Polo Vista, a villa community in Pune owned by the Indian Army. The film highlights spatial design, form, and lifestyle through refined composition, natural light, and fluid camera movement, bringing the character of the space to life.",
-    priority: false,
     videos: [
       {
         id: "video1",
-      videoType: "youtube",
+        videoType: "youtube",
         videoId: "abcd1234",
         label: "",
         thumbnail: "/assets/images/thumbnail/beautyAndProduct/poloVista.png",
@@ -76,7 +73,7 @@ export const SELECTEDPROJECTS = [
     videoType: "youtube",
     description:
       "A large-scale, purpose-driven campaign celebrating unity, knowledge, and youth engagement. From Kargil to Ladakh, the films document stories of participation, patriotism, and togetherness-handled with sensitivity and pride.",
-    priority: false,
+    layout: "tall",
     videos: [
       {
         id: "video1",
@@ -154,7 +151,7 @@ export const SELECTEDPROJECTS = [
     videoType: "youtube",
     description:
       "A soulful music video built around emotion, performance, and mood. The visuals enhance the lyrical depth and musical texture of the track.",
-    priority: false,
+    layout: "wide",
     videos: [
       {
         id: "video1",
@@ -175,7 +172,6 @@ export const SELECTEDPROJECTS = [
     videoType: "instagram",
     description:
       "An engaging, culturally rooted AI awareness campaign. Using humor and a ‘Guruji’ persona, complex AI concepts are broken down into bite-sized, entertaining episodes tailored for social platforms.",
-    priority: false,
     videos: [
       {
         id: "video1",
@@ -239,8 +235,6 @@ export const SELECTEDPROJECTS = [
     videoId: "abcd1234",
     description:
       "A clean, vibrant product film focused on texture, application, and benefits. Designed to communicate hydration, freshness, and everyday usability through crisp visuals and smooth transitions.",
-    priority: false,
-    orientation: "landscape",
     videos: [
       {
         id: "video1",
@@ -253,7 +247,7 @@ export const SELECTEDPROJECTS = [
     ],
   },
   {
-    id: 9,
+    id: 8,
     title: "JM Financial – JM Pro App (User Journey)",
     subtitle: "Application Advertisement Film",
     company: "JM Financial",
@@ -262,7 +256,7 @@ export const SELECTEDPROJECTS = [
     videoType: "youtube",
     description:
       "A narrative-driven user journey film simplifying smart investing. The story follows real-life decision-making moments to humanize finance and build trust in the JM Pro app.",
-    priority: false,
+    layout: "tall",
     videos: [
       {
         id: "video1",
@@ -274,7 +268,7 @@ export const SELECTEDPROJECTS = [
     ],
   },
   {
-    id: 8,
+    id: 9,
     title: "Turtle & Snail – Skincare Campaign",
     subtitle: "Series of 4 Digital Commercials",
     company: "Turtle & Snail",
@@ -284,8 +278,6 @@ export const SELECTEDPROJECTS = [
     videoType: "youtube",
     description:
       "A cohesive skincare campaign designed as a four-part digital film series. Each film highlights a specific product combination while maintaining a unified visual language, soft textures, and routine-driven storytelling—built for seamless social consumption and strong grid aesthetics.",
-    priority: false,
-    orientation: "portrait",
     videos: [
       {
         id: "video1",
@@ -310,8 +302,8 @@ export const SELECTEDPROJECTS = [
       },
     ],
   },
-    {
-    id: 3,
+  {
+    id: 10,
     title: "Polo Vista",
     subtitle: "Architectural Film",
     company: "Polo Vista",
@@ -320,91 +312,7 @@ export const SELECTEDPROJECTS = [
     videoType: "youtube",
     description:
       "A cinematic architectural walkthrough of Polo Vista, a villa community in Pune owned by the Indian Army. The film highlights spatial design, form, and lifestyle through refined composition, natural light, and fluid camera movement, bringing the character of the space to life.",
-    priority: false,
-    videos: [
-      {
-        id: "video1",
-        videoType: "youtube",
-        videoId: "abcd1234",
-        label: "",
-        thumbnail: "/assets/images/thumbnail/beautyAndProduct/poloVista.png",
-      },
-    ],
-  },
-    {
-    id: 3,
-    title: "Polo Vista",
-    subtitle: "Architectural Film",
-    company: "Polo Vista",
-    category: "BEAUTY & LIFESTYLE",
-    thumbnail: "/assets/images/thumbnail/beautyAndProduct/poloVista.png",
-    videoType: "youtube",
-    description:
-      "A cinematic architectural walkthrough of Polo Vista, a villa community in Pune owned by the Indian Army. The film highlights spatial design, form, and lifestyle through refined composition, natural light, and fluid camera movement, bringing the character of the space to life.",
-    priority: false,
-    videos: [
-      {
-        id: "video1",
-        videoType: "youtube",
-        videoId: "abcd1234",
-        label: "",
-        thumbnail: "/assets/images/thumbnail/beautyAndProduct/poloVista.png",
-      },
-    ],
-  },
-    {
-    id: 3,
-    title: "Polo Vista",
-    subtitle: "Architectural Film",
-    company: "Polo Vista",
-    category: "BEAUTY & LIFESTYLE",
-    thumbnail: "/assets/images/thumbnail/beautyAndProduct/poloVista.png",
-    videoType: "youtube",
-    description:
-      "A cinematic architectural walkthrough of Polo Vista, a villa community in Pune owned by the Indian Army. The film highlights spatial design, form, and lifestyle through refined composition, natural light, and fluid camera movement, bringing the character of the space to life.",
-    priority: false,
-    videos: [
-      {
-        id: "video1",
-        videoType: "youtube",
-        videoId: "abcd1234",
-        label: "",
-        thumbnail: "/assets/images/thumbnail/beautyAndProduct/poloVista.png",
-      },
-    ],
-  },
-    {
-    id: 3,
-    title: "Polo Vista",
-    subtitle: "Architectural Film",
-    company: "Polo Vista",
-    category: "BEAUTY & LIFESTYLE",
-    thumbnail: "/assets/images/thumbnail/beautyAndProduct/poloVista.png",
-    videoType: "youtube",
-    description:
-      "A cinematic architectural walkthrough of Polo Vista, a villa community in Pune owned by the Indian Army. The film highlights spatial design, form, and lifestyle through refined composition, natural light, and fluid camera movement, bringing the character of the space to life.",
-    priority: false,
-    videos: [
-      {
-        id: "video1",
-        videoType: "youtube",
-        videoId: "abcd1234",
-        label: "",
-        thumbnail: "/assets/images/thumbnail/beautyAndProduct/poloVista.png",
-      },
-    ],
-  },
-    {
-    id: 3,
-    title: "Polo Vista",
-    subtitle: "Architectural Film",
-    company: "Polo Vista",
-    category: "BEAUTY & LIFESTYLE",
-    thumbnail: "/assets/images/thumbnail/beautyAndProduct/poloVista.png",
-    videoType: "youtube",
-    description:
-      "A cinematic architectural walkthrough of Polo Vista, a villa community in Pune owned by the Indian Army. The film highlights spatial design, form, and lifestyle through refined composition, natural light, and fluid camera movement, bringing the character of the space to life.",
-    priority: false,
+    layout: "hero",
     videos: [
       {
         id: "video1",

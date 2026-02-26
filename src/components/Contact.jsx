@@ -3,6 +3,7 @@ import { X, MessageCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MdEmail } from "react-icons/md";
 import { FaPhone } from "react-icons/fa6";
+import { lockScroll, unlockScroll } from "../utils/utils";
 import CopyButton from "./common/CopyButton";
 import Button from "./common/Button";
 import { ContactPageContent } from "../../public/assets/data/CONTACTPAGECONTENT";
@@ -27,10 +28,11 @@ const item = {
 
 export const Contact = ({ open, onClose }) => {
   useEffect(() => {
-    if (!open) return;
-    const originalOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => (document.body.style.overflow = originalOverflow);
+    if (open) {
+      lockScroll();
+    } else {
+      unlockScroll();
+    }
   }, [open]);
 
   useEffect(() => {
@@ -112,7 +114,7 @@ export const Contact = ({ open, onClose }) => {
                 className="mt-10 space-y-3 text-lg md:text-xl text-center"
               >
                 <p className="flex items-center justify-center gap-2 opacity-90">
-                <MdEmail />
+                  <MdEmail />
                   <a href={`mailto: ${ContactPageContent.email.value}`}>
                     <Button
                       variant="simple"

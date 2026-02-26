@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ProjectsGrid } from "./ProjectsGrid";
+import { ProjectsGrid } from "./ourwork/ProjectsGrid";
+import { ProjectsGridMobile } from "./ourwork/ProjectsGridMobile";
 import { PROJECTS } from "../../public/assets/data/PROJECTS";
-import { FilterTabs } from "./FilterTabs";
-import { ProjectDialog } from "./ProjectDialog";
-import { ProjectCTA } from "./ProjectCTA";
+import { FilterTabs } from "./ourwork/FilterTabs";
+import { ProjectDialog } from "./ourwork/ProjectDialog";
+import { ProjectCTA } from "./common/ProjectCTA";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -66,46 +67,46 @@ export default function GravitySection() {
 
   // animate grid on filter change
   useEffect(() => {
-  if (!gridRef.current) return;
+    if (!gridRef.current) return;
 
-  const cards = gridRef.current.querySelectorAll(".project-card");
+    const cards = gridRef.current.querySelectorAll(".project-card");
 
-  gsap.killTweensOf(cards);
+    gsap.killTweensOf(cards);
 
-  gsap.set(cards, { opacity: 0, y: 25 });
+    gsap.set(cards, { opacity: 0, y: 25 });
 
-  gsap.to(cards, {
-    opacity: 1,
-    y: 0,
-    duration: 0.55,
-    ease: "power3.out",
-    stagger: 0.04,
-  });
-}, [activeFilter]);
+    gsap.to(cards, {
+      opacity: 1,
+      y: 0,
+      duration: 0.55,
+      ease: "power3.out",
+      stagger: 0.04,
+    });
+  }, [activeFilter]);
 
 
   // smooth exit + change filter
   const handleFilterChange = (newFilter) => {
-  if (newFilter === activeFilter) return;
+    if (newFilter === activeFilter) return;
 
-  // quick micro fade on whole grid
-  if (gridRef.current) {
-    gsap.killTweensOf(gridRef.current);
+    // quick micro fade on whole grid
+    if (gridRef.current) {
+      gsap.killTweensOf(gridRef.current);
 
-    gsap.fromTo(
-      gridRef.current,
-      { opacity: 0.6, scale: 0.98 },
-      {
-        opacity: 1,
-        scale: 1,
-        duration: 0.25,
-        ease: "power2.out",
-      }
-    );
-  }
+      gsap.fromTo(
+        gridRef.current,
+        { opacity: 0.6, scale: 0.98 },
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 0.25,
+          ease: "power2.out",
+        }
+      );
+    }
 
-  setActiveFilter(newFilter);
-};
+    setActiveFilter(newFilter);
+  };
 
 
   return (
@@ -134,11 +135,20 @@ export default function GravitySection() {
 
         {/* Grid */}
         <div ref={gridRef}>
-          <ProjectsGrid
-            projects={filteredProjects}
-            onSelect={handleSelectProject}
-            activeFilter={activeFilter}
-          />
+          <div className="hidden md:block">
+            <ProjectsGrid
+              projects={filteredProjects}
+              onSelect={handleSelectProject}
+              activeFilter={activeFilter}
+            />
+          </div>
+          <div className="block md:hidden">
+            <ProjectsGridMobile
+              projects={filteredProjects}
+              onSelect={handleSelectProject}
+              activeFilter={activeFilter}
+            />
+          </div>
         </div>
       </section>
 

@@ -54,7 +54,7 @@ export const ProjectsGrid = ({ projects, onSelect, activeFilter }) => {
       if (project.priority) {
         spanClass = BIG_SPAN;
         console.log(project.title, "PRIORITY");
-      } 
+      }
       else if (project.orientation === "portrait") {
         console.log(project.title, project.orientation);
         spanClass = TALL_SPAN;
@@ -93,10 +93,9 @@ export const ProjectsGrid = ({ projects, onSelect, activeFilter }) => {
               ${spanClass}
               shadow-[0_0_60px_rgba(255,255,255,0.15)]
               transition-all duration-500
-              ${
-                project.priority
-                  ? "ring-2 ring-yellow-400/50 hover:shadow-yellow-300/40 hover:shadow-3xl"
-                  : "hover:ring-2 hover:ring-white/60 hover:shadow-white/40 hover:shadow-2x"
+              ${project.priority
+                ? "ring-2 ring-yellow-400/50 hover:shadow-yellow-300/40 hover:shadow-3xl"
+                : "hover:ring-2 hover:ring-white/60 hover:shadow-white/40 hover:shadow-2x"
               }
             `}
           >
@@ -112,6 +111,8 @@ export const ProjectsGrid = ({ projects, onSelect, activeFilter }) => {
               `}
             >
               <img
+                loading="lazy"
+                decoding="async"
                 src={project.thumbnail}
                 alt={project.title}
                 className="

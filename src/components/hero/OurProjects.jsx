@@ -1,4 +1,4 @@
-// OurProjects.jsx
+import { useState } from "react";
 import Button from "../common/Button";
 import { ArrowRight, ArrowRightCircle } from "lucide-react";
 import { NavLink } from "react-router-dom";
@@ -7,6 +7,17 @@ import { BentoItem } from "../BentoItem";
 import { cn } from "../../utils/utils";
 import { ProjectsGrid } from "../ourwork/ProjectsGrid";
 import { SELECTEDPROJECTS } from "../../../public/assets/data/SELECTEDPROJECTS";
+import { ProjectDialog } from "../ourwork/ProjectDialog";
+
+// Use actual data but assign bento layouts positionally
+// const bentoProjects = SELECTEDPROJECTS.slice(0, 10).map((project, index) => {
+//   const layouts = [
+//     "featured", "wide", "normal", "tall", "wide",
+//     "normal", "normal", "tall", "normal", "hero"
+//   ];
+//   return { ...project, layout: layouts[index] || "normal" };
+// });
+const bentoProjects = SELECTEDPROJECTS.slice(0, 10);
 
 const projects = [
   { id: 1, image: "/assets/images/thumbnail/beautyAndProduct/poloVista.png", layout: "featured" },
@@ -22,6 +33,14 @@ const projects = [
 ];
 
 export const OurProjects = ({ className, content }) => {
+  const [open, setOpen] = useState(false);
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const handleOpen = (index) => {
+    setSelectedIndex(index);
+    setOpen(true);
+  };
+
   return (
     <>
       <section
@@ -59,20 +78,43 @@ export const OurProjects = ({ className, content }) => {
             my-10
           "
         >
-          {projects.map((project, index) => (
+          {bentoProjects.map((project, index) => (
             <BentoItem
-              key={project.id}
-              className={resolveLayout(project, index)}
+              key={`${project.id}-${index}`}
+              className={resolveLayout(project, index) + " !p-0"}
+              onClick={() => handleOpen(index)}
             >
               <img
-                src={project.image}
-                alt=""
+                loading="lazy"
+                decoding="async"
+                src={project.thumbnail}
+                alt={project.title}
                 className="
                   w-full h-full object-cover
                   transition-transform duration-1000 ease-in-out
                   group-hover:scale-110
                 "
               />
+
+              <div
+                className="
+                  absolute inset-0
+                  bg-linear-to-t from-black/90 via-black/30 to-transparent
+                "
+              />
+
+              {/* {project.priority && (
+                <div className="absolute top-4 left-4 z-20">
+                  <span className="px-3 py-1 text-[10px] font-semibold rounded-full bg-yellow-400 text-black shadow-lg uppercase tracking-wider">
+                    Featured
+                  </span>
+                </div>
+              )} */}
+
+              <div className="absolute bottom-4 left-4 text-white z-10 w-[calc(100%-32px)]">
+                <h3 className="font-bold text-lg leading-tight truncate drop-shadow-md">{project.title}</h3>
+                <p className="text-sm opacity-90 truncate drop-shadow-md">{project.company || "Work"}</p>
+              </div>
             </BentoItem>
           ))}
         </div>
@@ -85,6 +127,12 @@ export const OurProjects = ({ className, content }) => {
           text="Explore more of our work"
         />
       </NavLink> */}
+      <ProjectDialog
+        open={open}
+        projects={bentoProjects}
+        onClose={() => setOpen(false)}
+        startIndex={selectedIndex}
+      />
     </>
   );
 };

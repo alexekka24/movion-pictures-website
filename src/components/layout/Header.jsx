@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { cn } from "../../utils/utils";
+import { cn, lockScroll, unlockScroll } from "../../utils/utils";
 import Button from "../common/Button";
 import { NavLink } from "react-router-dom";
 import { Contact } from "../Contact";
@@ -20,14 +20,11 @@ export const Header = () => {
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
 
   useEffect(() => {
-    if (!isMenuOpen) return;
-
-    const originalOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-
-    return () => {
-      document.body.style.overflow = originalOverflow;
-    };
+    if (isMenuOpen) {
+      lockScroll();
+    } else {
+      unlockScroll();
+    }
   }, [isMenuOpen]);
 
   useEffect(() => {
@@ -57,11 +54,11 @@ export const Header = () => {
     <>
       <nav
         className={cn(
-          "z-40 fixed left-1/2 -translate-x-1/2 transition-all duration-500",
+          "z-40 fixed left-1/2 -translate-x-1/2 transition-all duration-700 ease-in-out",
           "top-0 w-full h-20 flex items-center bg-black/20 backdrop-blur-2xs",
 
           isScrolled &&
-            "top-6 w-[92%] max-w-6xl rounded-full border border-white/30 shadow-[0_8px_32px_rgba(0,0,0,0.25)] backdrop-blur-2xl bg-white/10",
+          "top-6 w-[92%] max-w-6xl rounded-full border border-white/30 shadow-[0_8px_32px_rgba(0,0,0,0.25)] backdrop-blur-2xl bg-white/10",
         )}
       >
         {/* <div className="container flex items-center justify-between"> */}
@@ -72,21 +69,34 @@ export const Header = () => {
             className="text-xl font-bold text-primary flex items-center"
           >
             <img
+              loading="lazy"
+              decoding="async"
               src={
                 isScrolled
                   ? "/assets/images/logos/logo-black.png"
                   : "/assets/images/logos/logos-white.png"
               }
               alt="Movion Pictures Logo"
-              className="w-3xs transition-all duration-300"
+              className="w-28 md:w-3xs transition-all duration-300"
             />
           </NavLink>
 
-          {/* MOBILE TOGGLE */}
+        </div>
+      </nav>
+
+      {/* MOBILE TOGGLE (Outside Nav for Z-Index Context) */}
+      <div
+        className={cn(
+          "z-[70] fixed left-1/2 -translate-x-1/2 transition-all duration-500 pointer-events-none",
+          "top-0 w-full h-20 flex items-center",
+          isScrolled && "top-6 w-[92%] max-w-6xl"
+        )}
+      >
+        <div className="w-full max-w-6xl mx-auto px-6 flex items-center justify-end">
           <Button
             variant="simple_black"
             size="lg"
-            className="p-2 text-black z-40 bg-black/40 rounded-[20%]"
+            className="p-2 text-black bg-black/40 rounded-[20%] pointer-events-auto"
             aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
             onClick={() => setIsMenuOpen((prev) => !prev)}
           >
@@ -100,11 +110,12 @@ export const Header = () => {
             )}
           </Button>
         </div>
-      </nav>
+      </div>
+
       {/* MOBILE MENU */}
       <div
         className={cn(
-          "fixed inset-0 bg-white backdrop-blur-3xl z-30 flex items-center justify-evenly h-screen rounded-2xl",
+          "fixed inset-0 bg-white backdrop-blur-3xl z-[60] flex items-center justify-evenly h-screen rounded-2xl",
           "transition-all duration-300",
           isMenuOpen
             ? "translate-x-0 opacity-100 pointer-events-auto"
@@ -124,6 +135,8 @@ export const Header = () => {
                 style={{ animationDelay: `${i * 80}ms` }}
               >
                 <img
+                  loading="lazy"
+                  decoding="async"
                   src={img.src}
                   className="w-full rounded-xl object-cover grayscale hover:grayscale-0 duration-200"
                 />

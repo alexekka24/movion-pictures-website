@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ProjectsGrid } from "../components/ourwork/ProjectsGrid";
+import { ProjectsGridMobile } from "../components/ourwork/ProjectsGridMobile";
 import { FilterTabs } from "../components/ourwork/FilterTabs";
 import { ProjectDialog } from "../components/ourwork/ProjectDialog";
 import { ProjectCTA } from "../components/common/ProjectCTA";
@@ -140,18 +141,26 @@ export const OurWork = () => {
         </div>
 
         {/* Filters */}
-        <div className="reveal mb-12 flex justify-center">
+        <div className="reveal mb-16 md:mb-24 flex justify-center w-full px-2">
           <FilterTabs active={activeFilter} setActive={handleFilterChange} />
         </div>
 
         {/* Grid */}
         <div ref={gridRef}>
-          <ProjectsGrid
-            projects={filteredProjects}
-            // projects={projectsForGrid}
-            onSelect={handleSelectProject}
-            activeFilter={activeFilter}
-          />
+          <div className="hidden md:block">
+            <ProjectsGrid
+              projects={filteredProjects}
+              onSelect={handleSelectProject}
+              activeFilter={activeFilter}
+            />
+          </div>
+          <div className="block md:hidden">
+            <ProjectsGridMobile
+              projects={filteredProjects}
+              onSelect={handleSelectProject}
+              activeFilter={activeFilter}
+            />
+          </div>
         </div>
       </section>
 
