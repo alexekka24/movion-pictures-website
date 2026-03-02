@@ -21,7 +21,7 @@ export const NAVIGATION = {
     {
       id: 3,
       name: "Process and Pricing",
-      href: "/processandpricing",
+      href: "/process-and-pricing",
     },
     {
       id: 4,
@@ -32,20 +32,20 @@ export const NAVIGATION = {
   ],
 
   socials: [
-      {
-        name: "YouTube",
-        url: "https://www.youtube.com/@Movion_Pictures",
-        icon: FaYoutube,
-      },
-      {
-        name: "Instagram",
-        url: "https://www.instagram.com/movion_pictures",
-        icon: FaInstagram,
-      },
-      {
-        name: "LinkedIn",
-        url: "https://www.linkedin.com/company/movionpictures/",
-        icon: FaLinkedin,
-      },
-    ],
+    {
+      name: "YouTube",
+      url: "https://www.youtube.com/@Movion_Pictures",
+      icon: FaYoutube,
+    },
+    {
+      name: "Instagram",
+      url: "https://www.instagram.com/movion_pictures",
+      icon: FaInstagram,
+    },
+    {
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/company/movionpictures/",
+      icon: FaLinkedin,
+    },
+  ],
 };

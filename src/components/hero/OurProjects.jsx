@@ -1,36 +1,11 @@
 import { useState } from "react";
-import Button from "../common/Button";
-import { ArrowRight, ArrowRightCircle } from "lucide-react";
-import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import { BentoItem } from "../BentoItem";
 import { cn } from "../../utils/utils";
-import { ProjectsGrid } from "../ourwork/ProjectsGrid";
 import { SELECTEDPROJECTS } from "../../../public/assets/data/SELECTEDPROJECTS";
 import { ProjectDialog } from "../ourwork/ProjectDialog";
 
-// Use actual data but assign bento layouts positionally
-// const bentoProjects = SELECTEDPROJECTS.slice(0, 10).map((project, index) => {
-//   const layouts = [
-//     "featured", "wide", "normal", "tall", "wide",
-//     "normal", "normal", "tall", "normal", "hero"
-//   ];
-//   return { ...project, layout: layouts[index] || "normal" };
-// });
 const bentoProjects = SELECTEDPROJECTS.slice(0, 10);
-
-const projects = [
-  { id: 1, image: "/assets/images/thumbnail/beautyAndProduct/poloVista.png", layout: "featured" },
-  { id: 2, image: "/assets/images/thumbnail/beautyAndProduct/poloVista.png", layout: "wide" },
-  { id: 3, image: "/assets/images/thumbnail/beautyAndProduct/poloVista.png" }, //auto
-  { id: 4, image: "/assets/images/thumbnail/beautyAndProduct/poloVista.png", layout: "tall" },
-  { id: 5, image: "/assets/images/thumbnail/beautyAndProduct/poloVista.png", layout: "wide" },
-  { id: 6, image: "/assets/images/thumbnail/beautyAndProduct/poloVista.png" }, //auto
-  { id: 7, image: "/assets/images/thumbnail/beautyAndProduct/poloVista.png" }, //auto
-  { id: 8, image: "/assets/images/thumbnail/beautyAndProduct/poloVista.png", layout: "tall" },
-  { id: 9, image: "/assets/images/thumbnail/beautyAndProduct/poloVista.png" }, //add freely
-  { id: 10, image: "/assets/images/thumbnail/beautyAndProduct/poloVista.png", layout: "hero" },
-];
 
 export const OurProjects = ({ className, content }) => {
   const [open, setOpen] = useState(false);
@@ -61,9 +36,6 @@ export const OurProjects = ({ className, content }) => {
           bg-clip-text text-transparent
         "
         >
-          {/* Previous
-          <br />
-          Completed Projects */}
           {content.title}
         </motion.h1>
 
@@ -81,7 +53,7 @@ export const OurProjects = ({ className, content }) => {
           {bentoProjects.map((project, index) => (
             <BentoItem
               key={`${project.id}-${index}`}
-              className={resolveLayout(project, index) + " !p-0"}
+              className={resolveLayout(project, index) + " p-0!"}
               onClick={() => handleOpen(index)}
             >
               <img
@@ -103,30 +75,19 @@ export const OurProjects = ({ className, content }) => {
                 "
               />
 
-              {/* {project.priority && (
-                <div className="absolute top-4 left-4 z-20">
-                  <span className="px-3 py-1 text-[10px] font-semibold rounded-full bg-yellow-400 text-black shadow-lg uppercase tracking-wider">
-                    Featured
-                  </span>
-                </div>
-              )} */}
-
               <div className="absolute bottom-4 left-4 text-white z-10 w-[calc(100%-32px)]">
-                <h3 className="font-bold text-lg leading-tight truncate drop-shadow-md">{project.title}</h3>
-                <p className="text-sm opacity-90 truncate drop-shadow-md">{project.company || "Work"}</p>
+                <h3 className="font-bold text-lg leading-tight truncate drop-shadow-md">
+                  {project.title}
+                </h3>
+                <p className="text-sm opacity-90 truncate drop-shadow-md">
+                  {project.company || "Work"}
+                </p>
               </div>
             </BentoItem>
           ))}
         </div>
       </section>
-      {/* <NavLink key="Our Work" to="/ourwork">
-        <Button
-          variant="surface_black"
-          size="ex_md"
-          className="my-10"
-          text="Explore more of our work"
-        />
-      </NavLink> */}
+
       <ProjectDialog
         open={open}
         projects={bentoProjects}

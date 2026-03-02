@@ -8,63 +8,32 @@ gsap.registerPlugin(ScrollTrigger);
 export const HeroVideo = () => {
   const ref = useRef(null);
   const videoRef = useRef(null);
-  const volumeRef = useRef(null);
 
   const [muted, setMuted] = useState(true);
-  const [volume, setVolume] = useState(0.6);
-  const [openVolume, setOpenVolume] = useState(false);
 
-  // set initial volume
+  // Autoplay fix for browsers
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.volume = volume;
+      videoRef.current.play().catch((err) => {
+        console.log("Autoplay failed:", err);
+      });
     }
-  }, []);
-
-  // click outside closes volume panel
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (volumeRef.current && !volumeRef.current.contains(e.target)) {
-        setOpenVolume(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   const toggleMute = async () => {
     const video = videoRef.current;
     if (!video) return;
 
-    video.muted = !video.muted;
-    setMuted(video.muted);
+    const newMutedState = !video.muted;
+    video.muted = newMutedState;
+    setMuted(newMutedState);
 
-    if (!video.muted) {
-      try {
-        await video.play();
-      } catch (err) {
-        console.log("Play blocked:", err);
-      }
+    // Some browsers require an explicit play() on user interaction to unmute
+    try {
+      await video.play();
+    } catch (err) {
+      console.log("Interaction play failed:", err);
     }
-  };
-
-  const handleVolume = (e) => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    const newVolume = Number(e.target.value);
-    video.volume = newVolume;
-
-    if (newVolume === 0) {
-      video.muted = true;
-      setMuted(true);
-    } else {
-      video.muted = false;
-      setMuted(false);
-    }
-
-    setVolume(newVolume);
   };
 
   useLayoutEffect(() => {
@@ -81,6 +50,12 @@ export const HeroVideo = () => {
               pinSpacing: true,
             },
           });
+
+          tl.to(videoRef.current, {
+            volume: 0,
+            ease: "none",
+            duration: 0.5,
+          }, 0);
 
           tl.to(".video", {
             scale: 0.7,
@@ -140,6 +115,25 @@ export const HeroVideo = () => {
       className="relative w-full bg-white overflow-hidden aspect-video md:aspect-auto pt-20 md:pt-0 md:h-screen"
     >
       {/* Desktop text only */}
+      <style>
+        {`
+          @keyframes bulb-blink {
+            0%, 100% { 
+              opacity: 1; 
+              box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+              transform: scale(1);
+            }
+            50% { 
+              opacity: 0.7; 
+              box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+              transform: scale(0.95);
+            }
+          }
+          .bulb-animate {
+            animation: bulb-blink 2s infinite ease-in-out;
+          }
+        `}
+      </style>
       <div className="absolute inset-0 z-30 hidden md:block pointer-events-none">
         <h1 className="think-text absolute left-30 top-1/2 -translate-y-1/2 text-[5vw] opacity-0 flex flex-col font-bold">
           {/* <div>T</div>
@@ -171,40 +165,21 @@ export const HeroVideo = () => {
             playsInline
           />
 
-          {/* 🔥 Custom Audio Controls */}
-          <div ref={volumeRef} className="absolute bottom-6 left-6 z-[9999]">
-            {/* Button */}
+          {/* 🔥 Custom Audio Toggle Button */}
+          <div className="absolute bottom-6 left-6 z-[9999]">
             <button
-              onClick={() => setOpenVolume((p) => !p)}
+              onClick={toggleMute}
               className="cursor-pointer w-12 h-12 flex items-center justify-center rounded-full 
               bg-black/50 backdrop-blur-lg border border-white/20 text-white 
-              hover:bg-black/70 transition duration-300"
+              hover:bg-white/10 transition duration-300 group bulb-animate"
+              aria-label={muted ? "Unmute" : "Mute"}
             >
-              {muted ? <VolumeX size={22} /> : <Volume2 size={22} />}
+              {muted ? (
+                <VolumeX size={22} className="group-hover:scale-110 transition-transform" />
+              ) : (
+                <Volume2 size={22} className="group-hover:scale-110 transition-transform" />
+              )}
             </button>
-
-            {/* Slider Popup (absolute) */}
-            {openVolume && (
-              <div
-                className="absolute left-14 top-1/2 -translate-y-1/2 
-                  w-44 px-4 py-3 rounded-xl bg-black/60 backdrop-blur-xl 
-                  border border-white/20 shadow-xl flex flex-col gap-2"
-              >
-                <p className="text-xs text-white/80 font-medium tracking-wide">
-                  Volume: {Math.round(volume * 100)}%
-                </p>
-
-                <input
-                  type="range"
-                  min="0"
-                  max="1"
-                  step="0.01"
-                  value={volume}
-                  onChange={handleVolume}
-                  className="w-full cursor-pointer accent-white"
-                />
-              </div>
-            )}
           </div>
         </div>
       </div>

@@ -115,7 +115,7 @@ export const Header = () => {
       {/* MOBILE MENU */}
       <div
         className={cn(
-          "fixed inset-0 bg-white backdrop-blur-3xl z-[60] flex items-center justify-evenly h-screen rounded-2xl",
+          "fixed inset-0 bg-white backdrop-blur-3xl z-60 flex items-center justify-evenly h-screen rounded-2xl",
           "transition-all duration-300",
           isMenuOpen
             ? "translate-x-0 opacity-100 pointer-events-auto"

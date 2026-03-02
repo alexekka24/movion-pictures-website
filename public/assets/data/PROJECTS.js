@@ -1,163 +1,153 @@
 export const PROJECTS = [
+  // BEAUTY & LIFESTYLE
   {
-    id: 1,
+    id: "B&L-1",
     title: "Turtle & Snail – Skincare Campaign",
     subtitle: "Series of 4 Digital Commercials",
     company: "Turtle & Snail",
     category: "BEAUTY & LIFESTYLE",
-    thumbnail:
-      "/assets/images/thumbnail/beautyAndProduct/Turtle-And-Snail-Sunscreen-And-lip-Balm.png",
+    thumbnail: "/assets/images/thumbnail/beautyAndProduct/turtle&SnailCampaign.png",
     videoType: "youtube",
-    description:
-      "A cohesive skincare campaign designed as a four-part digital film series. Each film highlights a specific product combination while maintaining a unified visual language, soft textures, and routine-driven storytelling—built for seamless social consumption and strong grid aesthetics.",
+    description: "A cohesive skincare campaign designed as a four-part digital film series. Each film highlights a specific product combination while maintaining a unified visual language, soft textures, and routine-driven storytelling—built for seamless social consumption and strong grid aesthetics.",
     priority: true,
-    orientation: "portrait",
+    isCampaign: true,
+    // orientation: "portrait",  
     videos: [
       {
         id: "video1",
         videoType: "youtube",
         videoId: "uuJQn74BD2A",
-        label: "Campaign 1",
         thumbnail: "/assets/images/thumbnail/beautyAndProduct/squareAspectRatio/turtleAndSnailFaceWashAndLotion.png",
       },
       {
         id: "video2",
         videoType: "youtube",
-        videoId: "OVKlG1_JUuU",
-        label: "Campaign 2",
+        videoId: "PoNpTbkZbnI",
         thumbnail: "/assets/images/thumbnail/beautyAndProduct/squareAspectRatio/turtleAndSnailMuskmelonLotion.png",
       },
       {
         id: "video3",
         videoType: "youtube",
         videoId: "abcd1234",
-        label: "Campaign 3",
+        thumbnail: "/assets/images/thumbnail/beautyAndProduct/squareAspectRatio/turtleAndSnailSunscreenAndLipBalm.png",
+      },
+      {
+        id: "video4",
+        videoType: "instagram",
+        videoId: "https://www.instagram.com/p/DCIxY5WN03Q/",
         thumbnail: "/assets/images/thumbnail/beautyAndProduct/squareAspectRatio/turtleAndSnailSunscreenAndLipBalm.png",
       },
     ],
   },
   {
-    id: 2,
+    id: "B&L-2",
     title: "Mercedes-Benz – Vision One Eleven",
     subtitle: "Launch Film",
     company: "Mercedes-Benz",
     category: "BEAUTY & LIFESTYLE",
     thumbnail: "/assets/images/thumbnail/beautyAndProduct/squareAspectRatio/mercedes.png",
     videoType: "instagram",
-    description:
-      "A futuristic visual treatment inspired by the Vision One Eleven, blending luxury, speed, and innovation. Crafted to reflect Mercedes-Benz’s design philosophy through striking visuals and minimalistic storytelling.",
+    description: "A futuristic visual treatment inspired by the Vision One Eleven, blending luxury, speed, and innovation. Crafted to reflect Mercedes-Benz’s design philosophy through striking visuals and minimalistic storytelling.",
     priority: false,
+    isCampaign: false,
     orientation: "portrait",
     videos: [
       {
         id: "video1",
         videoType: "instagram",
         videoId: "https://www.instagram.com/reel/CxswW8CJEWN/",
-        label: "",
         thumbnail: "/assets/images/thumbnail/beautyAndProduct/squareAspectRatio/mercedes.png",
       },
       {
         id: "video2",
         videoType: "instagram",
         videoId: "https://www.instagram.com/reel/CxswW8CJEWN/",
-        label: "",
         thumbnail: "/assets/images/who-we-are/image1.jpg",
       },
       {
         id: "video3",
         videoType: "instagram",
         videoId: "https://www.instagram.com/reel/CxswW8CJEWN/",
-        label: "",
         thumbnail: "/assets/images/who-we-are/image1.jpg",
       },
       {
         id: "video4",
         videoType: "instagram",
         videoId: "https://www.instagram.com/reel/CxswW8CJEWN/",
-        label: "",
         thumbnail: "/assets/images/who-we-are/image1.jpg",
       },
       {
         id: "video5",
         videoType: "instagram",
         videoId: "https://www.instagram.com/reel/CxswW8CJEWN/",
-        label: "",
         thumbnail: "/assets/images/who-we-are/image1.jpg",
       },
     ],
   },
   {
-    id: 3,
+    id: "B&L-3",
     title: "Dot & Key Moisturizer",
     subtitle: "Product Film",
     company: "Dot & Key",
     category: "BEAUTY & LIFESTYLE",
-    thumbnail:
-      "/assets/images/thumbnail/beautyAndProduct/dotAndKeyMoisturizer.png",
+    thumbnail: "/assets/images/thumbnail/beautyAndProduct/dotAndKeyMoisturizer.png",
     videoType: "youtube",
     videoId: "abcd1234",
-    description:
-      "A clean, vibrant product film focused on texture, application, and benefits. Designed to communicate hydration, freshness, and everyday usability through crisp visuals and smooth transitions.",
+    description: "A clean, vibrant product film focused on texture, application, and benefits. Designed to communicate hydration, freshness, and everyday usability through crisp visuals and smooth transitions.",
     priority: false,
+    isCampaign: false,
     orientation: "landscape",
     videos: [
       {
         id: "video1",
         videoType: "youtube",
         videoId: "6xPvkrlzEno",
-        label: "",
-        thumbnail:
-          "/assets/images/thumbnail/beautyAndProduct/dotAndKeyMoisturizer.png",
+        thumbnail: "/assets/images/thumbnail/beautyAndProduct/dotAndKeyMoisturizer.png",
       },
     ],
   },
   {
-    id: 4,
+    id: "B&L-4",
     title: "Dot & Key Facewash",
     subtitle: "Product Film",
     company: "Dot & Key",
     category: "BEAUTY & LIFESTYLE",
-    thumbnail:
-      "/assets/images/thumbnail/beautyAndProduct/dotAndKeyFacewash.png",
-    videoType: "instagram",
-    description:
-      "A fast-paced, sensory-driven product film showcasing cleansing action and skin feel. Shot to resonate with a young, digital-first skincare audience.",
+    thumbnail: "/assets/images/thumbnail/beautyAndProduct/dotAndKeyFacewash.png",
+    description: "A fast-paced, sensory-driven product film showcasing cleansing action and skin feel. Shot to resonate with a young, digital-first skincare audience.",
     priority: true,
+    isCampaign: false,
     orientation: "landscape",
     videos: [
       {
         id: "video1",
         videoType: "youtube",
-        videoId: "abcd1234",
-        label: "",
-        thumbnail:
-          "/assets/images/thumbnail/beautyAndProduct/dotAndKeyFacewash.png",
+        videoId: "LqsMmzbTq6E?",
+        thumbnail: "/assets/images/thumbnail/beautyAndProduct/dotAndKeyFacewash.png",
       },
     ],
   },
   {
-    id: 5,
+    id: "B&L-5",
     title: "Bella Vita (Glam)",
     subtitle: "",
     company: "Bella Vita",
     category: "BEAUTY & LIFESTYLE",
     thumbnail: "/assets/images/thumbnail/beautyAndProduct/squareAspectRatio/bellaVitaGlam.png",
-    videoType: "youtube",
     description: "A cinematic brand launch film capturing vision and energy.",
     priority: false,
+    isCampaign: false,
     orientation: "portrait",
     videos: [
       {
         id: "video1",
         videoType: "youtube",
-        videoId: "abcd1234",
-        label: "",
+        videoId: "shorts/XjNFMb-mGwU-mGwU",
         thumbnail: "/assets/images/thumbnail/beautyAndProduct/squareAspectRatio/bellaVitaGlam.png",
       },
     ],
   },
   {
-    id: 6,
+    id: "B&L-6",
     title: "BELLA VITA: ROSE",
     subtitle: "",
     company: "Bella Vita",
@@ -166,6 +156,7 @@ export const PROJECTS = [
     videoType: "instagram",
     description: "High-performing short-form ads built for social platforms.",
     priority: false,
+    isCampaign: false,
     orientation: "portrait",
     videos: [
       {
@@ -178,7 +169,7 @@ export const PROJECTS = [
     ],
   },
   {
-    id: 7,
+    id: "B&L-8",
     title: "Polo Vista",
     subtitle: "Architectural Film",
     company: "Polo Vista",
@@ -188,6 +179,7 @@ export const PROJECTS = [
     description:
       "A cinematic architectural walkthrough of Polo Vista, a villa community in Pune owned by the Indian Army. The film highlights spatial design, form, and lifestyle through refined composition, natural light, and fluid camera movement, bringing the character of the space to life.",
     priority: false,
+    isCampaign: false,
     orientation: "landscape",
     videos: [
       {
@@ -200,7 +192,7 @@ export const PROJECTS = [
     ],
   },
   {
-    id: 18,
+    id: "B&L-9",
     title: "AT Villas Campaign",
     subtitle: "Luxury Villa Brand Films",
     company: "AT Villas",
@@ -210,6 +202,7 @@ export const PROJECTS = [
     description:
       "A lifestyle-led visual narrative showcasing luxury, comfort, and escape. Crafted to position AT Villas as a premium holiday destination through warm, experiential storytelling.",
     priority: false,
+    isCampaign: false,
     orientation: "portrait",
     videos: [
       {
@@ -229,7 +222,7 @@ export const PROJECTS = [
     ],
   },
   {
-    id: 28,
+    id: "B&L-10",
     title: "AT Villas Campaign",
     subtitle: "Luxury Villa Brand Films",
     company: "AT Villas",
@@ -239,6 +232,7 @@ export const PROJECTS = [
     description:
       "A lifestyle-led visual narrative showcasing luxury, comfort, and escape. Crafted to position AT Villas as a premium holiday destination through warm, experiential storytelling.",
     priority: false,
+    isCampaign: false,
     orientation: "portrait",
     videos: [
       {
@@ -258,7 +252,7 @@ export const PROJECTS = [
     ],
   },
   {
-    id: 8,
+    id: "B&L-11",
     title: "AT Villas Campaign",
     subtitle: "Luxury Villa Brand Films",
     company: "AT Villas",
@@ -268,6 +262,7 @@ export const PROJECTS = [
     description:
       "A lifestyle-led visual narrative showcasing luxury, comfort, and escape. Crafted to position AT Villas as a premium holiday destination through warm, experiential storytelling.",
     priority: false,
+    isCampaign: false,
     orientation: "portrait",
     videos: [
       {
@@ -286,8 +281,9 @@ export const PROJECTS = [
       },
     ],
   },
+  // AD FILMS / BRAND FILMS
   {
-    id: 79,
+    id: "AD-1",
     title: "JM Financial – JM Pro App (User Journey)",
     subtitle: "Application Advertisement Film",
     company: "JM Financial",
@@ -297,6 +293,7 @@ export const PROJECTS = [
     description:
       "A narrative-driven user journey film simplifying smart investing. The story follows real-life decision-making moments to humanize finance and build trust in the JM Pro app.",
     priority: false,
+    isCampaign: false,
     videos: [
       {
         id: "video1",
@@ -308,7 +305,7 @@ export const PROJECTS = [
     ],
   },
   {
-    id: 10,
+    id: "AD-2",
     title: "JM Financial – JM Pro App (Smart Investing)",
     subtitle: "Mobile Application Advertisement Film",
     company: "JM Financial",
@@ -319,6 +316,7 @@ export const PROJECTS = [
     description:
       "A sharp, insight-led film communicating confidence, control, and intelligent investing. Designed to appeal to modern traders through clarity and strong character-driven storytelling.",
     priority: false,
+    isCampaign: false,
     videos: [
       {
         id: "video1",
@@ -330,7 +328,7 @@ export const PROJECTS = [
     ],
   },
   {
-    id: 11,
+    id: "AD-3",
     title: "JM Financial – Festive Trading Film",
     subtitle: "Festive Trading Film",
     company: "JM Financial",
@@ -339,6 +337,7 @@ export const PROJECTS = [
     videoType: "instagram",
     description: "A cinematic brand launch film capturing vision and energy.",
     priority: false,
+    isCampaign: false,
     videos: [
       {
         id: "video1",
@@ -350,7 +349,7 @@ export const PROJECTS = [
     ],
   },
   {
-    id: 12,
+    id: "AD-4",
     title: "Universal AI – “Guruji Ki Kaksha” Campaign",
     subtitle: "Digital Content Series (3–4 Episodes)",
     company: "XXXXXXX",
@@ -360,6 +359,7 @@ export const PROJECTS = [
     description:
       "An engaging, culturally rooted AI awareness campaign. Using humor and a ‘Guruji’ persona, complex AI concepts are broken down into bite-sized, entertaining episodes tailored for social platforms.",
     priority: true,
+    isCampaign: true,
     videos: [
       {
         id: "video1",
@@ -412,7 +412,7 @@ export const PROJECTS = [
     ],
   },
   {
-    id: 13,
+    id: "AD-5",
     title: "Arth",
     subtitle: "Emotional Brand Film",
     company: "XYZ Studios",
@@ -422,6 +422,7 @@ export const PROJECTS = [
     description:
       "A deeply emotional storytelling piece focused on human connection and values. The film prioritizes feeling over format, leaving a lasting emotional impact.",
     priority: false,
+    isCampaign: false,
     videos: [
       {
         id: "video1",
@@ -433,16 +434,16 @@ export const PROJECTS = [
     ],
   },
   {
-    id: 14,
+    id: "AD-6",
     title: "UAi – Small Town, Big Dreams",
     subtitle: "Inspirational Brand Film",
     company: "ABC Brand",
     category: "AD FILMS / BRAND FILMS",
     thumbnail: "/assets/images/thumbnail/adFilms/uai.png",
     videoType: "instagram",
-    description:
-      "A heartfelt narrative celebrating ambition beyond geography. The film captures the journey of students chasing big dreams from small towns through education and opportunity.",
+    description: "A heartfelt narrative celebrating ambition beyond geography. The film captures the journey of students chasing big dreams from small towns through education and opportunity.",
     priority: false,
+    isCampaign: false,
     orientation: "portrait",
     videos: [
       {
@@ -456,58 +457,57 @@ export const PROJECTS = [
   },
   // CORPORATE & INNOVATION
   {
-    id: 15,
+    id: "CORP-1",
     title: "Sarla Aviation",
     company: "Corporate Film",
     category: "CORPORATE & INNOVATION",
     thumbnail: "/assets/images/thumbnail/corporate/sarla.png",
     videoType: "youtube",
     videoId: "abcd1234",
-    description:
-      "A future-forward corporate film showcasing innovation, vision, and technological ambition within the aviation ecosystem.",
+    description: "A future-forward corporate film showcasing innovation, vision, and technological ambition within the aviation ecosystem.",
     priority: false,
+    isCampaign: false,
     videos: [
       {
         id: "video1",
         videoType: "youtube",
-        videoId: "abcd1234",
+        videoId: "Cp053IEi6eA",
         label: "",
         thumbnail: "/assets/images/thumbnail/corporate/sarla.png",
       },
     ],
   },
   {
-    id: 16,
+    id: "CORP-2",
     title: "Digantra",
     company: "Space-Tech Brand Film",
     category: "CORPORATE & INNOVATION",
     thumbnail: "/assets/images/thumbnail/corporate/digantra.png",
-    videoType: "instagram",
-    videoUrl: "https://www.instagram.com/reel/xyz/",
-    description:
-      "A precision-led corporate narrative highlighting advanced space surveillance and technology, built to communicate credibility and innovation.",
+    videoType: "youtube",
+    description: "A precision-led corporate narrative highlighting advanced space surveillance and technology, built to communicate credibility and innovation.",
     priority: false,
+    isCampaign: false,
     videos: [
       {
         id: "video1",
         videoType: "youtube",
-        videoId: "abcd1234",
+        videoId: "bD6Op1IyqOM",
         label: "",
         thumbnail: "/assets/images/thumbnail/corporate/digantra.png",
       },
     ],
   },
   {
-    id: 17,
+    id: "CORP-3",
     title: "Universal AI University – Corporate Campaign",
     subtitle: "Brand Film Series (2 Films)",
     company: "UAi",
     category: "CORPORATE & INNOVATION",
     thumbnail: "/assets/images/who-we-are/image1.jpg",
     videoType: "youtube",
-    description:
-      "A dual-film campaign introducing India’s first AI university. One film focuses on campus and student life, while the other establishes UAi’s vision, leadership, and future readiness.",
+    description: "A dual-film campaign introducing India’s first AI university. One film focuses on campus and student life, while the other establishes UAi’s vision, leadership, and future readiness.",
     priority: false,
+    isCampaign: false,
     videos: [
       {
         id: "video1",
@@ -527,7 +527,7 @@ export const PROJECTS = [
     ],
   },
   {
-    id: 18,
+    id: "CORP-4",
     title: "Campus Fund: AWS Grand Challenge",
     subtitle: "Event Film ",
     company: "ABC Brand",
@@ -538,6 +538,7 @@ export const PROJECTS = [
     description:
       "High-energy event coverage capturing innovation, competition, and collaboration. Designed for digital storytelling and social amplification..",
     priority: false,
+    isCampaign: false,
     videos: [
       {
         id: "video1",
@@ -563,28 +564,28 @@ export const PROJECTS = [
     ],
   },
   {
-    id: 19,
+    id: "CORP-5",
     title: "Ethereal X",
     subtitle: "Brand Film",
     company: "Ethereal X",
     category: "CORPORATE & INNOVATION",
     thumbnail: "/assets/images/thumbnail/corporate/etherealX.png",
     videoType: "youtube",
-    description:
-      "A sleek corporate narrative focused on innovation and next-generation technology, crafted with a futuristic visual tone.",
+    description: "A sleek corporate narrative focused on innovation and next-generation technology, crafted with a futuristic visual tone.",
     priority: false,
+    isCampaign: false,
     videos: [
       {
         id: "video1",
         videoType: "youtube",
-        videoId: "abcd1234",
+        videoId: "TtO11902mgo",
         label: "",
         thumbnail: "/assets/images/thumbnail/corporate/etherealX.png",
       },
     ],
   },
   {
-    id: 20,
+    id: "CORP-6",
     title: "Indian Army: Battle of Minds Campaign",
     subtitle: "National-Level Quiz & Awareness Campaign",
     company: "Indian Army",
@@ -594,6 +595,7 @@ export const PROJECTS = [
     description:
       "A large-scale, purpose-driven campaign celebrating unity, knowledge, and youth engagement. From Kargil to Ladakh, the films document stories of participation, patriotism, and togetherness-handled with sensitivity and pride.",
     priority: true,
+    isCampaign: true,
     videos: [
       {
         id: "video1",
@@ -662,7 +664,7 @@ export const PROJECTS = [
     ],
   },
   {
-    id: 21,
+    id: "CORP-7",
     title: "Addverb – LogiMAT 2025",
     subtitle: "Addverb Event Film",
     company: "Addverb",
@@ -672,6 +674,7 @@ export const PROJECTS = [
     description:
       "A crisp, professional event film highlighting innovation in robotics and automation, designed specifically for a corporate  audience.",
     priority: false,
+    isCampaign: false,
     videos: [
       {
         id: "video1",
@@ -683,16 +686,17 @@ export const PROJECTS = [
     ],
   },
   {
-    id: 22,
+    id: "CORP-8",
     title: "Nykaaland 2.0",
     subtitle: "Event Experience Film",
     company: "Nykka",
     category: "CORPORATE & INNOVATION",
-    thumbnail: "/assets/images/who-we-are/image1.jpg",
+    thumbnail: "/assets/images/thumbnail/corporate/nykaaland.png",
     videoType: "instagram",
-    description:
-      "A vibrant event film capturing scale, energy, and immersive brand experiences through dynamic visuals and fast-paced edits.",
+    description: "A vibrant event film capturing scale, energy, and immersive brand experiences through dynamic visuals and fast-paced edits.",
     priority: false,
+    isCampaign: false,
+    orientation: "portrait",
     videos: [
       {
         id: "video1",
@@ -703,8 +707,9 @@ export const PROJECTS = [
       },
     ],
   },
+  // NARRATIVE
   {
-    id: 23,
+    id: "NAR-1",
     title: "AQDA - The Yellow Diary",
     subtitle: "Official Music Video",
     company: "The Yellow Diary",
@@ -714,6 +719,7 @@ export const PROJECTS = [
     description:
       "A soulful music video built around emotion, performance, and mood. The visuals enhance the lyrical depth and musical texture of the track.",
     priority: false,
+    isCampaign: false,
     videos: [
       {
         id: "video1",
@@ -725,7 +731,7 @@ export const PROJECTS = [
     ],
   },
   {
-    id: 24,
+    id: "NAR-2",
     title: "Kaahe Jaage Mohan",
     subtitle: "Narrative Music Video",
     company: "Parindey Storytellers",
@@ -735,18 +741,18 @@ export const PROJECTS = [
     description:
       "A poetic visual narrative blending classical undertones with contemporary storytelling. Rich performances and symbolic imagery drive the emotion.",
     priority: false,
+    isCampaign: false,
     videos: [
       {
         id: "video1",
         videoType: "youtube",
         videoId: "IMtwb5je0xE",
-        label: "xxxxx",
-        thumbnail: "/assets/images/thumbnail/narrative/kaahe-jaage-mohan.png",
+        thumbnail: "/assets/images/thumbnail/narrative/kaaheJaageMohan.png",
       },
     ],
   },
   {
-    id: 25,
+    id: "NAR-3",
     title: "The Good, The Bad & The Ungli",
     subtitle: "Short Narrative Film",
     company: "ABC Brand",
@@ -757,19 +763,20 @@ export const PROJECTS = [
     description:
       "A stylized narrative exploring children’s behavior with humor and edge. Strong character arcs and punchy storytelling define the film.",
     priority: false,
+    isCampaign: false,
     videos: [
       {
         id: "video1",
         videoType: "youtube",
         videoId: "abcd1234",
-        label: "",
         thumbnail:
           "public/assets/images/thumbnail/narrative/theGoodTheBadTheUngli.png",
       },
     ],
   },
+  // SPEC AD & CONCEPTS
   {
-    id: 26,
+    id: "SPEC-1",
     title: "BookMyShow",
     subtitle: "Spec Advertisement",
     company: "The Yellow Diary",
@@ -779,6 +786,7 @@ export const PROJECTS = [
     description:
       "A concept-driven spec ad imagining BookMyShow through a fresh storytelling lens, focused on emotion, anticipation, and shared experiences.",
     priority: false,
+    isCampaign: false,
     videos: [
       {
         id: "video1",
@@ -790,7 +798,7 @@ export const PROJECTS = [
     ],
   },
   {
-    id: 27,
+    id: "SPEC-2",
     title: "Silent Cat",
     subtitle: "Concept Film",
     company: "Parindey Storytellers",
@@ -800,6 +808,7 @@ export const PROJECTS = [
     description:
       "A visual experiment built on silence, and symbolism designed to explore storytelling beyond dialogue.",
     priority: false,
+    isCampaign: false,
     videos: [
       {
         id: "video1",
@@ -811,7 +820,7 @@ export const PROJECTS = [
     ],
   },
   {
-    id: 28,
+    id: "SPEC-3",
     title: "Shayad in",
     subtitle: "Music Cover Video",
     company: "ABC Brand",
@@ -821,6 +830,7 @@ export const PROJECTS = [
     description:
       "An intimate music cover film emphasizing raw emotion and simplicity. The visuals complement the vulnerability of the performance.",
     priority: false,
+    isCampaign: false,
     videos: [
       {
         id: "video1",

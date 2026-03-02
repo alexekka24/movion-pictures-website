@@ -11,27 +11,41 @@ export const WhatsAppFloatingButton = () => {
   )}`;
 
   return (
-    <a
-      href={whatsappUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Chat on WhatsApp"
-      className="
-        fixed bottom-6 right-6 z-80
-        flex items-center justify-center
-        rounded-full shadow-lg
-        bg-[#25D366] text-white
-        transition-transform duration-300
-        hover:scale-110
-        active:scale-95
-        /* Size */
-        w-12 h-12
-        md:w-16 md:h-16
-      "
-    >
-      <div className="flex justify-center items-center w-full h-full">
-        <Button text={<FaWhatsapp />} variant="simple" size="lg" className="text-2xl md:text-3xl" />
-      </div>
-    </a>
+    <>
+      <style>
+        {`
+          @keyframes whatsapp-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+          }
+          .whatsapp-btn {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            animation: whatsapp-pulse 2s infinite;
+          }
+        `}
+      </style>
+      <a
+        href={whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat on WhatsApp"
+        className="
+          fixed bottom-6 right-6 z-[80]
+          flex items-center justify-center
+          rounded-full shadow-2xl
+          whatsapp-btn text-white
+          transition-all duration-300
+          hover:scale-110 hover:brightness-110
+          active:scale-95
+          border border-white/20 backdrop-blur-sm
+          /* Size */
+          w-14 h-14
+          md:w-16 md:h-16
+        "
+      >
+        <FaWhatsapp className="text-3xl md:text-3xl drop-shadow-md" />
+      </a>
+    </>
   );
 }

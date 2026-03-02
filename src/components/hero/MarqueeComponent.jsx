@@ -37,7 +37,7 @@ export const MarqueeComponent = ({ content }) => {
               decoding="async"
               src={logo}
               alt={`Client ${index}`}
-              className="max-h-full max-w-full w-auto object-contain grayscale opacity-60 
+              className="max-h-full max-w-full w-auto object-contain opacity-60 
                            hover:grayscale-0 hover:opacity-100 transition duration-300"
             />
           </div>

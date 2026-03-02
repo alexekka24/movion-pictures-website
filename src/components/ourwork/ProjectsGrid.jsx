@@ -19,32 +19,6 @@ export const ProjectsGrid = ({ projects, onSelect, activeFilter }) => {
     return projects; // always keep original order
   }, [projects]);
 
-  // const spanMap = useMemo(() => {
-  //   const map = {};
-
-  //   displayProjects.forEach((project, index) => {
-  //     let spanClass = "";
-
-  //     if (isAll) {
-  //       spanClass = COLLAGE_SPANS[index % COLLAGE_SPANS.length];
-
-  //       if (project.priority) {
-  //         spanClass = BIG_SPAN;
-  //       }
-  //       else {
-  //         spanClass = project.orientation === "portrait" ? TALL_SPAN : NORMAL_SPAN;
-  //       }
-  //     }
-  //     else if (!isAll && !project.priority) {
-  //       spanClass = project.orientation === "portrait" ? TALL_SPAN : NORMAL_SPAN;
-  //     }
-
-  //     map[project.id] = spanClass;
-  //   });
-
-  //   return map;
-  // }, [displayProjects, isAll]);
-
   const spanMap = useMemo(() => {
     const map = {};
 
@@ -93,21 +67,21 @@ export const ProjectsGrid = ({ projects, onSelect, activeFilter }) => {
               ${spanClass}
               shadow-[0_0_60px_rgba(255,255,255,0.15)]
               transition-all duration-500
-              ${project.priority
+              ${project.isCampaign
                 ? "ring-2 ring-yellow-400/50 hover:shadow-yellow-300/40 hover:shadow-3xl"
                 : "hover:ring-2 hover:ring-white/60 hover:shadow-white/40 hover:shadow-2x"
               }
             `}
           >
             {/* Glow Border */}
-            {project.priority && (
+            {project.isCampaign && (
               <div className="glow-border pointer-events-none" />
             )}
 
             <div
               className={`
                 absolute inset-0 rounded-xl overflow-hidden
-                ${project.priority ? "ring-2 ring-yellow-400/60" : "ring-1 ring-white/10"}
+                ${project.isCampaign ? "ring-2 ring-yellow-400/60" : "ring-1 ring-white/10"}
               `}
             >
               <img
@@ -131,7 +105,7 @@ export const ProjectsGrid = ({ projects, onSelect, activeFilter }) => {
                 "
               />
 
-              {project.priority && (
+              {project.isCampaign && (
                 <div className="absolute top-4 left-4 z-20">
                   <span className="px-3 py-1 text-sm font-semibold rounded-full bg-yellow-400 text-black shadow-lg">
                     Campaign

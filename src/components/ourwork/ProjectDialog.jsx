@@ -123,26 +123,30 @@ const ProjectSlide = ({ project }) => {
       </div>
 
       {/* Right: Content */}
-      <div className="lg:w-[30%] h-[45%] lg:h-full bg-black backdrop-blur-xl p-4 md:p-8 overflow-y-auto flex flex-col justify-center items-center">
+      <div className="lg:w-[30%] h-[45%] lg:h-full bg-black backdrop-blur-xl p-4 md:p-8 overflow-y-auto flex flex-col justify-center items-center text-center">
         <h2 className="text-xl md:text-2xl font-bold mb-1">{project.title}</h2>
         <p className="text-gray-400 text-sm md:text-base mb-2">{project.company}</p>
-        <p className="text-gray-200 text-sm md:text-base mb-4 line-clamp-3 md:line-clamp-none leading-relaxed text-center">{project.description}</p>
+        <p className="text-gray-200 text-sm md:text-base mb-6 line-clamp-3 md:line-clamp-none leading-relaxed">{project.description}</p>
 
         {/* <div className="space-y-3 grid grid-cols-2"> */}
-        <div className="grid gap-2 md:gap-4 grid-cols-2 md:grid-cols-[repeat(auto-fit,minmax(120px,1fr))] w-full mt-auto">
+        <div className="grid gap-2 md:gap-4 grid-cols-2 lg:grid-cols-2 w-full justify-items-center">
           {project.videos.map((v, idx) => (
             <button
               key={v.videoId}
               onClick={() => setActiveVideoIndex(idx)}
-              className={`w-full flex gap-3 p-3 rounded-lg
+              className={`w-full flex items-center justify-center p-2 rounded-lg transition-all
                 ${idx === activeVideoIndex
-                  ? "bg-white/20"
+                  ? "bg-white/20 ring-1 ring-white/30"
                   : "bg-white/5 hover:bg-white/10"
                 }`}
             >
-              {/* <Play size={16} /> */}
-              <img loading="lazy" decoding="async" src={v.thumbnail} className="h-25" />
-              {/* {v.label} */}
+              <img
+                loading="lazy"
+                decoding="async"
+                src={v.thumbnail}
+                className="w-full h-auto aspect-video object-cover rounded shadow-lg"
+                alt={`Thumbnail ${idx + 1}`}
+              />
             </button>
           ))}
         </div>
