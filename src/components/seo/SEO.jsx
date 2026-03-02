@@ -1,5 +1,3 @@
-import { Helmet } from 'react-helmet-async';
-
 export const SEO = ({ title, description, canonical, ogImage, twitterImage, type = "website" }) => {
     const siteName = "Movion Pictures";
     const fullTitle = `${title} | ${siteName}`;
@@ -8,7 +6,7 @@ export const SEO = ({ title, description, canonical, ogImage, twitterImage, type
     const defaultImage = `${baseUrl}/assets/images/og-image.jpg`;
 
     return (
-        <Helmet>
+        <>
             {/* Basic Meta Tags */}
             <title>{fullTitle}</title>
             <meta name="description" content={description} />
@@ -27,6 +25,6 @@ export const SEO = ({ title, description, canonical, ogImage, twitterImage, type
             <meta name="twitter:title" content={fullTitle} />
             <meta name="twitter:description" content={description} />
             <meta name="twitter:image" content={twitterImage || ogImage || defaultImage} />
-        </Helmet>
+        </>
     );
 };
