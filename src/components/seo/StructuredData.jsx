@@ -6,6 +6,7 @@ export const StructuredData = () => {
             "@context": "https://schema.org",
             "@type": "Organization",
             "name": "Movion Pictures",
+            "alternateName": "Movion",
             "url": "https://movionpictures.com",
             "logo": "https://movionpictures.com/assets/images/logos/favicon.png",
             "sameAs": [
@@ -13,7 +14,12 @@ export const StructuredData = () => {
                 "https://www.youtube.com/@Movion_Pictures",
                 "https://www.linkedin.com/company/movionpictures/"
             ],
-            "description": "Premier creative studio and production house specializing in cinematic video production and brand storytelling."
+            "description": "Premier creative studio and production house specializing in cinematic video production and brand storytelling.",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "customer support",
+                "email": "contact@movionpictures.com"
+            }
         };
 
         const serviceSchema = {

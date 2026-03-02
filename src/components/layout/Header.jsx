@@ -77,7 +77,7 @@ export const Header = () => {
                   : "/assets/images/logos/logos-white.png"
               }
               alt="Movion Pictures Logo"
-              className="w-28 md:w-3xs transition-all duration-300"
+              className="w-28 md:w-3xs aspect-[3/1] object-contain transition-all duration-300"
             />
           </NavLink>
 
@@ -138,6 +138,7 @@ export const Header = () => {
                   loading="lazy"
                   decoding="async"
                   src={img.src}
+                  alt={img.alt || "Production Still"}
                   className="w-full rounded-xl object-cover grayscale hover:grayscale-0 duration-200"
                 />
               </div>

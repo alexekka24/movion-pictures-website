@@ -159,6 +159,7 @@ export const HeroVideo = () => {
             ref={videoRef}
             className="w-full h-full object-contain md:object-cover"
             src="https://res.cloudinary.com/dxwadodnh/video/upload/v1771154212/output_lyjghb.mp4"
+            poster="https://res.cloudinary.com/dxwadodnh/video/upload/v1771154212/output_lyjghb.jpg"
             autoPlay
             loop
             muted

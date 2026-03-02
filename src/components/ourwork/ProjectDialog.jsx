@@ -145,7 +145,7 @@ const ProjectSlide = ({ project }) => {
                 decoding="async"
                 src={v.thumbnail}
                 className="w-full h-auto aspect-video object-cover rounded shadow-lg"
-                alt={`Thumbnail ${idx + 1}`}
+                alt={`${project.title} Video Thumbnail ${idx + 1}`}
               />
             </button>
           ))}
