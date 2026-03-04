@@ -77,7 +77,7 @@ export const HeroVideo = () => {
             ".wipe-block",
             { yPercent: 100 },
             {
-              yPercent: 20,
+              yPercent: 0,
               stagger: 0.35,
               duration: 1.2,
               ease: "power4.inOut",
@@ -186,10 +186,59 @@ export const HeroVideo = () => {
       </div>
 
       {/* Desktop bottom text only */}
-      <div className="wipe-text absolute bottom-10 left-0 w-full h-[25vh] hidden md:flex items-center justify-center overflow-hidden z-40">
-        <p className="wipe-block sub text-5xl tracking-wide text-black">
-          Motion • Vision • Movion
-        </p>
+      <div className="wipe-text absolute bottom-10 left-0 w-full h-[25vh] hidden md:flex items-center justify-center z-40">
+        <div
+          className="wipe-block relative flex items-center gap-8 px-12 py-5 select-none"
+          style={{
+            background: "rgba(0,0,0,0.35)",
+            backdropFilter: "blur(18px)",
+            WebkitBackdropFilter: "blur(18px)",
+            borderRadius: "100px",
+            border: "1px solid rgba(255,255,255,0.12)",
+            boxShadow: "0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.08)",
+          }}
+        >
+          {/* top edge shimmer */}
+          <div
+            className="pointer-events-none absolute top-0 left-[15%] right-[15%] h-px"
+            style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)" }}
+          />
+
+          <span
+            className="text-[2.2vw] font-extralight tracking-[0.35em] uppercase text-white/90"
+            style={{ fontVariantCaps: "all-small-caps" }}
+          >
+            Motion
+          </span>
+
+          {/* divider */}
+          <span
+            className="h-6 w-px shrink-0"
+            style={{ background: "linear-gradient(to bottom, transparent, rgba(255,255,255,0.4), transparent)" }}
+          />
+
+          <span
+            className="text-[2.2vw] font-extralight tracking-[0.35em] uppercase text-white/90"
+            style={{ fontVariantCaps: "all-small-caps" }}
+          >
+            Vision
+          </span>
+
+          {/* divider */}
+          <span
+            className="h-6 w-px shrink-0"
+            style={{ background: "linear-gradient(to bottom, transparent, rgba(255,255,255,0.4), transparent)" }}
+          />
+
+          <span
+            className="text-[2.2vw] font-semibold tracking-[0.4em] uppercase text-white"
+            style={{
+              textShadow: "0 0 30px rgba(255,255,255,0.35)",
+            }}
+          >
+            Movion
+          </span>
+        </div>
       </div>
     </section>
   );

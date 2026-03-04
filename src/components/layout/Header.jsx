@@ -17,7 +17,7 @@ export const Header = () => {
   const [contactOpen, setContactOpen] = useState(false);
   const textColor = isScrolled ? "text-black" : "text-white";
   const iconColor = isScrolled ? "black" : "white";
-  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
+  const [isDesktop, setIsDesktop] = useState(() => typeof window !== "undefined" && window.innerWidth >= 1024);
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -34,13 +34,14 @@ export const Header = () => {
   }, []);
 
   useEffect(() => {
-    const heroHeight = window.innerHeight;
-
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > heroHeight - 800);
+      setIsScrolled(window.scrollY > 50);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    // Set correct state immediately on mount (fixes Safari / initial load flash)
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   // if (!isMenuOpen) return null;
