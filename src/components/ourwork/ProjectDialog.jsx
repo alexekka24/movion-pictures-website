@@ -18,7 +18,7 @@ import { InstagramEmbed } from "./InstagramEmbed";
 import { lockScroll, unlockScroll } from "../../utils/utils";
 
 export const ProjectDialog = ({ projects, open, onClose, startIndex = 0 }) => {
-
+  
   useEffect(() => {
     if (open) {
       lockScroll();
@@ -43,9 +43,9 @@ export const ProjectDialog = ({ projects, open, onClose, startIndex = 0 }) => {
       {/* Modal */}
       <motion.div
         className="fixed inset-0 z-40 flex items-center justify-center "
-        initial={{ scale: 0.96, opacity: 0, }}
+        initial={{ scale: 0.96, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        exit={{ scale: 0.96, opacity: 0, }}
+        exit={{ scale: 0.96, opacity: 0 }}
       >
         <div className="relative w-[90%] h-[90%] rounded-3xl overflow-hidden bg-black">
           {/* Close button */}
@@ -106,7 +106,10 @@ const ProjectSlide = ({ project }) => {
   return (
     <div className="flex flex-col lg:flex-row w-full h-full text-white">
       {/* Left: Video */}
-      <div className="lg:w-[70%] h-[55%] lg:h-full bg-black flex justify-center items-center overflow-hidden relative" onTouchMove={(e) => e.stopPropagation()}>
+      <div
+        className="lg:w-[70%] h-[55%] lg:h-full bg-black flex justify-center items-center overflow-hidden relative"
+        onTouchMove={(e) => e.stopPropagation()}
+      >
         {video.videoType === "youtube" && (
           <iframe
             src={`https://www.youtube.com/embed/${video.videoId}?autoplay=1&mute=1&playsinline=1&controls=0&rel=0`}
@@ -120,13 +123,25 @@ const ProjectSlide = ({ project }) => {
             <InstagramEmbed url={video.videoId} />
           </div>
         )}
+{/* <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7301465307934531584?compact=1" height="399" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe> */}
+        {video.videoType === "linkedin" && (
+          <iframe
+            src={`https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7301465307934531584?compact=1`}
+            className="w-full h-full"
+            allowFullScreen
+          ></iframe>
+        )}
       </div>
 
       {/* Right: Content */}
       <div className="lg:w-[30%] h-[45%] lg:h-full bg-black backdrop-blur-xl p-4 md:p-8 overflow-y-auto flex flex-col justify-center items-center text-center">
         <h2 className="text-xl md:text-2xl font-bold mb-1">{project.title}</h2>
-        <p className="text-gray-400 text-sm md:text-base mb-2">{project.company}</p>
-        <p className="text-gray-200 text-sm md:text-base mb-6 line-clamp-3 md:line-clamp-none leading-relaxed">{project.description}</p>
+        <p className="text-gray-400 text-sm md:text-base mb-2">
+          {project.company}
+        </p>
+        <p className="text-gray-200 text-sm md:text-base mb-6 line-clamp-3 md:line-clamp-none leading-relaxed">
+          {project.description}
+        </p>
 
         {/* <div className="space-y-3 grid grid-cols-2"> */}
         <div className="grid gap-2 md:gap-4 grid-cols-2 lg:grid-cols-2 w-full justify-items-center">
@@ -135,9 +150,10 @@ const ProjectSlide = ({ project }) => {
               key={v.videoId}
               onClick={() => setActiveVideoIndex(idx)}
               className={`w-full flex items-center justify-center p-2 rounded-lg transition-all
-                ${idx === activeVideoIndex
-                  ? "bg-white/20 ring-1 ring-white/30"
-                  : "bg-white/5 hover:bg-white/10"
+                ${
+                  idx === activeVideoIndex
+                    ? "bg-white/20 ring-1 ring-white/30"
+                    : "bg-white/5 hover:bg-white/10"
                 }`}
             >
               <img
