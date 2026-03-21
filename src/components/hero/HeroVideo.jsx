@@ -205,7 +205,7 @@ export const HeroVideo = () => {
           />
 
           <span
-            className="text-[2.2vw] font-extralight tracking-[0.35em] uppercase text-white/90"
+            className="text-[1.5vw] font-extralight tracking-[0.35em] uppercase text-white/90"
             style={{ fontVariantCaps: "all-small-caps" }}
           >
             Motion
@@ -218,7 +218,7 @@ export const HeroVideo = () => {
           />
 
           <span
-            className="text-[2.2vw] font-extralight tracking-[0.35em] uppercase text-white/90"
+            className="text-[1.5vw] font-extralight tracking-[0.35em] uppercase text-white/90"
             style={{ fontVariantCaps: "all-small-caps" }}
           >
             Vision
@@ -231,7 +231,7 @@ export const HeroVideo = () => {
           />
 
           <span
-            className="text-[2.2vw] font-semibold tracking-[0.4em] uppercase text-white"
+            className="text-[1.5vw] font-semibold tracking-[0.4em] uppercase text-white"
             style={{
               textShadow: "0 0 30px rgba(255,255,255,0.35)",
             }}
