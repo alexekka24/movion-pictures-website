@@ -18,10 +18,16 @@ export const InstagramEmbed = ({ url }) => {
   return (
     <blockquote
       ref={ref}
-      className="instagram-media w-full h-full"
+      className="instagram-media"
       data-instgrm-permalink={url}
       data-instgrm-version="14"
-      style={{ background: "#000", margin: 0 }}
+      style={{
+        background: "#000",
+        margin: "0 auto",
+        maxWidth: "400px",
+        width: "100%",
+        minWidth: "300px"
+      }}
     />
   );
 };

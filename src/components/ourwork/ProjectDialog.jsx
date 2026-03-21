@@ -119,7 +119,7 @@ const ProjectSlide = ({ project }) => {
         )}
 
         {video.videoType === "instagram" && (
-          <div className="scale-[0.85] sm:scale-100 flex items-center justify-center h-full w-full">
+          <div className="w-full h-full overflow-y-auto hide-scrollbar flex flex-col items-center justify-start py-4 lg:justify-center">
             <InstagramEmbed url={video.videoId} />
           </div>
         )}
