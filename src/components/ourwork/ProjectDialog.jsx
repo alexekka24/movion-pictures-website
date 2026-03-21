@@ -22,10 +22,18 @@ export const ProjectDialog = ({ projects, open, onClose, startIndex = 0 }) => {
   useEffect(() => {
     if (open) {
       lockScroll();
-    } else {
-      unlockScroll();
+      return () => unlockScroll();
     }
   }, [open]);
+
+  useEffect(() => {
+    if (!open) return;
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [open, onClose]);
 
   if (!open) return null;
 

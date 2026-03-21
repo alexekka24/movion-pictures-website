@@ -6,7 +6,6 @@ import { Contact } from "../Contact";
 import { RiMenu3Fill } from "react-icons/ri";
 import { IoClose } from "react-icons/io5";
 
-import { FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { NAVIGATION } from "../../../public/assets/data/NAVIGATION";
 
 const images = NAVIGATION.images;
@@ -22,9 +21,17 @@ export const Header = () => {
   useEffect(() => {
     if (isMenuOpen) {
       lockScroll();
-    } else {
-      unlockScroll();
+      return () => unlockScroll();
     }
+  }, [isMenuOpen]);
+
+  useEffect(() => {
+    if (!isMenuOpen) return;
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") setIsMenuOpen(false);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isMenuOpen]);
 
   useEffect(() => {
@@ -189,7 +196,7 @@ export const Header = () => {
             NAVIGATION.socials.map((item) => {
               const Icon = item.icon;
               return (
-                <a href={item.url} target="_blank">
+                <a key={item.url || item.name} href={item.url} target="_blank" rel="noreferrer">
                   <Button text={<Icon />} variant="simple_black" size="lg" />
                 </a>
               )

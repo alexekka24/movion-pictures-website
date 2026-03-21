@@ -30,8 +30,7 @@ export const Contact = ({ open, onClose }) => {
   useEffect(() => {
     if (open) {
       lockScroll();
-    } else {
-      unlockScroll();
+      return () => unlockScroll();
     }
   }, [open]);
 
