@@ -7,7 +7,7 @@ import { ProjectCTA } from "../components/common/ProjectCTA";
 import { HOMEPAGECONTENT } from "../../public/assets/data/pageData/HOMEPAGECONTENT";
 
 export default function Home() {
-  return (
+    return (
         <div className="min-h-screen">
             {/* Main Section */}
             <main>
@@ -15,10 +15,8 @@ export default function Home() {
                 <MarqueeComponent content={HOMEPAGECONTENT.ourClients} />
                 <WhoWeAre content={HOMEPAGECONTENT.ourWork} />
                 <ProjectsSection content={HOMEPAGECONTENT.previousProjects} className="lg:hidden" />
-                <OurProjects content={HOMEPAGECONTENT.previousProjects}  className="hidden lg:block"/>
+                <OurProjects content={HOMEPAGECONTENT.previousProjects} className="hidden lg:block" />
                 <ProjectCTA theme="light" />
-                {/* <MasonryProjects /> */}
-                {/* <ProjectMilestones /> */}
             </main>
         </div>
     );

@@ -1,7 +1,8 @@
-import { useRef, useMemo } from "react";
+import { useRef } from "react";
 import { Clock, Users, BadgeIndianRupee } from "lucide-react";
 import { ProjectCTA } from "../components/common/ProjectCTA";
 import { motion, useScroll, useTransform, useSpring, useMotionValue } from "framer-motion";
+import { PROCESS_PRICING } from "../../public/assets/data/pageData/PROCESS&PRICING.JS";
 
 const GrainFilter = () => (
   <svg className="fixed inset-0 w-full h-full pointer-events-none opacity-[0.03] z-50">
@@ -72,54 +73,6 @@ export const ProcessAndPricing = () => {
     offset: ["start start", "end end"]
   });
 
-  const processSteps = useMemo(() => [
-    {
-      step: "01",
-      title: "Discovery",
-      desc: "We start by understanding your brand, audience, and the story you want to tell.",
-    },
-    {
-      step: "02",
-      title: "Concept & Script",
-      desc: "We craft the narrative, treatment, and direction that fits your goals and tone.",
-    },
-    {
-      step: "03",
-      title: "Pre-Production",
-      desc: "We plan everything — locations, casting, shot list, schedule, and production logistics.",
-    },
-    {
-      step: "04",
-      title: "Production",
-      desc: "Shoot day(s) where we capture cinematic visuals with the right crew and equipment.",
-    },
-    {
-      step: "05",
-      title: "Post-Production",
-      desc: "Editing, sound, music, grading, motion graphics, and refinements until it feels perfect.",
-    },
-    {
-      step: "06",
-      title: "Delivery",
-      desc: "Final exports optimized for social, web, ads, or broadcast — delivered in the right formats.",
-    },
-  ], []);
-
-  const questions = {
-    cost: {
-      question: "What does it cost?",
-      answer: "Every project is a unique collaboration. We don't sell fixed products; we build bespoke cinematic experiences. Once you share your budget range, we propose the best possible treatment, ensuring every rupee is visible on screen through high production value."
-    },
-    time: {
-      question: "How long does it take?",
-      answer: "Quality demands time, but efficiency is our hallmark. Most projects follow a 3-6 week cycle. We provide a meticulous schedule upfront, covering everything from initial concept to the final color grade, so you're never in the dark."
-    },
-    handle: {
-      question: "What do we handle?",
-      answer: "We are a full-service creative house. From the first spark of an idea to the final master file, we manage it all. We assemble elite crews—directors, DPs, sound designers, and stylists—tailored specifically to your project's unique DNA.",
-    }
-  };
-
   const containerVariants = {
     hidden: { opacity: 0 },
     show: {
@@ -173,17 +126,17 @@ export const ProcessAndPricing = () => {
         >
           <motion.div variants={itemVariants} className="overflow-hidden mb-8">
             <motion.p className="text-[10px] uppercase tracking-[0.5em] font-mono text-zinc-400">
-              Technical Excellence
+              {PROCESS_PRICING.main.preTitle}
             </motion.p>
           </motion.div>
 
           <motion.h1 variants={itemVariants} className="text-6xl md:text-9xl font-semibold leading-[0.85] tracking-tighter mb-12 text-zinc-950">
-            A seamless workflow. <br />
-            <span className="text-emerald-600 italic">Pure clarity.</span>
+            {PROCESS_PRICING.main.title} <br />
+            <span className="text-emerald-600 italic">{PROCESS_PRICING.main.suffixTitle}</span>
           </motion.h1>
 
           <motion.p variants={itemVariants} className="text-xl md:text-3xl font-light text-zinc-400 max-w-3xl mx-auto leading-relaxed tracking-tight">
-            We've refined our production pipeline to be as cinematic as our final results — transparent, efficient, and uncompromising.
+            {PROCESS_PRICING.main.content}
           </motion.p>
         </motion.div>
       </section>
@@ -200,16 +153,16 @@ export const ProcessAndPricing = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-5xl md:text-7xl font-semibold tracking-tighter leading-none mb-10 text-zinc-900">
-                The <br /><span className="text-emerald-600/80 underline decoration-zinc-200 underline-offset-8">Journey.</span>
+                {PROCESS_PRICING.process.preTitle} <br /><span className="text-emerald-600/80 underline decoration-zinc-200 underline-offset-8">{PROCESS_PRICING.process.title}.</span>
               </h2>
               <p className="text-zinc-400 text-xl font-light leading-relaxed max-w-sm">
-                Every masterpiece follows an architectural path. From blueprint to final export.
+                {PROCESS_PRICING.process.content}
               </p>
             </motion.div>
           </div>
 
           <div className="lg:col-span-8 space-y-16">
-            {processSteps.map((item, idx) => (
+            {PROCESS_PRICING.process.processSteps.map((item, idx) => (
               <motion.div
                 key={item.step}
                 initial={{ opacity: 0, y: 30 }}
@@ -257,17 +210,17 @@ export const ProcessAndPricing = () => {
               whileInView={{ opacity: 1 }}
               className="text-[10px] uppercase tracking-[0.5em] font-mono text-zinc-400 mb-6"
             >
-              Commercials
+              {PROCESS_PRICING.pricing.preTitle}
             </motion.p>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               className="text-5xl md:text-8xl font-semibold tracking-tighter mb-10 text-zinc-950"
             >
-              Practical <span className="italic text-emerald-600/80">Value.</span>
+              {PROCESS_PRICING.pricing.title} <span className="italic text-emerald-600/80">{PROCESS_PRICING.pricing.suffixTitle}</span>
             </motion.h2>
             <p className="text-zinc-400 text-xl font-light max-w-2xl mx-auto tracking-tight">
-              Direct answers to the questions that drive our partnership.
+              {PROCESS_PRICING.pricing.content}
             </p>
           </div>
 
@@ -279,10 +232,10 @@ export const ProcessAndPricing = () => {
                   <BadgeIndianRupee className="w-8 h-8 text-emerald-600 group-hover:text-white transition-colors" />
                 </div>
                 <h3 className="text-3xl font-medium mb-10 tracking-tight text-zinc-900 underline decoration-zinc-100 decoration-2 underline-offset-8">
-                  {questions.cost.question}
+                  {PROCESS_PRICING.pricing.questions[0].question}
                 </h3>
                 <p className="text-zinc-500 leading-relaxed text-lg md:text-xl font-light">
-                  {questions.cost.answer}
+                  {PROCESS_PRICING.pricing.questions[0].answer}
                 </p>
               </div>
             </TiltCard>
@@ -294,10 +247,10 @@ export const ProcessAndPricing = () => {
                   <Clock className="w-8 h-8 text-yellow-600 group-hover:text-white transition-colors" />
                 </div>
                 <h3 className="text-3xl font-medium mb-10 tracking-tight text-zinc-900 underline decoration-zinc-100 decoration-2 underline-offset-8">
-                  {questions.time.question}
+                  {PROCESS_PRICING.pricing.questions[1].question}
                 </h3>
                 <p className="text-zinc-500 leading-relaxed text-lg md:text-xl font-light">
-                  {questions.time.answer}
+                  {PROCESS_PRICING.pricing.questions[1].answer}
                 </p>
               </div>
             </TiltCard>
@@ -309,10 +262,10 @@ export const ProcessAndPricing = () => {
                   <Users className="w-8 h-8 text-zinc-600 group-hover:text-white transition-colors" />
                 </div>
                 <h3 className="text-3xl font-medium mb-10 tracking-tight text-zinc-900 underline decoration-zinc-100 decoration-2 underline-offset-8">
-                  {questions.handle.question}
+                  {PROCESS_PRICING.pricing.questions[2].question}
                 </h3>
                 <p className="text-zinc-500 leading-relaxed text-lg md:text-xl font-light">
-                  {questions.handle.answer}
+                  {PROCESS_PRICING.pricing.questions[2].answer}
                 </p>
               </div>
             </TiltCard>

@@ -166,7 +166,7 @@ export const HeroVideo = () => {
             playsInline
           />
 
-          {/* 🔥 Custom Audio Toggle Button */}
+          {/* Custom Audio Toggle Button */}
           <div className="absolute bottom-6 left-6 z-[9999]">
             <button
               onClick={toggleMute}

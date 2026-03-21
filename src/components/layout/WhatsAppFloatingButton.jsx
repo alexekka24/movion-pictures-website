@@ -1,6 +1,6 @@
 import { FaWhatsapp } from "react-icons/fa";
 import Button from "../common/Button";
-import { ContactPageContent } from "../../../public/assets/data/CONTACTPAGECONTENT";
+import { ContactPageContent } from "../../../public/assets/data/pageData/CONTACTPAGECONTENT";
 
 const WHATSAPP_NUMBER = ContactPageContent.whatsapp.number;
 const MESSAGE = ContactPageContent.whatsapp.message;

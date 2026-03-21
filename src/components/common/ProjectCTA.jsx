@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import Button from "../common/Button";
-import { ContactPageContent } from "../../../public/assets/data/CONTACTPAGECONTENT";
+import { ContactPageContent } from "../../../public/assets/data/pageData/CONTACTPAGECONTENT";
 
 export const ProjectCTA = ({ theme = "dark" }) => {
   const isDark = theme === "dark";
@@ -36,10 +36,9 @@ export const ProjectCTA = ({ theme = "dark" }) => {
           className={`
             relative rounded-3xl p-12 md:p-16 text-center
             border backdrop-blur-xl shadow-2xl
-            ${
-              isDark
-                ? "bg-white/5 border-white/10"
-                : "bg-black/5 border-black/10"
+            ${isDark
+              ? "bg-white/5 border-white/10"
+              : "bg-black/5 border-black/10"
             }
           `}
         >
@@ -47,10 +46,9 @@ export const ProjectCTA = ({ theme = "dark" }) => {
           <div
             className={`
               pointer-events-none absolute inset-0 rounded-3xl
-              ${
-                isDark
-                  ? "bg-linear-to-br from-white/10 via-transparent to-transparent"
-                  : "bg-linear-to-br from-black/10 via-transparent to-transparent"
+              ${isDark
+                ? "bg-linear-to-br from-white/10 via-transparent to-transparent"
+                : "bg-linear-to-br from-black/10 via-transparent to-transparent"
               }
             `}
           />
@@ -93,10 +91,9 @@ export const ProjectCTA = ({ theme = "dark" }) => {
                 className={`
                   inline-flex items-center justify-center
                   px-10 py-4 rounded-full font-semibold
-                  ${
-                    isDark
-                      ? "bg-green-500 text-white hover:bg-green-400 shadow-green-500/20"
-                      : "bg-green-700 text-white hover:bg-green-800 shadow-green-700/30"
+                  ${isDark
+                    ? "bg-green-500 text-white hover:bg-green-400 shadow-green-500/20"
+                    : "bg-green-700 text-white hover:bg-green-800 shadow-green-700/30"
                   }
                     `}
               >
@@ -113,10 +110,9 @@ export const ProjectCTA = ({ theme = "dark" }) => {
                 className={`
                   inline-flex items-center justify-center
                   px-10 py-4 rounded-full font-semibold
-                  ${
-                    isDark
-                      ? "border-white/20 text-white hover:bg-white hover:text-black"
-                      : "border-white/20 text-black hover:bg-black hover:text-white"
+                  ${isDark
+                    ? "border-white/20 text-white hover:bg-white hover:text-black"
+                    : "border-white/20 text-black hover:bg-black hover:text-white"
                   }
                 `}
               >

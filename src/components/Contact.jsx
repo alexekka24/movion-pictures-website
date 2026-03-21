@@ -6,7 +6,7 @@ import { FaPhone } from "react-icons/fa6";
 import { lockScroll, unlockScroll } from "../utils/utils";
 import CopyButton from "./common/CopyButton";
 import Button from "./common/Button";
-import { ContactPageContent } from "../../public/assets/data/CONTACTPAGECONTENT";
+import { ContactPageContent } from "../../public/assets/data/pageData/CONTACTPAGECONTENT";
 
 const container = {
   hidden: { opacity: 0, y: 30 },
@@ -58,16 +58,17 @@ export const Contact = ({ open, onClose }) => {
           <div className="absolute -top-40 -left-40 w-125 h-125 rounded-full bg-white/10 blur-[120px]" />
           <div className="absolute -bottom-40 -right-40 w-125 h-125 rounded-full bg-yellow-400/10 blur-[140px]" />
 
-          {/* Wrapper */}
-          <div className="relative flex min-h-dvh items-center justify-center px-6 py-12">
-            {/* Close */}
-            <button
-              onClick={onClose}
-              className="absolute top-6 right-6 text-white/80 hover:text-white transition cursor-pointer"
-            >
-              <X size={28} />
-            </button>
+          {/* Close - Moved outside wrapper for better mobile/tablet positioning */}
+          <button
+            onClick={onClose}
+            className="fixed top-4 right-4 md:top-6 md:right-6 z-50 p-2 md:p-0 text-white/50 hover:text-white bg-black/20 md:bg-transparent hover:bg-black/40 md:hover:bg-transparent backdrop-blur-md md:backdrop-blur-none rounded-full md:rounded-none transition cursor-pointer"
+            aria-label="Close form"
+          >
+            <X size={24} className="md:w-7 md:h-7" />
+          </button>
 
+          {/* Wrapper */}
+          <div className="relative flex min-h-[100dvh] w-full items-center justify-center p-4 sm:p-6 md:p-12">
             {/* Card */}
             <motion.div
               variants={container}
@@ -76,11 +77,13 @@ export const Contact = ({ open, onClose }) => {
               exit="hidden"
               className="
                 relative w-full max-w-2xl
-                rounded-3xl
+                max-h-[90dvh] overflow-y-auto
+                [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]
+                rounded-2xl md:rounded-3xl
                 border border-white/15
                 bg-white/5
                 shadow-2xl
-                px-8 py-10 md:px-14 md:py-14
+                p-6 sm:p-8 md:p-12 lg:p-14
                 text-white
                 backdrop-blur-2xl
               "
@@ -95,7 +98,7 @@ export const Contact = ({ open, onClose }) => {
               {/* Headline */}
               <motion.h2
                 variants={item}
-                className="text-3xl md:text-5xl font-light text-center leading-tight"
+                className="text-3xl sm:text-4xl md:text-5xl font-light text-center leading-tight"
               >
                 {ContactPageContent.headline}
               </motion.h2>
@@ -111,26 +114,25 @@ export const Contact = ({ open, onClose }) => {
               {/* Contact info */}
               <motion.div
                 variants={item}
-                className="mt-10 space-y-3 text-lg md:text-xl text-center"
+                className="mt-8 md:mt-10 space-y-4 md:space-y-3 text-base sm:text-lg md:text-xl text-center"
               >
-                <p className="flex items-center justify-center gap-2 opacity-90">
-                  <MdEmail />
-                  <a href={`mailto: ${ContactPageContent.email.value}`}>
+                <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 opacity-90">
+                  <MdEmail className="text-xl md:text-2xl" />
+                  <a href={`mailto:${ContactPageContent.email.value}`} className="break-all">
                     <Button
                       variant="simple"
                       text={ContactPageContent.email.value}
                       size="ex_md"
                     />
                   </a>
-
                   <CopyButton
                     value={ContactPageContent.email.value}
                     label={ContactPageContent.email.label}
                   />
-                </p>
+                </div>
 
-                <p className="flex items-center justify-center gap-2 opacity-90">
-                  <FaPhone />
+                <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 opacity-90">
+                  <FaPhone className="text-lg md:text-xl" />
                   <a href={`tel:${ContactPageContent.phone.value}`}>
                     <Button
                       variant="simple"
@@ -142,22 +144,22 @@ export const Contact = ({ open, onClose }) => {
                     value={ContactPageContent.phone.value}
                     label={ContactPageContent.phone.label}
                   />
-                </p>
+                </div>
               </motion.div>
 
               {/* Services chips */}
-              <motion.div variants={item} className="mt-10">
+              <motion.div variants={item} className="mt-8 md:mt-10">
                 <p className="text-xs uppercase tracking-widest opacity-60 text-center mb-4">
                   Services
                 </p>
 
-                <div className="flex flex-wrap justify-center gap-3">
+                <div className="flex flex-wrap justify-center gap-2 md:gap-3">
                   {ContactPageContent.services.map((service) => (
                     <span
                       key={service}
                       className="
-                        px-4 py-2 rounded-full
-                        text-sm
+                        px-3 py-1.5 md:px-4 md:py-2 rounded-full
+                        text-xs md:text-sm
                         border border-white/15
                         bg-white/5
                         hover:bg-white/10
@@ -171,12 +173,12 @@ export const Contact = ({ open, onClose }) => {
               </motion.div>
 
               {/* Socials */}
-              <motion.div variants={item} className="mt-12 text-center">
+              <motion.div variants={item} className="mt-8 md:mt-12 text-center">
                 <p className="text-xs uppercase tracking-widest opacity-60 mb-4">
                   Follow our work
                 </p>
 
-                <div className="flex justify-center gap-10">
+                <div className="flex flex-wrap justify-center gap-6 md:gap-10">
                   {ContactPageContent.socials.map((social) => {
                     const Icon = social.icon;
                     return (
@@ -198,7 +200,7 @@ export const Contact = ({ open, onClose }) => {
               </motion.div>
 
               {/* WhatsApp CTA */}
-              <motion.div variants={item} className="mt-12 flex justify-center">
+              <motion.div variants={item} className="mt-8 md:mt-12 flex justify-center">
                 <a
                   href={`https://wa.me/${ContactPageContent.whatsapp.number}?text=${encodeURIComponent(
                     ContactPageContent.whatsapp.message,
@@ -206,8 +208,8 @@ export const Contact = ({ open, onClose }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="
-                    inline-flex items-center gap-3
-                    rounded-full px-8 py-4
+                    inline-flex items-center gap-2 md:gap-3
+                    rounded-full px-6 py-3 md:px-8 md:py-4
                     text-sm md:text-base
                     bg-linear-to-r from-green-500/90 to-emerald-400/90
                     text-black font-semibold
@@ -216,7 +218,7 @@ export const Contact = ({ open, onClose }) => {
                     transition duration-300
                   "
                 >
-                  <MessageCircle size={18} color="white" />
+                  <MessageCircle size={18} color="white" className="md:w-5 md:h-5" />
                   <Button
                     variant="simple"
                     text={`Chat on WhatsApp`}
@@ -230,7 +232,7 @@ export const Contact = ({ open, onClose }) => {
               {/* Footer note */}
               <motion.p
                 variants={item}
-                className="text-xs opacity-50 text-center mt-10"
+                className="text-xs opacity-50 text-center mt-8 md:mt-10 px-4"
               >
                 Prefer email? Send us a brief and we’ll reply within 24 hours.
               </motion.p>

@@ -2,10 +2,10 @@ import { FaInstagram, FaYoutube, FaLinkedin } from "react-icons/fa";
 
 export const NAVIGATION = {
   images: [
-    { id: 1, src: "/assets/images/image1.jpg" },
-    { id: 2, src: "/assets/images/image2.jpg" },
-    { id: 3, src: "/assets/images/image3.jpg" },
-    { id: 4, src: "/assets/images/image4.jpg" },
+    { id: 1, src: "/assets/images/thumbnail/beautyAndProduct/poloVista.webp" },
+    { id: 2, src: "/assets/images/thumbnail/beautyAndProduct/mercedes.webp" },
+    { id: 3, src: "/assets/images/thumbnail/beautyAndProduct/bellaVitaRose.webp" },
+    { id: 4, src: "/assets/images/thumbnail/narrative/yellowDiary.webp" },
   ],
   navItems: [
     {
