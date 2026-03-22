@@ -2,33 +2,6 @@ import { useRef } from "react";
 import { motion } from "framer-motion";
 import Marquee from "react-fast-marquee";
 
-const SERVICES = [
-  {
-    preTitle: "What we do",
-    title: "Cinematic Brand Films",
-    desc: "High-energy reels, commercial TVC - content that makes people stop scrolling.",
-  },
-  {
-    preTitle: "How we do it",
-    title: "Design & Strategy",
-    desc: "We obsess over details so you don't have to. We don't just capture footage - we capture the vibe.",
-  },
-  {
-    preTitle: "Start here",
-    title: "End-to-End Production",
-    desc: "Making cool things with cool people. From first brief to final master file.",
-  }
-];
-
-const MARQUEE_TEXT = [
-  "Cinematic Brand Films",
-  "Commercials",
-  "Visual Storytelling",
-  "Post Production",
-  "Creative Strategy",
-  "Motion Design"
-];
-
 export const WhoWeAre = ({ content }) => {
   const sectionRef = useRef(null);
 
@@ -68,7 +41,7 @@ export const WhoWeAre = ({ content }) => {
       {/* SERVICE GRID */}
       <div className="max-w-[100rem] mx-auto px-6 border-t border-zinc-200">
         <div className="grid grid-cols-1 md:grid-cols-3">
-          {SERVICES.map((service, idx) => (
+          {content.services.map((service, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 20 }}
@@ -98,7 +71,7 @@ export const WhoWeAre = ({ content }) => {
           gradient={false}
           speed={40}
         >
-          {MARQUEE_TEXT.map((text, index) => (
+          {content.marquee_text.map((text, index) => (
             <div
               key={index}
               className="flex items-center bg-zinc-100 h-20"
