@@ -38,7 +38,7 @@ export const ProcessAndPricing = () => {
       {/* THE JOURNEY SECTION */}
       <section className="py-24 w-screen">
         <div className="mx-auto px-6">
-          <div className="flex justify-between items-end border-b border-zinc-100 pb-8 mb-12">
+          <div className="flex justify-between items-end border-b border-zinc-200 pb-8 mb-12">
             <div>
               <p className="text-sm uppercase tracking-[0.4em] text-zinc-400 font-medium mb-4">STAGES</p>
               <h2 className="text-6xl font-bold tracking-tighter uppercase">{PROCESS_PRICING.process.title}</h2>
@@ -60,17 +60,17 @@ export const ProcessAndPricing = () => {
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true, margin: "-100px" }}
-                  className={`grid grid-cols-1 md:grid-cols-2 border-2 border-zinc-300 min-h-[400px] rounded-3xl ${step.color}`}
+                  className={`grid grid-cols-1 md:grid-cols-2 min-h-[400px] rounded-3xl`}
                 >
                   {/* Number Section */}
-                  <div className={`flex items-center justify-center p-12 order-1 ${isEven ? 'md:order-2 border border-zinc-300' : 'md:order-1'} ${isDark ? 'md:border-zinc-800' : ''}`}>
+                  <div className={`flex items-center justify-center p-12 order-1 rounded-3xl border border-zinc-300 ${step.color} ${isEven ? 'md:order-2' : 'md:order-1'} ${isDark ? 'md:border-zinc-800' : ''}`}>
                     <span className={`text-md md:text-[15rem] font-bold tracking-tighter leading-none ${isDark ? 'text-zinc-900/30' : 'text-zinc-600'}`}>
                       {step.step}
                     </span>
                   </div>
 
                   {/* Content Section */}
-                  <div className={`flex flex-col justify-center p-12 md:p-24 order-2 ${isEven ? 'md:order-1' : 'md:order-2 border border-zinc-300'} ${isDark ? 'md:border-zinc-800' : ''}`}>
+                  <div className={`flex flex-col justify-center p-12 md:p-24 order-2 border border-zinc-300 rounded-3xl ${step.color} ${isEven ? 'md:order-1' : 'md:order-2 '} ${isDark ? 'md:border-zinc-800' : ''}`}>
                     <p className={`text-md uppercase tracking-[0.3em] font-medium mb-6 ${step.secondaryTextColor}`}>
                       {step.stage}
                     </p>
@@ -106,7 +106,7 @@ export const ProcessAndPricing = () => {
             PRACTICAL VALUE
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 border-t border-zinc-100">
+          <div className="grid grid-cols-1 md:grid-cols-3">
             {PROCESS_PRICING.pricing.questions.map((item, idx) => (
               <motion.div
                 key={idx}
@@ -114,19 +114,19 @@ export const ProcessAndPricing = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className={`p-10 md:p-14 border-l border-zinc-300 rounded-3xl last:border-r ${item.highlight ? 'bg-zinc-950 text-white border-l-transparent' : 'bg-zinc-50/30'}`}
+                className={`p-10 md:p-14 border border-zinc-300 rounded-3xl last:border-r ${item.backgroundColor}`}
               >
-                <p className={`text-sm uppercase tracking-[0.3em] font-medium mb-10 text-zinc-400`}>
+                <p className={`text-sm uppercase tracking-[0.3em] font-medium mb-10 ${item.secondaryTextColor}`}>
                   {item.label}
                 </p>
-                <h3 className="text-3xl md:text-4xl font-bold tracking-tight mb-8 leading-tight">
+                <h3 className={`text-3xl md:text-4xl font-bold tracking-tight mb-8 leading-tight ${item.primaryTextColor}`}>
                   {item.question}
                 </h3>
-                <p className={`text-lg leading-relaxed font-light ${item.highlight ? 'text-zinc-400' : 'text-zinc-500'}`}>
+                <p className={`text-lg leading-relaxed font-light ${item.secondaryTextColor}`}>
                   {item.answer}
                 </p>
 
-                {!item.highlight && <div className="mt-12 w-px h-32 bg-zinc-950" />}
+                {/* <div className={`mt-12 w-px h-32 bg-zinc-600`} /> */}
               </motion.div>
             ))}
           </div>

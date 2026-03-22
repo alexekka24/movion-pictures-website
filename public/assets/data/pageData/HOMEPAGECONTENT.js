@@ -27,12 +27,14 @@ export const HOMEPAGECONTENT = {
         description: "Making cool things with cool people. Whether it's a brand film, ad campaign, digital content, or high-energy event film, we obsess over the details, so you don't have to. We don't just capture footage - we capture the vibe.",
 
         marquee_text: [
-            "Cinematic Brand Films",
+            "Digital Content",
             "Commercials",
-            "Visual Storytelling",
-            "Post Production",
+            "Brand Films",
             "Creative Strategy",
-            "Motion Design"
+            "Micro Drama",
+            "Event Films",
+            "Music Videos",
+            "Post Production"
         ],
     },
     previousProjects: {

@@ -176,22 +176,24 @@ export const Header = () => {
             }
 
             return (
-              <NavLink
-                key={item.name}
-                to={item.href}
-                className="text-black hover:text-black/60 transition-colors flex"
-              >
-                <Button
-                  variant="simple_black"
-                  size="ex_lg"
-                  text={item.name.toUpperCase()}
-                />
-              </NavLink>
+              <>
+                <NavLink
+                  key={item.name}
+                  to={item.href}
+                  className="text-black hover:text-black/60 transition-colors flex"
+                >
+                  <Button
+                    variant="simple_black"
+                    size="ex_lg"
+                    text={item.name.toUpperCase()}
+                  />
+                </NavLink>
+              </>
             );
           })}
         </div>
         {/* ICONS */}
-        <div className="text-black absolute flex gap-10 bottom-20 lg:bottom-10">
+        <div className="text-black absolute flex gap-10 bottom-40 md:bottom-23 md:right-100">
           {
             NAVIGATION.socials.map((item) => {
               const Icon = item.icon;
