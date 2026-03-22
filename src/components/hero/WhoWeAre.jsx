@@ -68,15 +68,17 @@ export const WhoWeAre = ({ content }) => {
       <div className="pb-12 opacity-[0.9] select-none pointer-events-none ">
         <Marquee
           direction="left"
-          gradient={false}
-          speed={40}
+          gradient={true}
+          gradientWidth={100}
+          speed={100}
+          gradientColor="white"
         >
           {content.marquee_text.map((text, index) => (
             <div
               key={index}
-              className="flex items-center bg-zinc-100 h-20"
+              className="flex items-center bg-zinc-200 h-20"
             >
-              <span className="md:text-[2rem] font-semibold tracking-[0.1em] uppercase mx-12 text-zinc-300">
+              <span className="md:text-[2rem] font-semibold tracking-[0.1em] uppercase mx-12 text-zinc-400">
                 {text}
               </span>
               {/* <span className="text-4xl">/</span> */}
