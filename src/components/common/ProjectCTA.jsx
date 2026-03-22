@@ -19,13 +19,13 @@ export const ProjectCTA = ({ theme = "dark" }) => {
         <div
           className={`
             absolute -top-32 -left-32 w-125 h-125 rounded-full blur-3xl
-            ${isDark ? "bg-yellow-400/10" : "bg-green-500/10"}
+            ${isDark ? "bg-black/10" : "bg-white/10"}
           `}
         />
         <div
           className={`
             absolute -bottom-32 -right-32 w-125 h-125 rounded-full blur-3xl
-            ${isDark ? "bg-blue-300/10" : "bg-yellow-400/10"}
+            ${isDark ? "bg-black/10" : "bg-white/10"}
           `}
         />
       </div>
@@ -57,7 +57,7 @@ export const ProjectCTA = ({ theme = "dark" }) => {
             <p
               className={`
                 text-sm uppercase tracking-[0.3em] font-semibold mb-4
-                ${isDark ? "text-green-400" : "text-green-700"}
+                ${isDark ? "text-white/40" : "text-black/40"}
               `}
             >
               Ready when you are
@@ -65,10 +65,9 @@ export const ProjectCTA = ({ theme = "dark" }) => {
 
             <h2 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
               Let’s build something{" "}
-              <span className={isDark ? "text-green-400" : "text-green-700"}>
+              <span className={isDark ? "text-white/40" : "text-black/30"}>
                 meaningful
               </span>
-              .
             </h2>
 
             <p

@@ -131,13 +131,11 @@ const ProjectSlide = ({ project }) => {
             <InstagramEmbed url={video.videoId} />
           </div>
         )}
-        {/* <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7301465307934531584?compact=1" height="399" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe> */}
         {video.videoType === "linkedin" && (
           <iframe
-            src={`https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7301465307934531584?compact=1`}
-            className="w-full h-full"
-            allowFullScreen
-          ></iframe>
+            src={`https://www.linkedin.com/embed/feed/update/${video.videoId}?collapsed=1`}
+            className="w-full h-full overflow-y-auto hide-scrollbar flex flex-col items-center justify-start py-4 lg:justify-center"
+          />
         )}
       </div>
 

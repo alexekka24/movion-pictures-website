@@ -14,7 +14,7 @@ export const MarqueeComponent = ({ content }) => {
           {content.title}
         </h1>
 
-        <p className="mt-4 text-base md:text-lg text-gray-600">
+        <p className="w-[90%] mt-4 text-base md:text-2xl text-gray-600 flex justify-center">
           {content.description}
         </p>
       </div>
@@ -30,7 +30,7 @@ export const MarqueeComponent = ({ content }) => {
         {CLIENTS.map((logo, index) => (
           <div
             key={index}
-            className="mx-10 md:mx-18 flex items-center justify-center w-32 h-50 md:w-80 md:h-60 shrink-0"
+            className="flex items-center justify-center w-32 h-50 md:w-80 md:h-60 shrink-0"
           >
             <img
               loading="lazy"

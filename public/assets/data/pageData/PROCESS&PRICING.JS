@@ -14,33 +14,61 @@ export const PROCESS_PRICING = {
         processSteps: [
             {
                 step: "01",
+                stage: "STAGE ONE",
                 title: "Discovery",
-                desc: "We start by understanding your brand, audience, and the story you want to tell.",
+                desc: "We start by understanding your brand, audience, and the story you want to tell. Deep research before a single frame is planned.",
+                tags: ["Brand Audit", "Research", "Goal"],
+                color: "bg-black/0",
+                primaryTextColor: "text-black",
+                secondaryTextColor: "text-zinc-400",
             },
             {
                 step: "02",
+                stage: "STAGE TWO",
                 title: "Concept & Script",
-                desc: "We craft the narrative, treatment, and direction that fits your goals and tone.",
+                desc: "Narrative, treatment, and creative direction crafted to fit your goals and tone perfectly. Every frame planned before we shoot one.",
+                tags: ["Script", "Visuals", "Moodboard"],
+                color: "bg-black/20",
+                primaryTextColor: "text-black",
+                secondaryTextColor: "text-zinc-500",
             },
             {
                 step: "03",
+                stage: "STAGE THREE",
                 title: "Pre-Production",
-                desc: "We plan everything — locations, casting, shot list, schedule, and production logistics.",
+                desc: "Locations, casting, shot lists and logistics — all handled so shoot day runs with military precision.",
+                tags: ["Casting", "Launch Prep", "Shot List"],
+                color: "bg-black/40",
+                primaryTextColor: "text-black/70",
+                secondaryTextColor: "text-zinc-700",
+
             },
             {
                 step: "04",
+                stage: "STAGE FOUR • THE MAIN EVENT",
                 title: "Production",
-                desc: "Shoot day(s) where we capture cinematic visuals with the right crew and equipment.",
+                desc: "Shoot days. This is where everything comes together — cinematic visuals captured with the right crew, cameras, and lighting.",
+                tags: ["Crew", "Equipment", "Lighting"],
+                color: "bg-black/60 text-white",
+
+
             },
             {
                 step: "05",
+                stage: "STAGE FIVE",
                 title: "Post-Production",
-                desc: "Editing, sound, music, grading, motion graphics, and refinements until it feels perfect.",
+                desc: "Edit, sound, music, colour grading, motion graphics — refined until every frame feels exactly right.",
+                tags: ["Edit", "Color Grade", "Sound"],
+                color: "bg-black/80 text-white"
+
             },
             {
                 step: "06",
+                stage: "STAGE SIX • FINAL",
                 title: "Delivery",
-                desc: "Final exports optimized for social, web, ads, or broadcast — delivered in the right formats.",
+                desc: "Final exports optimized for social, web, ads, or broadcast — right formats, right specs, on time.",
+                tags: ["Social", "Broadcast", "Web"],
+                color: "bg-black text-white",
             },
         ]
     },
@@ -51,16 +79,20 @@ export const PROCESS_PRICING = {
         content: "Direct answers to the questions that drive our partnership.",
         questions: [
             {
+                label: "PRICING",
                 question: "What does it cost?",
-                answer: "Every project is a unique collaboration. We don't sell fixed products; we build bespoke cinematic experiences. Once you share your budget range, we propose the best possible treatment, ensuring every rupee is visible on screen through high production value."
+                answer: "Every project is unique. Detailed proposals built around your brief and budget. Best possible treatment at every level."
             },
             {
+                label: "TIMELINE",
                 question: "How long does it take?",
-                answer: "Quality demands time, but efficiency is our hallmark. Most projects follow a 3-6 week cycle. We provide a meticulous schedule upfront, covering everything from initial concept to the final color grade, so you're never in the dark."
+                answer: "Most projects follow a 3–6 week cycle. We move fast without cutting corners — efficiency is part of the craft."
             },
             {
+                label: "SCOPE",
                 question: "What do we handle?",
-                answer: "We are a full-service creative house. From the first spark of an idea to the final master file, we manage it all. We assemble elite crews—directors, DPs, sound designers, and stylists—tailored specifically to your project's unique DNA.",
+                answer: "Everything. One contact. Zero chaos. From first brief to final file, we handle it all.",
+                highlight: true
             }
         ]
     }
