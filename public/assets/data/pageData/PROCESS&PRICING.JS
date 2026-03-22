@@ -49,8 +49,9 @@ export const PROCESS_PRICING = {
                 title: "Production",
                 desc: "Shoot days. This is where everything comes together — cinematic visuals captured with the right crew, cameras, and lighting.",
                 tags: ["Crew", "Equipment", "Lighting"],
-                color: "bg-black/60 text-white",
-
+                color: "bg-black/60",
+                primaryTextColor: "text-white",
+                secondaryTextColor: "text-zinc-400",
 
             },
             {
@@ -59,8 +60,9 @@ export const PROCESS_PRICING = {
                 title: "Post-Production",
                 desc: "Edit, sound, music, colour grading, motion graphics — refined until every frame feels exactly right.",
                 tags: ["Edit", "Color Grade", "Sound"],
-                color: "bg-black/80 text-white"
-
+                color: "bg-black/80",
+                primaryTextColor: "text-white",
+                secondaryTextColor: "text-white/40",
             },
             {
                 step: "06",
@@ -68,7 +70,9 @@ export const PROCESS_PRICING = {
                 title: "Delivery",
                 desc: "Final exports optimized for social, web, ads, or broadcast — right formats, right specs, on time.",
                 tags: ["Social", "Broadcast", "Web"],
-                color: "bg-black text-white",
+                color: "bg-black",
+                primaryTextColor: "text-white",
+                secondaryTextColor: "text-white/70",
             },
         ]
     },

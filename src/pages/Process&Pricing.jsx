@@ -74,7 +74,7 @@ export const ProcessAndPricing = () => {
                     <p className={`text-md uppercase tracking-[0.3em] font-medium mb-6 ${step.secondaryTextColor}`}>
                       {step.stage}
                     </p>
-                    <h3 className="text-4xl md:text-5xl font-bold tracking-tight mb-8 uppercase">
+                    <h3 className={`text-4xl md:text-5xl font-bold tracking-tight mb-8 uppercase ${step.primaryTextColor}`}>
                       {step.title}
                     </h3>
                     <p className={`text-xl font-light leading-relaxed mb-12 max-w-2xl mx-auto ${step.secondaryTextColor}`}>
