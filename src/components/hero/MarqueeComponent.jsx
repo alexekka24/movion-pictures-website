@@ -14,7 +14,7 @@ export const MarqueeComponent = ({ content }) => {
           {content.title}
         </h1>
 
-        <p className="w-[90%] mt-4 text-base md:text-2xl text-gray-600 flex justify-center">
+        <p className="w-[90%] mx-auto mt-4 text-base md:text-2xl text-gray-600 flex justify-center">
           {content.description}
         </p>
       </div>

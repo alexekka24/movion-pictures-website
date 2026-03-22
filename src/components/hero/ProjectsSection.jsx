@@ -20,6 +20,20 @@ export const ProjectsSection = ({ className, content }) => {
 
   return (
     <div className={cn("p-4 md:p-10", className)}>
+      <h1
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
+        className="
+          text-5xl md:text-6xl lg:text-7xl
+          font-semibold tracking-tight leading-[1.05]
+          bg-linear-to-b from-black to-black/60
+          bg-clip-text text-transparent
+          mb-10
+        "
+      >
+        {content.title}
+      </h1>
       <div className="columns-2 sm:columns-3 lg:columns-4 gap-3 space-y-3">
         {masonryProjects.map((project, index) => {
           // Determine a CSS aspect ratio based on project properties to give it a Pinterest masonry feel
