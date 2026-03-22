@@ -196,27 +196,6 @@ export const SELECTEDPROJECTS = [
       },
     ],
   },
-  // {
-  //   id: 9,
-  //   title: "The Good, The Bad & The Ungli",
-  //   subtitle: "Short Narrative Film",
-  //   company: "ABC Brand",
-  //   category: "NARRATIVE",
-  //   thumbnail:
-  //     "public/assets/images/thumbnail/selectedHomeProjects/GoodBadUngli.webp",
-  //   description:
-  //     "A stylized narrative exploring children’s behavior with humor and edge. Strong character arcs and punchy storytelling define the film.",
-  //   videos: [
-  //     {
-  //       id: "video1",
-  //       videoType: "youtube",
-  //       videoId: "abcd1234",
-  //       label: "",
-  //       thumbnail:
-  //         "public/assets/images/thumbnail/narrative/theGoodTheBadTheUngli.webp",
-  //     },
-  //   ],
-  // },
   {
     id: "9",
     title: "The Good, The Bad & The Ungli",
