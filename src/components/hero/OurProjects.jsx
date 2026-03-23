@@ -80,7 +80,7 @@ export const OurProjects = ({ className, content }) => {
                   {project.title}
                 </h3>
                 <p className="text-sm opacity-90 truncate drop-shadow-md">
-                  {project.company || "Work"}
+                  {project.subtitle || "Work"}
                 </p>
               </div>
             </BentoItem>

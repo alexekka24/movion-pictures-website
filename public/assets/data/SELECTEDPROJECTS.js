@@ -2,7 +2,7 @@ export const SELECTEDPROJECTS = [
   {
     id: 1,
     title: "JM Financial – JM Pro App (User Journey Film)",
-    subtitle: "Mobile Application Advertisement Film",
+    subtitle: "Ad Film",
     company: "JM Financial",
     thumbnail: "/assets/images/thumbnail/selectedHomeProjects/JMFinancialTravelAd.webp",
     description: "A sharp, insight-led film communicating confidence, control, and intelligent investing. Designed to appeal to modern traders through clarity and strong character-driven storytelling.",
@@ -13,7 +13,7 @@ export const SELECTEDPROJECTS = [
         videoType: "youtube",
         videoId: "Ed9c1dvFtYk",
         label: "JM Pro Application Advertisement (RAJ)",
-        thumbnail: "/assets/images/thumbnail/selectedHomeProjects/JMFinancialTravelAd.webp",
+        thumbnail: "/assets/images/thumbnail/adFilms/JMProUserJourney.webp",
       },
     ],
   },
@@ -31,8 +31,7 @@ export const SELECTEDPROJECTS = [
         id: "video1",
         videoType: "youtube",
         videoId: "LqsMmzbTq6E",
-        label: "",
-        thumbnail: "/assets/images/thumbnail/selectedHomeProjects/Dot&Key.webp",
+        thumbnail: "/assets/images/thumbnail/beautyAndProduct/dotAndKeyFacewash.webp",
       },
     ],
   },
@@ -42,46 +41,33 @@ export const SELECTEDPROJECTS = [
     subtitle: "Product Film",
     company: "Dot & Key",
     category: "BEAUTY & LIFESTYLE",
-    thumbnail:
-      "/assets/images/thumbnail/selectedHomeProjects/Dot&KeyMoisturizer.webp",
+    thumbnail: "/assets/images/thumbnail/selectedHomeProjects/Dot&KeyMoisturizer.webp",
     videoId: "abcd1234",
-    description:
-      "A clean, vibrant product film focused on texture, application, and benefits. Designed to communicate hydration, freshness, and everyday usability through crisp visuals and smooth transitions.",
+    description: "A clean, vibrant product film focused on texture, application, and benefits. Designed to communicate hydration, freshness, and everyday usability through crisp visuals and smooth transitions.",
     videos: [
       {
         id: "video1",
         videoType: "youtube",
         videoId: "6xPvkrlzEno",
-        label: "",
-        thumbnail:
-          "/assets/images/thumbnail/beautyAndProduct/dotAndKeyMoisturizer.webp",
+        thumbnail: "/assets/images/thumbnail/beautyAndProduct/dotAndKeyMoisturizer.webp",
       },
     ],
   },
   {
     id: 4,
-    title: "AT Villas Campaign",
-    subtitle: "Luxury Villa Brand Films",
+    title: "AT Villas: Reverie",
+    subtitle: "Luxury Villa Brand Film",
     company: "AT Villas",
     category: "BEAUTY & LIFESTYLE",
     thumbnail: "/assets/images/thumbnail/selectedHomeProjects/ATVillas.webp",
-    description:
-      "A lifestyle-led visual narrative showcasing luxury, comfort, and escape. Crafted to position AT Villas as a premium holiday destination through warm, experiential storytelling.",
+    description: "A lifestyle-led visual narrative showcasing luxury, comfort, and escape. Crafted to position AT Villas as a premium holiday destination through warm, experiential storytelling.",
     layout: "tall",
     videos: [
       {
         id: "video1",
         videoType: "youtube",
-        videoId: "abcd1234",
-        label: "",
-        thumbnail: "/assets/images/who-we-are/image1.webp",
-      },
-      {
-        id: "video1",
-        videoType: "youtube",
-        videoId: "abcd1234",
-        label: "",
-        thumbnail: "/assets/images/who-we-are/image1.webp",
+        videoId: "sc4tNWm_20Y",
+        thumbnail: "/assets/images/thumbnail/beautyAndProduct/villaReverie.webp",
       },
     ],
   },
@@ -108,37 +94,35 @@ export const SELECTEDPROJECTS = [
   {
     id: 6,
     title: "Turtle & Snail – Skincare Campaign",
-    subtitle: "Series of 4 Digital Commercials",
+    subtitle: "Ad Campaign",
     company: "Turtle & Snail",
     category: "BEAUTY & LIFESTYLE",
-    thumbnail:
-      "/assets/images/thumbnail/selectedHomeProjects/Turtle&SnailSunscreen.webp",
-    description:
-      "A cohesive skincare campaign designed as a four-part digital film series. Each film highlights a specific product combination while maintaining a unified visual language, soft textures, and routine-driven storytelling—built for seamless social consumption and strong grid aesthetics.",
+    thumbnail: "/assets/images/thumbnail/selectedHomeProjects/Turtle&SnailSunscreen.webp",
+    description: "A cohesive skincare campaign designed as a four-part digital film series. Each film highlights a specific product combination while maintaining a unified visual language, soft textures, and routine-driven storytelling—built for seamless social consumption and strong grid aesthetics.",
     videos: [
       {
         id: "video1",
         videoType: "youtube",
         videoId: "uuJQn74BD2A",
-        label: "Campaign 1",
-        thumbnail:
-          "/assets/images/thumbnail/beautyAndProduct/squareAspectRatio/turtleAndSnailFaceWashAndLotion.webp",
+        thumbnail: "/assets/images/thumbnail/beautyAndProduct/campaign-Turtle&Snail/1.webp",
       },
       {
         id: "video2",
         videoType: "youtube",
-        videoId: "OVKlG1_JUuU",
-        label: "Campaign 2",
-        thumbnail:
-          "/assets/images/thumbnail/beautyAndProduct/squareAspectRatio/turtleAndSnailMuskmelonLotion.webp",
+        videoId: "PoNpTbkZbnI",
+        thumbnail: "/assets/images/thumbnail/beautyAndProduct/campaign-Turtle&Snail/turtleAndSnailFaceWashAndLotion.webp",
       },
       {
         id: "video3",
+        videoType: "instagram",
+        videoId: "https://www.instagram.com/p/DCIxY5WN03Q/",
+        thumbnail: "/assets/images/thumbnail/beautyAndProduct/campaign-Turtle&Snail/turtleAndSnailSunscreenAndLipBalm.webp",
+      },
+      {
+        id: "video4",
         videoType: "youtube",
         videoId: "abcd1234",
-        label: "Campaign 3",
-        thumbnail:
-          "/assets/images/thumbnail/beautyAndProduct/squareAspectRatio/turtleAndSnailSunscreenAndLipBalm.webp",
+        thumbnail: "/assets/images/thumbnail/beautyAndProduct/campaign-Turtle&Snail/turtleAndSnailMuskmelonLotion.webp",
       },
     ],
   },
@@ -148,15 +132,12 @@ export const SELECTEDPROJECTS = [
     company: "Corporate Film",
     category: "CORPORATE & INNOVATION",
     thumbnail: "/assets/images/thumbnail/selectedHomeProjects/Sarla.webp",
-    videoId: "abcd1234",
-    description:
-      "A future-forward corporate film showcasing innovation, vision, and technological ambition within the aviation ecosystem.",
+    description: "A future-forward corporate film showcasing innovation, vision, and technological ambition within the aviation ecosystem.",
     videos: [
       {
         id: "video1",
         videoType: "youtube",
-        videoId: "abcd1234",
-        label: "",
+        videoId: "Cp053IEi6eA",
         thumbnail: "/assets/images/thumbnail/corporate/sarla.webp",
       },
     ],
@@ -164,35 +145,19 @@ export const SELECTEDPROJECTS = [
   {
     id: 8,
     title: "Campus Fund: AWS Grand Challenge",
-    subtitle: "Event Film ",
-    company: "ABC Brand",
+    subtitle: "Corporate Film ",
+    company: "",
     category: "CORPORATE & INNOVATION",
     thumbnail: "/assets/images/thumbnail/selectedHomeProjects/UAi.webp",
     videoUrl: "https://www.instagram.com/reel/xyz/",
-    description:
-      "High-energy event coverage capturing innovation, competition, and collaboration. Designed for digital storytelling and social amplification..",
+    description: "High-energy event coverage capturing innovation, competition, and collaboration. Designed for digital storytelling and social amplification..",
     layout: "tall",
     videos: [
       {
         id: "video1",
-        videoType: "youtube",
-        videoId: "abcd1234",
-        label: "",
-        thumbnail: "/assets/images/who-we-are/image1.webp",
-      },
-      {
-        id: "video1",
-        videoType: "youtube",
-        videoId: "abcd1234",
-        label: "",
-        thumbnail: "/assets/images/who-we-are/image1.webp",
-      },
-      {
-        id: "video1",
-        videoType: "youtube",
-        videoId: "abcd1234",
-        label: "",
-        thumbnail: "/assets/images/who-we-are/image1.webp",
+        videoType: "instagram",
+        videoId: "https://www.instagram.com/p/DD7AwQwKIZ3/",
+        thumbnail: "/assets/images/thumbnail/corporate/campusFund.webp",
       },
     ],
   },
@@ -223,15 +188,13 @@ export const SELECTEDPROJECTS = [
     company: "Polo Vista",
     category: "BEAUTY & LIFESTYLE",
     thumbnail: "/assets/images/thumbnail/selectedHomeProjects/PoloVista.webp",
-    description:
-      "A cinematic architectural walkthrough of Polo Vista, a villa community in Pune owned by the Indian Army. The film highlights spatial design, form, and lifestyle through refined composition, natural light, and fluid camera movement, bringing the character of the space to life.",
+    description: "A cinematic architectural walkthrough of Polo Vista, a villa community in Pune owned by the Indian Army. The film highlights spatial design, form, and lifestyle through refined composition, natural light, and fluid camera movement, bringing the character of the space to life.",
     layout: "hero",
     videos: [
       {
         id: "video1",
         videoType: "youtube",
-        videoId: "abcd1234",
-        label: "",
+        videoId: "9fdIEGG5WDE",
         thumbnail: "/assets/images/thumbnail/beautyAndProduct/poloVista.webp",
       },
     ],

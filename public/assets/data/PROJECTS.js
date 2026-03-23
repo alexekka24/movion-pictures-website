@@ -469,7 +469,7 @@ export const PROJECTS = [
     id: "CORP-4",
     title: "Campus Fund: AWS Grand Challenge",
     subtitle: "Event Film ",
-    company: "ABC Brand",
+    company: "",
     category: "CORPORATE & INNOVATION",
     thumbnail: "/assets/images/thumbnail/corporate/campusFund.webp",
     videoType: "instagram",
