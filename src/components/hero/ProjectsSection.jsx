@@ -107,7 +107,7 @@ export const ProjectsSection = ({ className, content }) => {
                     {project.title}
                   </h3>
                   <p className="text-xs opacity-90 truncate drop-shadow-md">
-                    {project.company || "Work"}
+                    {project.subtitle || "Work"}
                   </p>
                 </div>
               </div>

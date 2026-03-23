@@ -131,6 +131,7 @@ export const SELECTEDPROJECTS = [
     title: "Sarla Aviation",
     company: "Corporate Film",
     category: "CORPORATE & INNOVATION",
+    subtitle: "Corporate Film",
     thumbnail: "/assets/images/thumbnail/selectedHomeProjects/Sarla.webp",
     description: "A future-forward corporate film showcasing innovation, vision, and technological ambition within the aviation ecosystem.",
     videos: [
