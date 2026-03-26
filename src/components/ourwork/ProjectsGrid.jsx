@@ -27,10 +27,10 @@ export const ProjectsGrid = ({ projects, onSelect, activeFilter }) => {
 
       if (project.priority) {
         spanClass = BIG_SPAN;
-        console.log(project.title, "PRIORITY");
+        // console.log(project.title, "PRIORITY");
       }
       else if (project.orientation === "portrait") {
-        console.log(project.title, project.orientation);
+        // console.log(project.title, project.orientation);
         spanClass = TALL_SPAN;
       }
 

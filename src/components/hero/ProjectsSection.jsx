@@ -2,12 +2,21 @@ import { useState } from "react";
 import { cn } from "../../utils/utils";
 import { SELECTEDPROJECTS } from "../../../public/assets/data/SELECTEDPROJECTS";
 import { ProjectDialog } from "../ourwork/ProjectDialog";
+import { motion } from "framer-motion";
 
-const masonryProjects = SELECTEDPROJECTS.slice(0, 10).map((project, index) => {
-  const ratios = ["square", "portrait", "landscape", "square", "square", "square", "square", "square", "square", "square"];
-  // Set a ratio based on index for the masonry effect mimicking the previous mock data
-  return { ...project, ratio: ratios[index] || "square" };
-});
+const masonryProjects = [
+  SELECTEDPROJECTS.find(p => Number(p.id) === 2),  // Dot & Key Facewash
+  SELECTEDPROJECTS.find(p => Number(p.id) === 3),  // Dot & Key Moisturizer
+  SELECTEDPROJECTS.find(p => Number(p.id) === 1),  // JM Financial
+  SELECTEDPROJECTS.find(p => Number(p.id) === 5),  // AQDA
+  SELECTEDPROJECTS.find(p => Number(p.id) === 4),  // AT Villas
+  SELECTEDPROJECTS.find(p => Number(p.id) === 7),  // Sarla Aviation
+  SELECTEDPROJECTS.find(p => Number(p.id) === 6),  // Turtle & Snail
+  SELECTEDPROJECTS.find(p => Number(p.id) === 8),  // AI University (Campus Fund)
+  SELECTEDPROJECTS.find(p => Number(p.id) === 9),  // Good Bad Ungli
+  SELECTEDPROJECTS.find(p => Number(p.id) === 10), // Polo Vista
+  SELECTEDPROJECTS.find(p => Number(p.id) === 11), // Upcoming
+].filter(Boolean);
 
 export const ProjectsSection = ({ className, content }) => {
   const [open, setOpen] = useState(false);
@@ -20,7 +29,7 @@ export const ProjectsSection = ({ className, content }) => {
 
   return (
     <div className={cn("p-4 md:p-10", className)}>
-      <h1
+      <motion.h1
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
@@ -33,48 +42,77 @@ export const ProjectsSection = ({ className, content }) => {
         "
       >
         {content.title}
-      </h1>
-      <div className="columns-2 sm:columns-3 lg:columns-4 gap-3 space-y-3">
+      </motion.h1>
+      <div className="grid grid-cols-3 md:grid-cols-3 gap-4 lg:gap-6">
         {masonryProjects.map((project, index) => {
-          // Determine a CSS aspect ratio based on project properties to give it a Pinterest masonry feel
-          let aspectClass = "aspect-[4/3]"; // Default wide/normal
-          if (project.ratio === "portrait") {
-            aspectClass = "aspect-[3/4]";
-          } else if (project.ratio === "square" || project.priority) {
-            aspectClass = "aspect-square";
-          } else if (project.ratio === "landscape") {
-            aspectClass = "aspect-[16/9]";
+          // Map project to grid position based on ID
+          let gridClass = "";
+          let aspectClass = "";
+
+          switch (Number(project.id)) {
+            case 2: // Dot & Key Facewash
+              gridClass = "col-span-3 md:col-span-3";
+              aspectClass = "aspect-[21/9] md:aspect-[2.4/1]";
+              break;
+            case 3: // Dot & Key Moisturizer
+              gridClass = "col-span-1";
+              aspectClass = "aspect-[3/2] md:aspect-[4/3]";
+              break;
+            case 1: // JM Financial
+              gridClass = "col-span-2 md:col-span-2";
+              aspectClass = "aspect-[2/1] md:aspect-[2/1]";
+              break;
+            case 5: // AQDA
+              gridClass = "col-span-2 md:col-span-2";
+              aspectClass = "aspect-[4/3] md:aspect-[2.4/1]";
+              break;
+            case 4: // AT Villas
+              gridClass = "col-span-1 md:row-span-2";
+              aspectClass = "aspect-[3/4] h-full";
+              break;
+            case 7: // Sarla Aviation
+              gridClass = "col-span-1 md:col-span-2";
+              aspectClass = "aspect-square md:aspect-[2.4/1]";
+              break;
+            case 6: // Turtle & Snail
+              gridClass = "col-span-2 md:row-span-2";
+              // aspectClass = "aspect-[  3/4] h-full";
+              aspectClass = "aspect-[4/3] md:aspect-[2.4/1]";
+              break;
+            case 8: // Good Bad Ungli
+              gridClass = "col-span-2 md:col-span-2";
+              aspectClass = "aspect-[16/9] md:aspect-[2.1/1]";
+              break;
+            case 9: // AI University (Campus Fund)
+              gridClass = "col-span-1 md:col-span-2";
+              aspectClass = "aspect-[4/3] md:aspect-[2.1/1]";
+              break;
+
+            case 10: // Polo Vista
+              gridClass = "col-span-3 md:col-span-3";
+              aspectClass = "aspect-[21/9] md:aspect-[2.4/1]";
+              break;
+            case 11: // Upcoming
+              gridClass = "col-span-3 md:col-span-3";
+              aspectClass = "aspect-[21/9] md:aspect-[2.4/1]";
+              break;
+            default:
+              gridClass = "col-span-1";
+              aspectClass = "aspect-video";
           }
 
           return (
             <div
               key={`${project.id}-${index}`}
               onClick={() => handleOpen(index)}
-              className={`
-                project-card group cursor-pointer
-                break-inside-avoid
-                overflow-hidden rounded-xl
-                bg-white relative
-                shadow-[0_0_30px_rgba(255,255,255,0.1)]
-                transition-all duration-500
-                ${project.priority
-                  ? "ring-1 ring-yellow-400/50 hover:shadow-yellow-300/40 hover:shadow-2xl"
-                  : "hover:ring-1 hover:ring-white/60 hover:shadow-white/40 hover:shadow-xl"
-                }
-              `}
-            >
-              {/* Glow Border */}
-              {project.priority && (
-                <div className="glow-border pointer-events-none" />
+              className={cn(
+                "project-card group cursor-pointer overflow-hidden rounded-2xl bg-white/5 relative",
+                "shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-white/10",
+                "transition-all duration-500 hover:border-white/20",
+                gridClass
               )}
-
-              <div
-                className={`
-                  relative w-full overflow-hidden
-                  ${project.priority ? "ring-2 ring-yellow-400/60" : "ring-1 ring-white/10"}
-                  ${aspectClass}
-                `}
-              >
+            >
+              <div className={cn("relative w-full overflow-hidden", aspectClass)}>
                 <img
                   loading="lazy"
                   decoding="async"
@@ -90,23 +128,16 @@ export const ProjectsSection = ({ className, content }) => {
                 <div
                   className="
                     absolute inset-0
-                    bg-linear-to-t from-black/90 via-black/30 to-transparent
+                    bg-linear-to-t from-black/90 via-black/20 to-transparent
+                    opacity-60 group-hover:opacity-80 transition-opacity duration-500
                   "
                 />
 
-                {project.priority && (
-                  <div className="absolute top-2 left-2 z-20">
-                    <span className="px-2 py-0.5 text-[10px] font-semibold rounded-full bg-yellow-400 text-black shadow-lg uppercase tracking-wider">
-                      Featured
-                    </span>
-                  </div>
-                )}
-
-                <div className="absolute bottom-3 left-3 text-white z-10 w-[calc(100%-24px)]">
-                  <h3 className="font-bold text-sm leading-tight truncate drop-shadow-md">
+                <div className="absolute bottom-3 left-3 right-3 text-white z-10">
+                  <h3 className="font-bold text-sm md:text-base leading-tight drop-shadow-lg mb-0.5">
                     {project.title}
                   </h3>
-                  <p className="text-xs opacity-90 truncate drop-shadow-md">
+                  <p className="text-[10px] md:text-xs text-white/80 font-medium drop-shadow-md">
                     {project.subtitle || "Work"}
                   </p>
                 </div>

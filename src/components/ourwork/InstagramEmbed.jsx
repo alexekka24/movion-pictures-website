@@ -4,12 +4,24 @@ export const InstagramEmbed = ({ url }) => {
   const ref = useRef(null);
 
   useEffect(() => {
+    const scriptId = "instagram-embed-script";
+    let script = document.getElementById(scriptId);
+
     if (!window.instgrm) {
-      const script = document.createElement("script");
-      script.src = "https://www.instagram.com/embed.js";
-      script.async = true;
-      document.body.appendChild(script);
-      script.onload = () => window.instgrm.Embeds.process();
+      if (!script) {
+        script = document.createElement("script");
+        script.id = scriptId;
+        script.src = "https://www.instagram.com/embed.js";
+        script.async = true;
+        document.body.appendChild(script);
+      }
+      
+      const handleLoad = () => {
+        if (window.instgrm) window.instgrm.Embeds.process();
+      };
+
+      script.addEventListener("load", handleLoad);
+      return () => script.removeEventListener("load", handleLoad);
     } else {
       window.instgrm.Embeds.process();
     }
@@ -17,6 +29,7 @@ export const InstagramEmbed = ({ url }) => {
 
   return (
     <blockquote
+      key={url}
       ref={ref}
       className="instagram-media"
       data-instgrm-permalink={url}

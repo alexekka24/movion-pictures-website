@@ -162,9 +162,9 @@ export const Header = () => {
             // Contact → OPEN OVERLAY
             if (item.action === "overlay") {
               return (
-                <a className="flex" key={item.name}>
+                <a className="flex" key={item.id}>
                   <Button
-                    key={item.name}
+                    key={item.id}
                     onClick={handleContactOpen}
                     className="text-black hover:text-black/60 transition-colors"
                     variant="simple_black"
@@ -178,7 +178,7 @@ export const Header = () => {
             return (
               <>
                 <NavLink
-                  key={item.name}
+                  key={item.id}
                   to={item.href}
                   className="text-black hover:text-black/60 transition-colors flex"
                 >
