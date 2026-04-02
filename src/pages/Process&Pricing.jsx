@@ -60,11 +60,11 @@ export const ProcessAndPricing = () => {
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true, margin: "-100px" }}
-                  className={`grid grid-cols-1 md:grid-cols-2 min-h-[400px] rounded-3xl`}
+                  className={`grid grid-cols-1 md:grid-cols-2 min-h-[400px] rounded-3xl my-2 gap-2`}
                 >
                   {/* Number Section */}
                   <div className={`flex items-center justify-center p-12 order-1 rounded-3xl border border-zinc-300 ${step.color} ${isEven ? 'md:order-2' : 'md:order-1'} ${isDark ? 'md:border-zinc-800' : ''}`}>
-                    <span className={`text-md md:text-[15rem] font-bold tracking-tighter leading-none ${isDark ? 'text-zinc-900/30' : 'text-zinc-600'}`}>
+                    <span className={`text-4xl md:text-[15rem] font-bold tracking-tighter leading-none ${isDark ? 'text-zinc-900/30' : 'text-zinc-600'}`}>
                       {step.step}
                     </span>
                   </div>
@@ -106,7 +106,7 @@ export const ProcessAndPricing = () => {
             PRACTICAL VALUE
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
             {PROCESS_PRICING.pricing.questions.map((item, idx) => (
               <motion.div
                 key={idx}

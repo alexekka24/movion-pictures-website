@@ -32,7 +32,7 @@ export const OurProjects = ({ className, content }) => {
           className="
           text-5xl md:text-6xl lg:text-7xl
           font-semibold tracking-tight leading-[1.05]
-          bg-linear-to-b from-black to-black/60
+          bg-black
           bg-clip-text text-transparent
         "
         >
@@ -59,7 +59,7 @@ export const OurProjects = ({ className, content }) => {
               <img
                 loading="lazy"
                 decoding="async"
-                src={project.thumbnail}
+                src={project.mobileThumbnail || project.thumbnail}
                 alt={project.title}
                 className="
                   w-full h-full object-cover

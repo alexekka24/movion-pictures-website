@@ -16,8 +16,6 @@ export function BentoItem({ children, className, onClick }) {
         shadow-black/60 shadow-lg
         transition-all duration-500
         hover:shadow-2xl hover:shadow-black/40
-        border-2 border-white/20
-        hover:border-2 hover:border-white
         ${className}
       `}
     >

@@ -8,7 +8,7 @@ export const FooterNavLinks = ({ onContactClick }) => {
   const navItems = NAVIGATION.navItems.slice(0, 3);
 
   return (
-    <ul className="space-y-3">
+    <ul className="space-y-3 flex flex-col items-center md:items-start">
       {navItems.map((item) => {
         const Icon = item.iconName;
 
@@ -33,7 +33,7 @@ export const FooterNavLinks = ({ onContactClick }) => {
             <NavLink
               to={item.href}
               className={({ isActive }) =>
-                `flex items-center gap-3 transition ${isActive ? "text-white" : "text-white/70 hover:text-white"
+                `flex flex-col items-center md:items-start gap-3 transition ${isActive ? "text-white" : "text-white/70 hover:text-white"
                 }`
               }
             >

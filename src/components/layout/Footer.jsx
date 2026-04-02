@@ -73,7 +73,7 @@ export const Footer = ({ pageTheme = "dark" }) => {
         <div className="relative grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Company Info */}
           <div className="sm:flex sm:flex-col items-center gap-4">
-            <NavLink to="/" className="text-xl font-bold flex items-center">
+            <NavLink to="/" className="text-xl font-bold flex flex-col items-center">
               <img
                 loading="lazy"
                 decoding="async"
@@ -87,7 +87,7 @@ export const Footer = ({ pageTheme = "dark" }) => {
               />
             </NavLink>
 
-            <p className="text-sm font-light text-white/40 max-w-xs leading-relaxed">
+            <p className="text-sm font-light text-white/40 max-w-lg leading-relaxed">
               Crafting cinematic narratives and high-impact digital experiences.
             </p>
           </div>
@@ -98,7 +98,7 @@ export const Footer = ({ pageTheme = "dark" }) => {
               Navigation
             </h4>
 
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-3 items-center">
               <FooterNavLinks variant={isFooterDark ? "dark" : "light"} />
             </div>
           </div>
@@ -109,7 +109,7 @@ export const Footer = ({ pageTheme = "dark" }) => {
               Follow Us
             </h4>
 
-            <div className="flex gap-4">
+            <div className="flex gap-4 justify-center">
               {NAVIGATION.socials.map((item) => {
                 const Icon = item.icon;
                 return (
@@ -118,7 +118,7 @@ export const Footer = ({ pageTheme = "dark" }) => {
                     href={item.url}
                     target="_blank"
                     whileHover={{ y: -5, scale: 1.1 }}
-                    className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:border-emerald-500/50 hover:bg-emerald-500/5 transition-all duration-300"
+                    className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:border-white/50 hover:bg-white/5 transition-all duration-300"
                   >
                     <Icon size={18} />
                   </motion.a>
@@ -142,7 +142,7 @@ export const Footer = ({ pageTheme = "dark" }) => {
             <a
               href="https://linkedin.com/in/alex-ekka"
               target="_blank"
-              className="hover:text-emerald-500/50 transition-colors duration-300"
+              className="hover:text-white/80 transition-colors duration-300"
             >
               Alex Ekka
             </a>

@@ -4,7 +4,8 @@ export const SELECTEDPROJECTS = [
     title: "JM Financial – JM Pro App (User Journey Film)",
     subtitle: "Ad Film",
     company: "JM Financial",
-    thumbnail: "/assets/images/thumbnail/selectedHomeProjects/JMFinancialTravelAd.webp",
+    thumbnail: "/assets/images/THUMBNAILHOMEPAGE/JMFINANCIAL.webp",
+    mobileThumbnail: "/assets/images/thumbnail/selectedHomeProjects/JMFinancialTravelAd.webp",
     description: "A sharp, insight-led film communicating confidence, control, and intelligent investing. Designed to appeal to modern traders through clarity and strong character-driven storytelling.",
     layout: "featured",
     videos: [
@@ -23,7 +24,8 @@ export const SELECTEDPROJECTS = [
     subtitle: "Product Film",
     company: "Dot & Key",
     category: "BEAUTY & LIFESTYLE",
-    thumbnail: "/assets/images/thumbnail/selectedHomeProjects/Dot&Key.webp",
+    thumbnail: "/assets/images/THUMBNAILHOMEPAGE/DOTANDKEYFACEWASH.webp",
+    mobileThumbnail: "/assets/images/thumbnail/selectedHomeProjects/Dot&Key.webp",
     description: "A fast-paced, sensory-driven product film showcasing cleansing action and skin feel. Shot to resonate with a young, digital-first skincare audience.",
     layout: "wide",
     videos: [
@@ -41,7 +43,8 @@ export const SELECTEDPROJECTS = [
     subtitle: "Product Film",
     company: "Dot & Key",
     category: "BEAUTY & LIFESTYLE",
-    thumbnail: "/assets/images/thumbnail/selectedHomeProjects/Dot&KeyMoisturizer.webp",
+    thumbnail: "/assets/images/THUMBNAILHOMEPAGE/DOTANDKEYMOISTURIZER.webp",
+    mobileThumbnail: "/assets/images/thumbnail/selectedHomeProjects/Dot&KeyMoisturizer.webp",
     videoId: "abcd1234",
     description: "A clean, vibrant product film focused on texture, application, and benefits. Designed to communicate hydration, freshness, and everyday usability through crisp visuals and smooth transitions.",
     videos: [
@@ -59,7 +62,8 @@ export const SELECTEDPROJECTS = [
     subtitle: "Luxury Villa Brand Film",
     company: "AT Villas",
     category: "BEAUTY & LIFESTYLE",
-    thumbnail: "/assets/images/thumbnail/selectedHomeProjects/ATVillas.webp",
+    thumbnail: "/assets/images/THUMBNAILHOMEPAGE/ATVILLA.png",
+    mobileThumbnail: "/assets/images/thumbnail/selectedHomeProjects/ATVillas.webp",
     description: "A lifestyle-led visual narrative showcasing luxury, comfort, and escape. Crafted to position AT Villas as a premium holiday destination through warm, experiential storytelling.",
     layout: "tall",
     videos: [
@@ -77,16 +81,15 @@ export const SELECTEDPROJECTS = [
     subtitle: "Official Music Video",
     company: "The Yellow Diary",
     category: "NARRATIVE",
-    thumbnail: "/assets/images/thumbnail/selectedHomeProjects/Aqda.webp",
-    description:
-      "A soulful music video built around emotion, performance, and mood. The visuals enhance the lyrical depth and musical texture of the track.",
+    thumbnail: "/assets/images/THUMBNAILHOMEPAGE/AQDA.webp",
+    mobileThumbnail: "/assets/images/thumbnail/selectedHomeProjects/Aqda.webp",
+    description: "A soulful music video built around emotion, performance, and mood. The visuals enhance the lyrical depth and musical texture of the track.",
     layout: "wide",
     videos: [
       {
         id: "video1",
         videoType: "youtube",
         videoId: "SyGfSi6hdUo",
-        label: "Aqda- The Yellow Diary I Official Music Video",
         thumbnail: "/assets/images/thumbnail/narrative/yellowDiary.webp",
       },
     ],
@@ -97,7 +100,8 @@ export const SELECTEDPROJECTS = [
     subtitle: "Ad Campaign",
     company: "Turtle & Snail",
     category: "BEAUTY & LIFESTYLE",
-    thumbnail: "/assets/images/thumbnail/selectedHomeProjects/Turtle&SnailSunscreen.webp",
+    thumbnail: "/assets/images/THUMBNAILHOMEPAGE/TURTLEANDSNAIL.webp",
+    mobileThumbnail: "/assets/images/thumbnail/selectedHomeProjects/Turtle&SnailSunscreen.webp",
     description: "A cohesive skincare campaign designed as a four-part digital film series. Each film highlights a specific product combination while maintaining a unified visual language, soft textures, and routine-driven storytelling—built for seamless social consumption and strong grid aesthetics.",
     videos: [
       {
@@ -132,7 +136,8 @@ export const SELECTEDPROJECTS = [
     company: "Corporate Film",
     category: "CORPORATE & INNOVATION",
     subtitle: "Corporate Film",
-    thumbnail: "/assets/images/thumbnail/selectedHomeProjects/Sarla.webp",
+    thumbnail: "/assets/images/THUMBNAILHOMEPAGE/SARLA.png",
+    mobileThumbnail: "/assets/images/thumbnail/selectedHomeProjects/Sarla.webp",
     description: "A future-forward corporate film showcasing innovation, vision, and technological ambition within the aviation ecosystem.",
     videos: [
       {
@@ -149,7 +154,8 @@ export const SELECTEDPROJECTS = [
     subtitle: "Corporate Film ",
     company: "",
     category: "CORPORATE & INNOVATION",
-    thumbnail: "/assets/images/thumbnail/selectedHomeProjects/UAi.webp",
+    thumbnail: "/assets/images/THUMBNAILHOMEPAGE/UNIVERSALAIUNIVERSITY.webp",
+    mobileThumbnail: "/assets/images/thumbnail/selectedHomeProjects/UAi.webp",
     videoUrl: "https://www.instagram.com/reel/xyz/",
     description: "High-energy event coverage capturing innovation, competition, and collaboration. Designed for digital storytelling and social amplification..",
     layout: "tall",
@@ -168,7 +174,8 @@ export const SELECTEDPROJECTS = [
     subtitle: "Short Narrative Film",
     company: "",
     category: "NARRATIVE",
-    thumbnail: "/assets/images/thumbnail/selectedHomeProjects/GoodBadUngli.webp",
+    thumbnail: "/assets/images/THUMBNAILHOMEPAGE/GOODBADUNGLI.png",
+    mobileThumbnail: "/assets/images/thumbnail/selectedHomeProjects/GoodBadUngli.webp",
     videoType: "youtube",
     description: "A stylized narrative exploring children’s behavior with humor and edge. Strong character arcs and punchy storytelling define the film.",
     priority: false,
@@ -188,7 +195,8 @@ export const SELECTEDPROJECTS = [
     subtitle: "Architectural Film",
     company: "Polo Vista",
     category: "BEAUTY & LIFESTYLE",
-    thumbnail: "/assets/images/thumbnail/selectedHomeProjects/PoloVista.webp",
+    thumbnail: "/assets/images/THUMBNAILHOMEPAGE/POLOVISTA.webp",
+    mobileThumbnail: "/assets/images/thumbnail/selectedHomeProjects/PoloVista.webp",
     description: "A cinematic architectural walkthrough of Polo Vista, a villa community in Pune owned by the Indian Army. The film highlights spatial design, form, and lifestyle through refined composition, natural light, and fluid camera movement, bringing the character of the space to life.",
     layout: "hero",
     videos: [

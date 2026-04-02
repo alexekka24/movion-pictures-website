@@ -51,50 +51,48 @@ export const ProjectsSection = ({ className, content }) => {
 
           switch (Number(project.id)) {
             case 2: // Dot & Key Facewash
-              gridClass = "col-span-3 md:col-span-3";
-              aspectClass = "aspect-[21/9] md:aspect-[2.4/1]";
+              gridClass = "col-span-3";
+              aspectClass = "aspect-[21/9]";
               break;
             case 3: // Dot & Key Moisturizer
               gridClass = "col-span-1";
-              aspectClass = "aspect-[3/2] md:aspect-[4/3]";
+              aspectClass = "aspect-[1/1]";
               break;
             case 1: // JM Financial
-              gridClass = "col-span-2 md:col-span-2";
-              aspectClass = "aspect-[2/1] md:aspect-[2/1]";
+              gridClass = "col-span-2";
+              aspectClass = "aspect-[2/1]";
               break;
             case 5: // AQDA
-              gridClass = "col-span-2 md:col-span-2";
-              aspectClass = "aspect-[4/3] md:aspect-[2.4/1]";
+              gridClass = "col-span-2";
+              aspectClass = "aspect-[4/3]";
               break;
             case 4: // AT Villas
-              gridClass = "col-span-1 md:row-span-2";
-              aspectClass = "aspect-[3/4] h-full";
+              gridClass = "col-span-1 md:row-span-1";
+              aspectClass = "h-full";
               break;
             case 7: // Sarla Aviation
-              gridClass = "col-span-1 md:col-span-2";
-              aspectClass = "aspect-square md:aspect-[2.4/1]";
+              gridClass = "col-span-1 md:row-span-1";
+              aspectClass = "h-full";
               break;
             case 6: // Turtle & Snail
-              gridClass = "col-span-2 md:row-span-2";
-              // aspectClass = "aspect-[  3/4] h-full";
-              aspectClass = "aspect-[4/3] md:aspect-[2.4/1]";
+              gridClass = "col-span-2";
+              aspectClass = "aspect-[4/3]";
               break;
-            case 8: // Good Bad Ungli
-              gridClass = "col-span-2 md:col-span-2";
-              aspectClass = "aspect-[16/9] md:aspect-[2.1/1]";
+            case 8: // AI University
+              gridClass = "col-span-2";
+              aspectClass = "aspect-[2/1]";
               break;
-            case 9: // AI University (Campus Fund)
-              gridClass = "col-span-1 md:col-span-2";
-              aspectClass = "aspect-[4/3] md:aspect-[2.1/1]";
+            case 9: // Good Bad Ungli
+              gridClass = "col-span-1";
+              aspectClass = "aspect-[1/1]";
               break;
-
             case 10: // Polo Vista
-              gridClass = "col-span-3 md:col-span-3";
-              aspectClass = "aspect-[21/9] md:aspect-[2.4/1]";
+              gridClass = "col-span-3";
+              aspectClass = "aspect-[21/9]";
               break;
             case 11: // Upcoming
-              gridClass = "col-span-3 md:col-span-3";
-              aspectClass = "aspect-[21/9] md:aspect-[2.4/1]";
+              gridClass = "col-span-3";
+              aspectClass = "aspect-[21/9]";
               break;
             default:
               gridClass = "col-span-1";
@@ -119,7 +117,7 @@ export const ProjectsSection = ({ className, content }) => {
                   src={project.thumbnail}
                   alt={project.title}
                   className="
-                    w-full h-full object-cover
+                    w-fit h-fit object-cover
                     transition-transform duration-700
                     group-hover:scale-105
                   "
