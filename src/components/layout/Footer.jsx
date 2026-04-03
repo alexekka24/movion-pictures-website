@@ -104,7 +104,7 @@ export const Footer = ({ pageTheme = "dark" }) => {
           </div>
 
           {/* Social Media */}
-          <div className="sm:flex sm:flex-col items-center">
+          <div className="sm:flex sm:flex-col mb-3 items-center">
             <h4 className="text-[10px] uppercase tracking-[0.4em] font-mono text-white/30 mb-8">
               Follow Us
             </h4>

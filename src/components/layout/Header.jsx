@@ -85,7 +85,7 @@ export const Header = () => {
                   : "/assets/images/logos/logos-white.png"
               }
               alt="Movion Pictures Logo"
-              className="w-28 md:w-3xs aspect-[3/1] object-contain transition-all duration-300"
+              className="w-28 md:w-3xs aspect-3/1 object-contain transition-all duration-300"
             />
           </NavLink>
 
@@ -95,7 +95,7 @@ export const Header = () => {
       {/* MOBILE TOGGLE (Outside Nav for Z-Index Context) */}
       <div
         className={cn(
-          "z-[70] fixed left-1/2 -translate-x-1/2 transition-all duration-500 pointer-events-none",
+          "z-70 fixed left-1/2 -translate-x-1/2 transition-all duration-500 pointer-events-none",
           "top-0 w-full h-20 flex items-center",
           isScrolled && "top-6 w-[92%] max-w-6xl"
         )}

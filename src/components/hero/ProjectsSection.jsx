@@ -107,17 +107,19 @@ export const ProjectsSection = ({ className, content }) => {
                 "project-card group cursor-pointer overflow-hidden rounded-2xl bg-white/5 relative",
                 "shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-white/10",
                 "transition-all duration-500 hover:border-white/20",
+                aspectClass,  // aspect-ratio on the grid item itself (Safari-safe)
                 gridClass
               )}
             >
-              <div className={cn("relative w-full overflow-hidden", aspectClass)}>
+              {/* Single absolute fill layer — no inner aspect-ratio div needed */}
+              <div className="absolute inset-0 overflow-hidden">
                 <img
                   loading="lazy"
                   decoding="async"
                   src={project.thumbnail}
                   alt={project.title}
                   className="
-                    w-fit h-fit object-cover
+                    absolute inset-0 w-full h-full object-cover
                     transition-transform duration-700
                     group-hover:scale-105
                   "

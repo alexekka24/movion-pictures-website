@@ -149,7 +149,7 @@ export const SELECTEDPROJECTS = [
     ],
   },
   {
-    id: 8,
+    id: 9,
     title: "Campus Fund: AWS Grand Challenge",
     subtitle: "Corporate Film ",
     company: "",
@@ -169,12 +169,12 @@ export const SELECTEDPROJECTS = [
     ],
   },
   {
-    id: "9",
+    id: 8,
     title: "The Good, The Bad & The Ungli",
     subtitle: "Short Narrative Film",
     company: "",
     category: "NARRATIVE",
-    thumbnail: "/assets/images/THUMBNAILHOMEPAGE/GOODBADUNGLI.png",
+    thumbnail: "/assets/images/THUMBNAILHOMEPAGE/theGoodTheBadTheUngli.webp",
     mobileThumbnail: "/assets/images/thumbnail/selectedHomeProjects/GoodBadUngli.webp",
     videoType: "youtube",
     description: "A stylized narrative exploring children’s behavior with humor and edge. Strong character arcs and punchy storytelling define the film.",
