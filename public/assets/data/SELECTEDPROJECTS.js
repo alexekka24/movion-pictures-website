@@ -150,7 +150,7 @@ export const SELECTEDPROJECTS = [
   },
   {
     id: 9,
-    title: "Campus Fund: AWS Grand Challenge",
+    title: "Founder Story | Universal Ai University",
     subtitle: "Corporate Film ",
     company: "",
     category: "CORPORATE & INNOVATION",

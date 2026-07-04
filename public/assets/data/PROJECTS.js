@@ -441,7 +441,7 @@ export const PROJECTS = [
   },
   {
     id: "CORP-3",
-    title: "Universal AI University – Corporate Campaign",
+    title: "Founder Story | Universal Ai University",
     subtitle: "Brand Film Series (2 Films)",
     company: "UAi",
     category: "CORPORATE & INNOVATION",
